@@ -1,0 +1,2 @@
+class BillsItem < ApplicationRecord
+end

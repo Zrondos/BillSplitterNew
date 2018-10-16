@@ -1,0 +1,2 @@
+class GuestsBill < ApplicationRecord
+end
