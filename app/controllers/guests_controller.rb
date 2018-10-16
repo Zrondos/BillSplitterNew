@@ -1,4 +1,4 @@
-class GuestController < ApplicationController
+class GuestsController < ApplicationController
   def index
   end
 
