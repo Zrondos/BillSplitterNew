@@ -9,10 +9,9 @@ Rails.application.routes.draw do
   resources :bills_items
 
   resources :group_bills
-  resources :guests
-  resources :guests_bills
+  resources :users_bills
   resources :items
 
-  root to: 'guests#index'
+  root to: 'users#index'
 
 end
