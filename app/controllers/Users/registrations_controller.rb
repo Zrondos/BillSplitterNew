@@ -6,6 +6,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
   
   def create
     user = User.create(
+      puts "!!!!!!!!!!!!!!!!!"
+      puts params[:user][:first_name]
       first_name: params[:user][:first_name],
       last_name: params[:user][:last_name],
       email: params[:user][:email],
@@ -18,7 +20,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # Notice the name of the method
   def sign_up_params
-    params.require(:user).permit(:display_first_name, :email, :password, :password_confirmation)
+    params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation, :payment_method)
   end
 end
 
