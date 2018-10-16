@@ -12,32 +12,30 @@
 
 ActiveRecord::Schema.define(version: 2018_10_16_172744) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "bills", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "bills_items", force: :cascade do |t|
+    t.integer "item"
+    t.integer "bill"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "group_bills", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "guests", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "guests_bills", force: :cascade do |t|
+    t.integer "admin"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "items", force: :cascade do |t|
+    t.string "name"
+    t.money "price", scale: 2
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
