@@ -1,4 +1,4 @@
-class GroupBillController < ApplicationController
+class ItemsController < ApplicationController
   def index
   end
 
