@@ -1,0 +1,99 @@
+/* body */
+* {
+  margin: 0;
+  background-color: #EAE5E5;
+}
+
+.nav-top-banner {
+  background-color: white;
+  height: 70px;
+  width: 100%;
+}
+
+.brand-logo {
+  padding-left: 20px;
+  padding-top: 20px;
+  float: left;
+  background-color: #fff;
+}
+
+.hamburger-menu-logo {
+  float: right;
+  background-color: #fff;
+  padding-right: 20px;
+  padding-top: 20px;
+}
+
+.spliting-container {
+  height: 100%;
+  max-width: 100%;
+}
+
+.header-content {
+  height: 40px;
+  width: 100%;
+  padding-top: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.edit-button {
+  float: right;
+  text-align: center;
+}
+/* 
+.item-container {
+
+} */
+
+.items {
+  padding-left: 20px;
+  float: left;
+  text-align: center;
+  padding-top: 10px;
+}
+
+.price {
+  padding-right: 20px;
+  float: right;
+  padding-top: 10px;
+}
+
+.item-container {
+  box-sizing: border-box;
+  height: 100%;
+  padding: 30px;    
+  border: 1px solid blue;
+  border-right: hidden;
+  border-left: hidden;
+}
+
+.group-bill-total {
+  box-sizing: border-box;
+  height: 100px;
+  padding: 30px;    
+  border: 1px solid blue;
+  border-right: hidden;
+  border-left: hidden;
+}
+
+.border-box {
+  box-sizing: border-box;
+  height: 100px;
+  padding: 30px;    
+  border: 1px solid blue;
+  border-right: hidden;
+  border-left: hidden;
+}
+
+.nav-bottom-banner {
+  background-color: white;
+  height: 200px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+
+}
+
