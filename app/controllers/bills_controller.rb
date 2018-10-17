@@ -5,6 +5,12 @@ class BillsController < ApplicationController
     @bills = Bill.all
     @users = User.all
 
+    resource = OcrSpace::Resource.new(apikey: "29b24fb56e88957")
+    result = resource.convert url: "http://www.fakereceipt.us/images/218x320.gif"
+    puts result
+    result = resource.clean_convert url: "http://www.fakereceipt.us/images/218x320.gif"
+    puts result
+
   end
 
   def show

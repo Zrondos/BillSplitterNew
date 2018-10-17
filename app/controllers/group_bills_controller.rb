@@ -15,6 +15,10 @@ class GroupBillsController < ApplicationController
     @bills_item = BillsItem.new
   end
 
+  def new
+    @group_bill=GroupBill.new
+  end
+
   def edit
   end
 

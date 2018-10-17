@@ -1,2 +1,14 @@
 <h1>Guest#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
+
+<p>Find me in app/views/guest/index.html.erb</p>
+<% @users.each do |user| %>
+    <%= user.first_name %>
+    <% user.bills.each do |bill|%>
+        <%=bill.id%>
+        Group Bill Id<%=bill.group_bill_id%>
+        <% bill.items.each do |item| %>
+            <%=item.name%> <%=item.price%><br>
+        <% end %>
+    <% end %>
+<% end %>
+
