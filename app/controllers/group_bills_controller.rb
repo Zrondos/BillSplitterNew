@@ -2,10 +2,17 @@
 class GroupBillsController < ApplicationController
 
   def index
-    @group_bills = GroupBill.all
+    @users = User.all.map { |c| [ c.first_name, c.id] }
+    @bill = Bill.new
   end
 
   def show
+    @group_bill = GroupBill.find(params[:id])
+    @users = User.all
+    @users = User.all.map { |c| [ c.first_name, c.id] }
+    @bill = Bill.new
+    @items = @group_bill.items.map { |c| [c.name, c.id]}
+    @bills_item = BillsItem.new
   end
 
   def new
@@ -15,12 +22,11 @@ class GroupBillsController < ApplicationController
   def edit
   end
 
-  
 
   def new 
+    @users = User.all.map{ |c| [ c.id] }
     @group_bill = GroupBill.new 
   end 
-
 
 
   def create
@@ -28,7 +34,7 @@ class GroupBillsController < ApplicationController
       admin: params[:group_bill][:admin],
     )
     # session[:group_bill_id] = group_bill.id
-    redirect_to group_bills_path
+    redirect_to group_bill_path(@group_bill)
   end
 
   def update

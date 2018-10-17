@@ -1,5 +1,7 @@
 <%= form_with model: @group_bill do |form| %>
-  <strong>Admin:</strong> <%= form.text_field :admin %> <br />
-  <%= form.submit %> 
+  <%= form.hidden_field :admin, value: current_user.id %>
+  <%= form.submit %>       
 <% end %>
             
+
+

@@ -13,16 +13,23 @@ class BillsItemsController < ApplicationController
   end
 
   def new 
-    @bills_item = BillsItem.new 
+    @bill = Bill.all
+    @items = Item.all
+    @items = Item.all.map { |c| [ c.name, c.id] }
+    @bills_item = BillsItem.new
   end 
 
   def create
-    @bills_item = BillsItem.create(
-      item_id: params[:bills_item][:item_id],
-      bill_id: params[:bills_item][:bill_id],
-
+    items = params[:bills_item][:items_ids]
+    items = items[1..-1]
+    items.each do |item| 
+      
+    BillsItem.create(
+      item_id: item,
+      bill_id: params[:bills_item][:bill_id]
     )
-    # session[:bills_items_id] = bills_items_.id
+    end 
+
     redirect_to bills_items_path
   end
   
