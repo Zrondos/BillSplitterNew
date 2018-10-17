@@ -1,5 +1,16 @@
 <h1>Bills#index</h1>
 <p>Find me in app/views/bills/index.html.erb</p>
-<form>
-<input type="file" capture="camera" accept="image/*" id="cameraInput" name="cameraInput">
-</form>
+<% @bills.each do |bill| %>
+
+    <%bill.users.each do |user|%>
+        <%=user.first_name%>
+    <% end %>
+
+    <%bill.items.each do |item| %>
+        <%=item.name%>
+    <% end %><br>
+
+
+<% end %>
+
+

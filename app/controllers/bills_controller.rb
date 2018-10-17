@@ -2,16 +2,14 @@
 class BillsController < ApplicationController
 
   def index
-<<<<<<< HEAD
-    resource = OcrSpace::Resource.new(apikey: "29b24fb56e88957")
-    result = resource.convert url: "https://expressexpense.com/images/sample-gas-receipt.jpg"
-    puts result
-    result = resource.clean_convert url: "https://expressexpense.com/images/sample-gas-receipt.jpg"
-    puts result
-=======
     @bills = Bill.all
 
->>>>>>> c69565c5243616700c2fcaed47344330cb9075d5
+    resource = OcrSpace::Resource.new(apikey: "29b24fb56e88957")
+    result = resource.convert url: "http://www.fakereceipt.us/images/218x320.gif"
+    puts result
+    result = resource.clean_convert url: "http://www.fakereceipt.us/images/218x320.gif"
+    puts result
+
   end
 
   def show

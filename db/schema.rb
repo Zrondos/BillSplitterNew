@@ -10,17 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 0) do
-=======
 ActiveRecord::Schema.define(version: 2018_10_16_223517) do
->>>>>>> c69565c5243616700c2fcaed47344330cb9075d5
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-<<<<<<< HEAD
-=======
   create_table "bills", force: :cascade do |t|
     t.integer "group_bill_id"
     t.datetime "created_at", null: false
@@ -84,5 +78,4 @@ ActiveRecord::Schema.define(version: 2018_10_16_223517) do
     t.index ["reset_password_token"], name: "index_views_on_reset_password_token", unique: true
   end
 
->>>>>>> c69565c5243616700c2fcaed47344330cb9075d5
 end
