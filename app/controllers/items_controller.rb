@@ -17,6 +17,7 @@ class ItemsController < ApplicationController
     @item = Item.create(
       name: params[:item][:name],
       price: params[:item][:price],
+      group_bill_id: params[:item][:group_bill_id],
 
     )
     # session[:group_bill_id] = group_bill.id

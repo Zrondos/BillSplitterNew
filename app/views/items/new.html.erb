@@ -1,6 +1,8 @@
 <%= form_with model: @item do |form| %>
   <strong>Name:</strong> <%= form.text_field :name %> <br />
   <strong>Price:</strong> <%= form.text_field :price %> <br />
+    <strong>group_bill:</strong> <%= form.text_field :group_bill_id %> <br />
+
   <%= form.submit %> 
 <% end %>
             
