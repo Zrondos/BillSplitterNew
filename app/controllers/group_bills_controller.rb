@@ -8,6 +8,10 @@ class GroupBillsController < ApplicationController
   def show
   end
 
+  def new
+    @group_bill=GroupBill.new
+  end
+
   def edit
   end
 
