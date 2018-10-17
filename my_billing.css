@@ -1,0 +1,115 @@
+* {
+  margin: 0;
+}
+.container-1, .container-1 div {
+  display: flex;
+  background-color: white;
+  padding: 10px;
+}
+
+.container-2 div,
+.container-3 div,
+.container-4 div,
+.container-5 div,
+.container-6 div,
+.container-7 div {
+  padding: 10px;
+  background-color: gainsboro;
+}
+
+
+
+.box-1 {
+  flex: 2;
+  order: 2;
+}
+
+.box-2 {
+  flex: 1;
+  order: 1;
+}
+
+.container-2,
+.container-2,
+.container-3,
+.container-4,
+.container-5,
+.container-6,
+.container-7 {
+  display: flex;
+}
+
+.case-container div {
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.box-3 {
+  flex: 9;
+  order: 1;
+}
+
+.box-4 {
+  flex: 1;
+  order: 2;
+}
+
+.box-5 {
+  flex: 9;
+  order: 1;
+}
+
+.box-6 {
+  flex: 1;
+  order: 2;
+}
+
+.box-7 {
+  flex: 1;
+}
+
+.box-8 {
+  flex: 9;
+  order: 1;
+}
+
+.box-9 {
+  flex: 1;
+  order: 2;
+}
+
+.box-10 {
+  flex: 9;
+  order: 1;
+}
+
+.box-11 {
+  flex: 1;
+  order: 2;
+}
+
+.box-12 {
+  flex: 7;
+  order: 1;
+}
+
+.box-13 {
+  flex: 1;
+  order: 2;
+}
+
+.container8 div {
+  background-color: red;
+  height: 100px;
+  width: 100%;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+}
+
+button {
+  background-color: rgb(91, 96, 94);
+  width: 300px;
+  height: 50px;
+  border-radius: 40px;
+}
