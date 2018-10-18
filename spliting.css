@@ -1,0 +1,140 @@
+@media(min-width:138px){
+
+  /* background  */
+  * {
+    margin: 0;
+  }
+  /* container with box-1 and box-2, contains logo and menu icons */
+  .container-1, .container-1 div {
+    display: flex;
+    background-color: white;
+    padding: 10px;
+  }
+  /* containers 2 - 7 with boxes 3 - 13 */
+  .container-2 div,
+  .container-3 div,
+  .container-4 div,
+  .container-5 div,
+  .container-6 div,
+  .container-7 div,
+  .container-7-5 {
+    padding: 10px;
+    background-color: #EAE5E5;
+  }
+
+
+  /* contains logo icon */
+  .box-1 {
+    flex: 2;
+    order: 2;
+    height: 50px;
+
+  }
+  /* contains menu icon */
+  .box-2 {
+    flex: 1;
+    order: 1;
+  }
+  /* containers 2 - 7 with boxes 3 - 13: display */ 
+  .container-2,
+  .container-2,
+  .container-3,
+  .container-4,
+  .container-5,
+  .container-6,
+  .container-7,
+  .container-7-5 {
+    display: flex;
+  }
+  /* container that contains container 5 & 6 & boxes 8 - 11 */
+  .case-container div {
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+  /* conatins tile of page */
+  .box-3 {
+    flex: 9;
+    order: 1;
+    align-content: center;
+  }
+
+  h1 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    letter-spacing: 2px;
+    text-align: center;
+  }
+
+  /* conatians the edit button */
+  .box-4 {
+    flex: 1;
+    order: 2;
+  }
+  /* with in container-3 & holds item */
+  .box-5 {
+    flex: 9;
+    order: 1;
+  }
+  /* with in container-3 & holds price of item */
+  .box-6 {
+    flex: 1;
+    order: 2;
+  }
+  /* holds user icons when drag & drop is implemented */
+  .box-7 {
+    flex: 1;
+  }
+  /* within case-container, and holds tip, tax, and their accompaning prices */
+  .box-8 {
+    flex: 7;
+    order: 1;
+  }
+
+  .box-9 {
+    flex: 1;
+    order: 2;
+  }
+
+  .box-10 {
+    flex: 7;
+    order: 1;
+  }
+
+  .box-11 {
+    flex: 1;
+    order: 2;
+  }
+  /* within container-7 and holds TOTAL and its integer counterpart */
+  .box-12 {
+    flex: 7;
+    order: 1;
+  }
+
+  .box-13 {
+    flex: 1;
+    order: 2;
+  }
+  /* add users */
+  .box-14 {
+    flex: 1;
+  }
+  /* container that holds pay/split button */
+  .container8 div {
+    background-color: white;
+    height: 100px;
+    width: 100%;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    align-content: center;
+  }
+  /* the pay/split button */
+  button {
+    background-color: #FF473A;
+    width: 300px;
+    height: 50px;
+    margin-left: 25px;
+    box-shadow: 2px 5px 18px #88888888;
+    border: none;
+  }
+}  
