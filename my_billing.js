@@ -12,6 +12,6 @@ function myFunction() {
   if (window.pageYOffset >= sticky) {
     container8.classList.add("sticky")
   } else {
-    navbar.classList.remove("sticky");
+    container8.classList.remove("sticky");
   }
 }

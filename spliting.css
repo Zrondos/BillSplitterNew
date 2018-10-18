@@ -1,117 +1,136 @@
-/* body */
+/* background  */
 * {
   margin: 0;
+}
+/* container with box-1 and box-2, contains logo and menu icons */
+.container-1, .container-1 div {
+  display: flex;
+  background-color: white;
+  padding: 10px;
+}
+/* containers 2 - 7 with boxes 3 - 13 */
+.container-2 div,
+.container-3 div,
+.container-4 div,
+.container-5 div,
+.container-6 div,
+.container-7 div,
+.container-7-5 {
+  padding: 10px;
   background-color: #EAE5E5;
 }
 
-.nav-top-banner {
-  background-color: white;
-  height: 70px;
-  width: 100%;
-}
 
-.brand-logo {
-  padding-left: 20px;
-  padding-top: 20px;
-  float: left;
-  background-color: #fff;
-}
+/* contains logo icon */
+.box-1 {
+  flex: 2;
+  order: 2;
+  height: 50px;
 
-.hamburger-menu-logo {
-  float: right;
-  background-color: #fff;
-  padding-right: 20px;
-  padding-top: 20px;
 }
-
-.spliting-container {
-  height: 100%;
-  max-width: 100%;
+/* contains menu icon */
+.box-2 {
+  flex: 1;
+  order: 1;
 }
-
-.header-content {
-  height: 40px;
-  width: 100%;
-  padding-top: 20px;
+/* containers 2 - 7 with boxes 3 - 13: display */ 
+.container-2,
+.container-2,
+.container-3,
+.container-4,
+.container-5,
+.container-6,
+.container-7,
+.container-7-5 {
+  display: flex;
+}
+/* container that contains container 5 & 6 & boxes 8 - 11 */
+.case-container div {
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+/* conatins tile of page */
+.box-3 {
+  flex: 9;
+  order: 1;
+  align-content: center;
 }
 
 h1 {
-  text-align: center;
-
-}
-
-.edit-button {
-  float: right;
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  letter-spacing: 2px;
   text-align: center;
 }
-/* 
-.item-container {
 
-} */
-
-.items {
-  padding-left: 20px;
-  float: left;
-  text-align: center;
-  padding-top: 10px;
+/* conatians the edit button */
+.box-4 {
+  flex: 1;
+  order: 2;
+}
+/* with in container-3 & holds item */
+.box-5 {
+  flex: 9;
+  order: 1;
+}
+/* with in container-3 & holds price of item */
+.box-6 {
+  flex: 1;
+  order: 2;
+}
+/* holds user icons when drag & drop is implemented */
+.box-7 {
+  flex: 1;
+}
+/* within case-container, and holds tip, tax, and their accompaning prices */
+.box-8 {
+  flex: 7;
+  order: 1;
 }
 
-.price {
-  padding-right: 20px;
-  float: right;
-  padding-top: 10px;
+.box-9 {
+  flex: 1;
+  order: 2;
 }
 
-.item-container {
-  box-sizing: border-box;
-  height: 300px;
-  padding: 30px;    
-  border: hidden;
+.box-10 {
+  flex: 7;
+  order: 1;
 }
 
-.border-box {
-  box-sizing: border-box;
-  height: 100px;
-  padding: 30px;    
-  border: 1px solid black;
-  border-right: hidden;
-  border-left: hidden;
+.box-11 {
+  flex: 1;
+  order: 2;
+}
+/* within container-7 and holds TOTAL and its integer counterpart */
+.box-12 {
+  flex: 7;
+  order: 1;
 }
 
-.border-box2 {
-  box-sizing: border-box;
-  height: 100px;
-  padding: 30px;    
-  border: 1px solid blue;
-  border-right: hidden;
-  border-left: hidden;
-  border-top: hidden;
+.box-13 {
+  flex: 1;
+  order: 2;
 }
-
-.nav-bottom-banner {
+/* add users */
+.box-14 {
+  flex: 1;
+}
+/* container that holds pay/split button */
+.container8 div {
   background-color: white;
-  height: 200px;
+  height: 100px;
   width: 100%;
+  padding: 10px;
   position: fixed;
   bottom: 0;
+  align-content: center;
 }
-
-.split-button {
-  background-color: #fff;
-}
-
+/* the pay/split button */
 button {
-  background-color: rgb(91, 96, 94);
+  background-color: #FF473A;
   width: 300px;
   height: 50px;
-  border-radius: 40px;
-}
-
-.user-circles-icons {
-  margin: 5px;
-  width: 50px;
-  height: 50px;
-  background: rgb(172, 170, 170);
-  border-radius: 50%;
-  display: inline-flex;
+  margin-left: 25px;
+  box-shadow: 2px 5px 18px #88888888;
 }
