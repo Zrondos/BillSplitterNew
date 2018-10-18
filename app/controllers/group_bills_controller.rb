@@ -36,9 +36,20 @@ class GroupBillsController < ApplicationController
   def create
     @group_bill = GroupBill.create(
       admin: params[:group_bill][:admin],
+      file_name: params[:group_bill][:file_name]
     )
     # session[:group_bill_id] = group_bill.id
-    redirect_to group_bill_path(@group_bill)
+    calll=OcrskdCall.new(file_name)
+    items_array=call.api_call
+    items_array.each do |item|
+      Item.create(
+        name: item[0]
+        price: item[1]
+        group_bill_id: @group_bill.id
+      )
+    end
+    redirect_to group_bills_path
+
   end
 
   def update
