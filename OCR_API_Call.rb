@@ -118,13 +118,30 @@ download_url = xml_data.elements["response/task"].attributes["resultUrl"]
 # Download the result
 puts "Downloading result.."
 recognized_text = RestClient.get(download_url)
-array=[]
 recognized_text=recognized_text.to_s
-recognized_text.each_line{|c| array.push(c)}
-puts array.to_s
-# recognized_text=recognized_text.split("/n")
+puts recognized_text
 
+# array=[]
 
-# puts recognized_text[0]
-# puts recognized_text[1]
+# string.each_line{|c| array.push(c)}
+
+# array.each do |s|
+#     s.gsub!(' ', '')
+# end
+
+# new_array=[]
+# numbers=["0","1","2","3","4","5","6","7","8","9"]
+# array.each do |element|
+#     for i in 0..element.length
+#         if numbers.include?(element[i])
+#             item=element[0..(i-1)]
+#             price=element[i..-1]
+#             # puts item
+#             # puts price
+#             break
+#         end
+#     end
+#     new_array.push([item,price])
+# end
+# puts new_array.to_s
 
