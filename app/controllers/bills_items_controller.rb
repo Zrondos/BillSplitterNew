@@ -4,7 +4,7 @@ class BillsItemsController < ApplicationController
   def index
     @bills_item = BillsItem.all
   end 
-  
+
 
   def show
   end
@@ -20,16 +20,12 @@ class BillsItemsController < ApplicationController
   end 
 
   def create
-    items = params[:bills_item][:items_ids]
-    items = items[1..-1]
-    items.each do |item| 
-      
+    item = params[:bills_item][:item_id]
+    # items.each do |item|    
     BillsItem.create(
       item_id: item,
       bill_id: params[:bills_item][:bill_id]
     )
-    end 
-
     redirect_to bills_items_path
   end
   
@@ -39,4 +35,5 @@ class BillsItemsController < ApplicationController
 
   def delete
   end
+  
 end

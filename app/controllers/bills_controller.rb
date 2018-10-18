@@ -8,6 +8,7 @@ class BillsController < ApplicationController
   end
 
   def show
+    @bill=Bill.find(params[:id])
   end
 
 
