@@ -11,8 +11,12 @@ class GroupBillsController < ApplicationController
     @users = User.all
     @users = User.all.map { |c| [ c.first_name, c.id] }
     @bill = Bill.new
-    @items = @group_bill.items.map { |c| [c.name, c.id]}
+    @items = @group_bill.items.map{ |c| [ c.name, c.id]}
     @bills_item = BillsItem.new
+    
+    # bills-items functionality 
+    @items = Item.all
+    @items = Item.all.map { |c| [ c.name, c.id] }
   end
 
   def new
