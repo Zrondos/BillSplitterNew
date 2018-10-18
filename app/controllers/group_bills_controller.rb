@@ -12,11 +12,23 @@ class GroupBillsController < ApplicationController
     @users = User.all.map { |c| [ c.first_name, c.id] }
     @bill = Bill.new
     @items = @group_bill.items.map{ |c| [ c.name, c.id]}
-    @bills_item = BillsItem.new
+    
+    @bills_on_group_bill=@group_bill.bills
+    @users_on_group_bill=[]
+    @bills_on_group_bill.each do |bill|
+      bill.users.each do |user|
+          @users_on_group_bill.push([user.first_name,user.id])
+      end
+    end
+
+
+    
     
     # bills-items functionality 
-    @items = Item.all
-    @items = Item.all.map { |c| [ c.name, c.id] }
+
+
+    # @items = Item.all
+    # @items = Item.all.map { |c| [ c.name, c.id] }
   end
 
   def new

@@ -1,17 +1,24 @@
 <h1>Bills#show</h1>
 <p>Find me in app/views/bills/show.html.erb</p>
-Bill Owner 
 
-<% @bill.items.each do |item| %>
-  <% puts item.name %>
-  <%= item.name %>
-<% end %>
-
-
-  <% @bill.users.each do |user| %> 
-    <%=user.first_name%>
+<h2>Bill Owner </h2> <br />
+  <% @bill.users.each do |user| %>
+    <%=user.first_name.capitalize%>
   <% end %>
+   <br/><br/>
+<% totalprice = 0%>
+<% @items.each do |item| %>
+  Name: <%= item.name %> <br>
+  Price: $<%= item.price %> <br/>
 
+  <% puts item.bills.length %>
+  <% puts "!!!!!!!!!!!" %>
+
+  My Price= <%=item.price/(item.bills.length)%><br><br>
+
+<% end %>
+TOTAL_PRICE: <%= totalprice%>
+  
 
 
 
