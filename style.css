@@ -1,0 +1,82 @@
+
+.container1 {
+  display: flex;
+  background-color: lightgrey;
+  padding: 20px;
+  flex-direction:column;
+  margin: 0px;
+}
+.item {
+    width: 200px;
+    height: 50px;
+    padding: 10px;
+    border: 1px solid #aaaaaa;
+}
+.item1 {
+  background-color: lightpink;
+  margin: 20px;
+}
+.item2 {
+  background-color: lightblue;
+  margin: 20px;
+}
+.item3 {
+  background-color: lightgreen;
+  margin: 20px;
+}
+
+.container2 {
+  display: flex;
+  background-color: lightyellow;
+  flex-direction:row;
+  height: 100px;
+  margin: 10px;
+}
+.person {
+  width: 80px;
+  height: 40px;
+  padding: 10px;
+  border: 1px solid #aaaaaa;
+}
+.person1 {
+  background-color: orange;
+  margin: 15px;
+}
+.person2 {
+  background-color: purple;
+  margin: 15px;
+}
+.person3 {
+  background-color: green;
+  margin: 15px;
+}
+.circle {
+  height: 50px;
+  width: 50px;
+  background-color: yellow;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  top:45px;
+}
+.circle1 {
+  background-color: yellow;
+}
+.circle2 {
+  background-color: green;
+}
+.circle3 {
+  background-color: red;
+}
+.circle4 {
+  background-color: grey;
+}
+.circle5 {
+  background-color: orange;
+}
+.circle6 {
+  background-color: purple;
+}
+.circle7 {
+  background-color: blue;
+}
