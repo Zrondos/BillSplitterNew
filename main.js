@@ -1,19 +1,26 @@
 //ones we open the brower we want those things to be there:
-let DRAGGING_PERSON="Helllloooo!!!! ";
+let DRAGGING_PERSON;
 class Person {
   constructor(id, name,color){
     this.element = document.createElement('div');
     this.element.id = id;
+
     this.element.classList.add('person');
     this.element.style.backgroundColor = color;
     this.element.draggable=true;
 
-    this.element.addEventListener("dragstart", this.startDrag,false);
+    this.element.addEventListener("dragstart", this.startDrag.bind(this),false);
+
     this.name = name;
+    this.id = id;
+    this.color = color;
+
     document.querySelector('.container2').appendChild(this.element);
   }
   startDrag( ){
-    DRAGGING_PERSON = "Heeeeellllllooooooo!!!";
+    console.log(this)
+    //global variable that holds the person:
+    DRAGGING_PERSON = this;
   }
 }
 // e => this.grab(name)
@@ -21,13 +28,17 @@ class Item {
   constructor(id, color){
   //generate random id for each new item
   //Creates an item:
+    // console.log(person);
+    // this.id= person.id;
+    // var personid = id;
+    // console.log(personid);
+
     this.element = document.createElement('div');
     this.element.id = id;
-    console.log(id);
     this.element.classList.add('item');
     this.element.style.backgroundColor = color;
 // adds addEventListeners:
-    this.element.addEventListener("drop",this.addPerson, false);
+    this.element.addEventListener("drop",this.addPerson.bind(this), false);
     this.element.addEventListener("dragenter",function(e){e.preventDefault();},false);
     this.element.addEventListener("dragover",function(e){e.preventDefault(); },false);
 //Output to the page:
@@ -35,14 +46,16 @@ class Item {
   }
   addPerson(e){
 
-    // e.target.innerText = DRAGGING_PERSON;
-    // circles.class = "this.id";
+    console.log(DRAGGING_PERSON);
+    // console.log(personid);
+    e.target.innerText = DRAGGING_PERSON.name;
     // e.target.innerText = this.id;
-    // this.element = document.createElement('div');
-    // this.element.draggable=true;
-    // let id = this.id;
-    // circles[id].setAttribute("id", id);
-    e.target.innerHTML += circles[this.id];
+    let circle = document.createElement('div');
+    circle.draggable=true;
+    let id = this.id;
+    circle.classList.add(`circle`);
+    circle.classList.add(`circle${DRAGGING_PERSON.id}`);
+    e.target.appendChild(circle);
   //create circle id and pass it
   }
   //if they add two people to one item
@@ -67,12 +80,12 @@ class Item {
 function doFirst(){
 
   const bill = new Person(1,'Bill',"red");
-  const drink = new Item(1, 'orange');
-  const rich = new Person(2,'Bill',"orange");
-  const itemanother = new Item(2, 'tomato');
-  const samanta = new Person(0,'Bill',"green");
-  const awesome = new Item(5, 'tomato');
-  console.log(bill,drink,rich,itemanother,samanta,awesome);
+  const drink = new Item(1, 'orange',"rachel");
+  const rich = new Person(2,'Chaler',"orange");
+  const itemanother = new Item(2, 'tomato',"rich");
+  const samanta = new Person(3,'Franklin',"green");
+  const awesome = new Item(3, 'tomato',"bill");
+;
   }
   // firstPerson = document.getElementById("person1");
   // firstPerson.style = "background-color: blue";
@@ -91,14 +104,14 @@ function doFirst(){
   //   circles.push(circle[i]);
   // }
   //
-  var circle1 = '<div class="circle circle1" draggable="true" > </div>';
-  var circle2 = '<div class="circle circle2" draggable="true" > </div>';
-  var circle3 = '<div class="circle circle3" draggable="true" > </div>';
-  var circle4 = '<div class="circle circle4" > </div>';
-  var circle5 = '<div class="circle circle5" > </div>';
-  var circle6 = '<div class="circle circle6" > </div>';
-  var circle7 = '<div class="circle circle7" > </div>';
-  var circles = [circle1, circle2, circle3, circle4,circle5,circle6,circle7];
+  // var circle1 = '<div class="circle circle1" draggable="true" > </div>';
+  // var circle2 = '<div class="circle circle2" draggable="true" > </div>';
+  // var circle3 = '<div class="circle circle3" draggable="true" > </div>';
+  // var circle4 = '<div class="circle circle4" > </div>';
+  // var circle5 = '<div class="circle circle5" > </div>';
+  // var circle6 = '<div class="circle circle6" > </div>';
+  // var circle7 = '<div class="circle circle7" > </div>';
+  // var circles = [circle1, circle2, circle3, circle4,circle5,circle6,circle7];
 
 window.addEventListener("load",doFirst, false);
 // function startDrag(e){
