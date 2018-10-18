@@ -35,8 +35,9 @@ class GroupBillsController < ApplicationController
       Item.create(
         name: item[0]
         price: item[1]
-        
+        group_bill_id: @group_bill.id
       )
+    end
     redirect_to group_bills_path
   end
 
