@@ -1,6 +1,6 @@
 <%= form_with model: @bills_item do |form| %>
   <strong>Bill_id:</strong> <%= form.text_field :bill_id %> <br />
-  <strong>Item_id:</strong> <%= form.text_field :item_id %> <br />
+  <%= form.select(:items_ids, options_for_select(@items, @bills_item.item_id), { :prompt => "Please select"}, { :multiple => true, :size => 5 })%>
   <%= form.submit %> 
 <% end %>
             

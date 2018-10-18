@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 2018_10_16_223517) do
   create_table "items", force: :cascade do |t|
     t.string "name"
     t.money "price", scale: 2
+    t.integer "group_bill_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

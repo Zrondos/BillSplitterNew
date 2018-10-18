@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
 
  protected
 
- protected
+ 
 
   def configure_permitted_parameters
     attributes = [:first_name, :last_name,:payment_method]

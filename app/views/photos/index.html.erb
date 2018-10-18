@@ -1,0 +1,15 @@
+<h1>Photo#index</h1>
+<p>Find me in app/views/photo/index.html.erb</p>
+<%= form_with model: @group_bill do |form| %>
+  <%= form.hidden_field :admin, value: current_user.id %>
+  <%= form.submit %>       
+<% end %>
+
+
+<!--
+<%= form_with(model: @bills_item) do |form| %>
+  <strong>Bill_id:</strong> <%= form.text_field :bill_id %> <br />
+  <%= form.select(:items_ids, options_for_select(@items), { :prompt => "Please select"}, { :multiple => true, :size => 5 })%>
+<br /> <br/>
+<%= form.submit%>
+<% end %> -->

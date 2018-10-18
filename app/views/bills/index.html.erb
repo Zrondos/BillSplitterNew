@@ -1,6 +1,14 @@
 <h1>Bills#index</h1>
 <p>Find me in app/views/bills/index.html.erb</p>
-Current User: <%=current_user.id %>
+
+
+
+
+<% @users.each do |user| %>
+<%= user.first_name %> <%= user.last_name %> <br>
+<% end %>
+
+
 <% @bills.each do |bill| %>
 
     <%bill.users.each do |user|%>
@@ -12,5 +20,6 @@ Current User: <%=current_user.id %>
     <% end %><br>
 
 <% end %>
+
 
 

@@ -1,2 +1,19 @@
 <h1>Bills#show</h1>
 <p>Find me in app/views/bills/show.html.erb</p>
+Bill Owner 
+
+<% @bill.items.each do |item| %>
+  <% puts item.name %>
+  <%= item.name %>
+<% end %>
+
+
+  <% @bill.users.each do |user| %> 
+    <%=user.first_name%>
+  <% end %>
+
+
+
+
+
+

@@ -4,7 +4,7 @@ class BillsItemsController < ApplicationController
   def index
     @bills_item = BillsItem.all
   end 
-  
+
 
   def show
   end
@@ -13,16 +13,19 @@ class BillsItemsController < ApplicationController
   end
 
   def new 
-    @bills_item = BillsItem.new 
+    @bill = Bill.all
+    @items = Item.all
+    @items = Item.all.map { |c| [ c.name, c.id] }
+    @bills_item = BillsItem.new
   end 
 
   def create
-    @bills_item = BillsItem.create(
-      item_id: params[:bills_item][:item_id],
-      bill_id: params[:bills_item][:bill_id],
-
+    item = params[:bills_item][:item_id]
+    # items.each do |item|    
+    BillsItem.create(
+      item_id: item,
+      bill_id: params[:bills_item][:bill_id]
     )
-    # session[:bills_items_id] = bills_items_.id
     redirect_to bills_items_path
   end
   
@@ -32,4 +35,5 @@ class BillsItemsController < ApplicationController
 
   def delete
   end
+  
 end

@@ -1,2 +1,48 @@
 <h1>GroupBill#show</h1>
 <p>Find me in app/views/group_bill/show.html.erb</p>
+
+  <h2>List of items </h2>    
+    <% @items.each do |item| %>
+    <li><%= item[0] %></li> <br/>
+      <%= form_with(model: @bill) do |form| %>
+      <%= form.hidden_field :group_bill_id, value: @group_bill.id %>
+      <%= form.select(:users_ids, options_for_select(@users), { :prompt => "Please select"}, { :multiple => true, :size => 5 })%>
+      <br /> <br/>
+      <%= form.submit%>
+      <% end %>
+    <% end %> 
+<br >
+
+  <h2>List of Users </h2>    
+    <%= form_with(model: @bill) do |form| %>
+    <%= form.hidden_field :group_bill_id, value: @group_bill.id %>
+    <%= form.select(:users_ids, options_for_select(@users), { :prompt => "Please select"}, { :multiple => true, :size => 5 })%>
+    <br /> <br/>
+    <%= form.submit%>
+    <% end %>
+<br >
+
+  <!--<h2>List of Bill-Items </h2>    
+  <% @items.each do |item| %>
+    <li><%= item[0] %></li> <br/>
+      <%= form_with(model: @bills_item) do |form| %>
+      <strong>Bill_id:</strong> <%= form.text_field :bill_id %> <br />
+      <%= form.select(:items_ids, options_for_select(@items), { :prompt => "Please select"}, { :multiple => true, :size => 5 })%>
+      <%= form.submit %> 
+      <% end %>
+    <% end %>
+<br/>  -->
+
+<br/><br/><br/>
+<h2>FORM Bill-Items </h2>    
+  <% @items.each do |item| %>
+    <%= item[0] %> 
+        <%= form_with(model: @bills_item) do |form| %>
+        <strong>Users:</strong> <%= form.select :bill_id, options_for_select(@users, @group_bill.bills) %>
+        <% puts @users %>
+        <% puts item[1] %>
+        <%= form.hidden_field :item_id, value: item[1] %>
+        <%= form.submit %>  <br/><br>
+      <% end %>
+      <% end %>
+                   

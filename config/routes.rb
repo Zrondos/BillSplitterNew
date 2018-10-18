@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'photo/index'
+  get 'photo/create'
+  get 'photo/new'
+  get 'photo/edit'
+  get 'photo/update'
+  get 'photo/destroy'
   devise_for :views
   
   devise_for :users
@@ -11,6 +17,8 @@ Rails.application.routes.draw do
   resources :group_bills
   resources :users_bills
   resources :items
+  resources :users
+  resources :photos
 
   root to: 'users#index'
 
