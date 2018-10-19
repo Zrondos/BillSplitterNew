@@ -1,3 +1,6 @@
+require "rest_client"
+
+require "rexml/document"
 
 class GroupBillsController < ApplicationController
 
@@ -76,7 +79,8 @@ class GroupBillsController < ApplicationController
       def api_call
         application_id = CGI.escape("BillSplitterApp")
         password = CGI.escape("Gc4wsceCBv8uDYh/TSEqjJkc")
-        file_name = "./o.png"
+        file_name= Rails.root.to_s + ActionController::Base.helpers.asset_path('o.png')
+        # file_name = Rails.root.to_s + "./o.png"
         language = "English"
         base_url = "http://#{application_id}:#{password}@cloud.ocrsdk.com"
 
@@ -93,7 +97,7 @@ class GroupBillsController < ApplicationController
         puts "Uploading file.."
         begin
             response = RestClient.post("#{base_url}/processImage?language=#{language}&exportFormat=txt", :upload => { 
-                :file => File.new(file_name, 'rb') 
+                :file => File.new(Rails.root.to_s + "/app/assets/images/o.png", 'rb') 
             })  
             rescue RestClient::ExceptionWithResponse => e
                 # Show processImage errors
@@ -117,7 +121,7 @@ class GroupBillsController < ApplicationController
 
             raise "Invalid task id used when preparing getTaskStatus request"\
             if ((!(defined? task_id)) || task_id.nil? ||task_id.empty?|| (task_id.include? "00000000-0"))
-                response = RestClient.get("#{BASE_URL}/getTaskStatus?taskid=#{task_id}")
+                response = RestClient.get("#{base_url}/getTaskStatus?taskid=#{task_id}")
                 rescue RestClient::ExceptionWithResponse => e
                 # Show getTaskStatus errors
                 output_response_error(e.response)
