@@ -1,8 +1,7 @@
 
 .container1 {
-  display: flex;
+  display:flex;
   background-color: lightgrey;
-  padding: 20px;
   flex-direction:column;
   margin: 0px;
 }
@@ -29,8 +28,8 @@
   display: flex;
   background-color: lightyellow;
   flex-direction:row;
-  height: 100px;
-  margin: 10px;
+  /* height: 100px;
+  margin: 10px; */
 }
 .person {
   width: 80px;
