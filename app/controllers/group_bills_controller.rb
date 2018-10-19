@@ -80,6 +80,7 @@ class GroupBillsController < ApplicationController
         application_id = CGI.escape("BillSplitterApp")
         password = CGI.escape("Gc4wsceCBv8uDYh/TSEqjJkc")
         file_name= Rails.root.to_s + ActionController::Base.helpers.asset_path('o.png')
+        file_name=Rails.root.to_s + "/app/assets/images/#{"o.png"}"
         # file_name = Rails.root.to_s + "./o.png"
         language = "English"
         base_url = "http://#{application_id}:#{password}@cloud.ocrsdk.com"
@@ -97,7 +98,7 @@ class GroupBillsController < ApplicationController
         puts "Uploading file.."
         begin
             response = RestClient.post("#{base_url}/processImage?language=#{language}&exportFormat=txt", :upload => { 
-                :file => File.new(Rails.root.to_s + "/app/assets/images/o.png", 'rb') 
+                :file => File.new(file_name, 'rb') 
             })  
             rescue RestClient::ExceptionWithResponse => e
                 # Show processImage errors
