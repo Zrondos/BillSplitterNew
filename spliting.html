@@ -5,88 +5,73 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-  <link rel="stylesheet" href="spliting.css">
+  <link rel="stylesheet" href="split_bill.css">
   <script src="https://unpkg.com/ionicons@4.2.2/dist/ionicons.js"></script>
-  <title>Document</title>
+  <title>Split Bill</title>
 </head>
 <body>
-  <!-- <h2>Hello Underworld</h2> -->
-  <!-- nav conatiner with logo and menu icon -->
-  <nav class="container-1">
-      <div class="box-1">
-          <img src="Untitled-3.svg" alt="" style="
-          width: 90px;">
-      </div>
-      <div class="box-2">
-        <ion-icon name="menu"></ion-icon>
-      </div>
-  </nav>
-  <!-- container with name of page "My Bill" and edit linked button -->
-  <div class="container-2">
-    <div class="box-3">
-        <h1 style="
-        padding-left: 40px;">Split Bill</h1>      
-    </div>
-    <div class="box-4">
-        <a href="#">Edit</a>
-    </div> 
-  </div>  
-  <div class="master_container">
-    <!-- container with items and price -->
-    <div class="container-3">
-      <div class="box-5">
-        <span>Cheesebuger</span>
-      </div>
-      <div class="box-6">
-        <span>$12.00</span>
-      </div>
-    </div>
-    <!-- will hold users icons when drag & drop is implemented  -->
-    <div class="container-4">
-      <div class="box-7">
-      </div> 
-    </div>  
-
-    <!-- container with bordered tip, tax, subtotal and percent of bill-->
-    <div class="case-container">
-      <div class="container-5">
-        <div class="box-8">
-            <p>tip</p>
-        </div> 
-        <div class="box-9">
-          <p>price</p>
-        </div>
-      </div>  
-      <div class="container-6">
-        <div class="box-10">
-            <p>tax</p>
-        </div>
-        <div class="box-11">
-          <p>price</p>
-        </div>
-      </div>
-    </div>
-    <!-- container with TOTAL and the total integer -->
-    <div class="container-7">
-      <div class="box-12">
-        <p>total</p>
-      </div>
-      <div class="box-13">
-        <p>price</p>
-      </div>
-    </div> 
+  <!-- Banner with logo -->
+  <div class="logo-banner">
+     <img src="Untitled-3.svg" alt="">
   </div>
 
-  <div class="container8"> 
-      <!-- add friends to bill conatiner -->
-        <div class="box-14" style="padding-bottom: 70px">
-          <p>hello----------------</p>
-        </div> 
+  <div class="container">
+    <section class="page-title">
+        
+      <h1>Split Bill</h1>
+    </section>
+    <!-- "Hello, User" title -->
+    <section class="hello-user">
+      <h2>Hello, user</h2>
+    </section>
+
+    <!-- item/receipt and price of item  -->
+    <section class="item">
+      <p>sdjfhksfnkjdnsitems</p>
+      <p>sdbjsprice</p>
+    </section>
+
+    <!-- bar with dropped user icons -->
+    <section class="dropped-user-icon-bar">
+
+    </section>
+
+    <!-- subtotal and price -->
+    <section class="sub-total-price">
+      <p>sub-total</p>
+      <p>price</p>
+    </section>
+    <!--  tax and price-->
+    <section class="tax-price">
+      <p>tax</p>
+      <p>price</p>
+    </section>
+    <!-- tip and price -->
+    <section class="tip-price">
+      <p>tip</p>
+      <p>price</p>
+    </section>
+    <!-- total and price -->
+    <section class="TOTAL-price">
+      <p>TOTAL</p>
+      <p>price</p>
+    </section>
+
+    <!-- user icons to be dragged -->
+    <section class="user-icons">
+
+    </section> 
+  </div>
+  <!-- split button -->
+    <section class="split-pay-button">
+        <button type="button" style="color: white">Split Bill</button>
+
+    </section>
+<!-- bottom navbar with edit, User's own icon, and a view my bill options and icons -->
+  <div class="bottom_nav">
     
-      <div class="14">
-        <button type="button" style="
-        color: White;">Split Bill</button>
-      </div>
-  </div> 
+  </div>
+
+
 </body>
 </html>

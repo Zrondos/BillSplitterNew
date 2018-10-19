@@ -4,6 +4,15 @@
     <title>BillSplitter</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+<!-- to implement split style janice -->
+ 
+
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link rel="stylesheet" href="spliting.css">
+  <script src="https://unpkg.com/ionicons@4.2.2/dist/ionicons.js"></script>
+  <script src="my_billing.js"> </script>
+  
+
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -17,6 +26,17 @@
 <% if alert %>
   <p class="alert alert-danger"><%= alert %></p>
 <% end %>
+
+<!--janice nav-bar  -->
+<nav class="container-1">
+      <div class="box-1">
+          <img src="Untitled-3.svg" alt="" style="
+          width: 90px;">
+      </div>
+      <div class="box-2">
+        <ion-icon name="menu"></ion-icon>
+      </div>
+  </nav>
 
 
 <p class="navbar-text pull-right">
