@@ -27,8 +27,8 @@ class GroupBillsController < ApplicationController
     # bills-items functionality 
 
 
-   @items = Item.all
-   @items = Item.all.map { |c| [ c.name, c.id] }
+    # @items = Item.all
+    # @items = Item.all.map { |c| [ c.name, c.id] }
   end
 
   def new
@@ -50,9 +50,9 @@ class GroupBillsController < ApplicationController
       admin: params[:group_bill][:admin],
       image_url: params[:group_bill][:image_url]
     )
-    session[:group_bill_id] = @group_bill.id
-    call=OcrskdCall.new(@group_bill.image_url)
-    items_array=call.api_call
+    # session[:group_bill_id] = group_bill.id
+    # call=OcrskdCall.new(@group_bill.image_url)
+    # items_array=call.api_call
     items_array=api_call()
     
     items_array.each do |item|
@@ -61,7 +61,6 @@ class GroupBillsController < ApplicationController
         price: item[1],
         group_bill_id: @group_bill.id
       )
-
     end
     redirect_to group_bills_path
 

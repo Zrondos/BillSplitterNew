@@ -1,76 +1,30 @@
 <h1>Bills#show</h1>
+<p>Find me in app/views/bills/show.html.erb</p>
 
-<!--<p>Find me in app/views/bills/show.html.erb</p> -->
-<div id="bill_page">
-    
-      <!-- Banner with logo -->
-    <div class="logo-banner">
-       <img src="Untitled-3.svg" alt="">
-    </div>
-
-    <div class="container">
-      <section class="page-title">
-      <h1>Split Bill</h1>
-      </section>
-    <!-- "Hello, User" title -->
-      <section class="hello-user">
-        <% @bill.users.each do |user| %>
-        <h2>Hello <%=user.first_name.capitalize%> </h2>
-      <% end %>
-      </section>
-    <!-- item/receipt and price of item  -->
-     <section class="item">
-      <% totalprice =0%>
-      <% @items.each do |item| %>
-        <p><%= item.name.capitalize %></p> 
-        <p>$<%= item.price %> </p> 
-      
-
+<h2>Bill Owner </h2> <br />
+  <% @bill.users.each do |user| %>
+    <%=user.first_name.capitalize%>
+  <% end %>
+   <br/><br/>
+<% totalprice = 0%>
+<% @items.each do |item| %>
+  Name: <%= item.name %> <br>
+  Price: $<%= item.price %> <br/>
+  My Price= <%=item.price/(item.bills.length)%><br>
+  Shared with:
   <% item.bills.each do |bill|%>
-               <% bill.users.each do |user|%>
-               dragging: <%=user.first_name%>
-               <% end %>
-                 <ul> My share: $<%item.price/(item.bills.length)%></ul> 
-               <% end %>
- TOTAL_PRICE: <%= totalprice %> 
- 
-      </section>
-        <section class="item">
-          <% end %>
-        </section>
-    <!-- bar with dropped user icons -->
-    <section class="dropped-user-icon-bar">
-    </section>
-    <!-- subtotal and price -->
-    <section class="sub-total-price">
-      <p>sub-total</p>
-      <p>price</p>
-    </section>
-    <!--  tax and price-->
-    <section class="tax-price">
-      <p>tax</p>
-      <p>price</p>
-    </section>
-    <!-- tip and price -->
-    <section class="tip-price">
-      <p>tip</p>
-      <p>price</p>
-    </section>
-    <!-- total and price -->
-    <section class="TOTAL-price">
-      <p>TOTAL</p>
-      <p>price</p>
-    </section>
-    <!-- user icons to be dragged -->
-    <section class="user-icons">
-    </section> 
-  </div> 
-    <!-- split button -->
-    <section class="split-pay-button">
-      <button type="button" style="color: white">Split Bill</button>
-    </section>
-    <!-- bottom navbar with edit, User's own icon, and a view my bill options and icons -->
-    <div class="bottom_nav"></div>
+    <% bill.users.each do |user|%>
+      <%=user.first_name%>
+    <% end %>
+  <% end %>
 
-   
-</div>
+  <br><br><br>
+
+<% end %>
+TOTAL_PRICE: <%= totalprice%>
+  
+
+
+
+
+
