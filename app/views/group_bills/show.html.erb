@@ -1,58 +1,120 @@
-<h1>GroupBill#show</h1>
-<p>Find me in app/views/group_bill/show.html.erb</p>
-<%= image_tag(@group_bill.receipt) %>
- <!-- <h2>List of items </h2>    
-    <% @items.each do |item| %>
-    <li><%= item[0] %></li> <br/>
-      <%= form_with(model: @bill) do |form| %>
-      <%= form.hidden_field :group_bill_id, value: @group_bill.id %>
-      <%= form.select(:users_ids, options_for_select(@users), { :prompt => "Please select"}, { :multiple => true, :size => 5 })%>
-      <br /> <br/>
-      <%= form.submit%>
-      <% end %>
-    <% end %>  -->
-<br >
-
+Welcome <%=@admin.first_name%>
 <% @bills_on_group_bill.each do |bill| %>
     <%bill.users.each do |user|%>
       <%=user.first_name%>
     <%end %>
 <% end %> 
 
-  <h2>List of Users </h2>    
-    <%= form_with(model: @bill) do |form| %>
-    <%= form.hidden_field :group_bill_id, value: @group_bill.id %>
-    <%= form.select(:users_ids, options_for_select(@users), { :prompt => "Please select"}, { :multiple => true, :size => 5 })%>
-    
-    <br /> <br/>
-    <%= form.submit%>
-    <% end %>
+  
 <br >
 
-  <!--<h2>List of Bill-Items </h2>    
-  <% @items.each do |item| %>
-    <li><%= item[0] %></li> <br/>
-      <%= form_with(model: @bills_item) do |form| %>
-      <strong>Bill_id:</strong> <%= form.text_field :bill_id %> <br />
-      <%= form.select(:items_ids, options_for_select(@items), { :prompt => "Please select"}, { :multiple => true, :size => 5 })%>
-      <%= form.submit %> 
-      <% end %>
-    <% end %>
-<br/>  -->
-
-
-
-
-
-
-<br/><br/><br/>
 <h2>FORM Bill-Items </h2>    
   <% @items.each do |item| %>
-    <%= item[0] %> 
+    <%= item.name %> $<%= item.price %> 
         <%= form_with(model: BillsItem.new) do |form| %>
-        <strong>Users:</strong> <%= form.select( :bill_ids, options_for_select(@users_on_group_bill), { :prompt => "Please select"}, { :multiple => true, :size => 5 })%>             
-        <%= form.hidden_field :item_id, value: item[1] %>
-        <%= form.submit %>  <br/><br>
-      <% end %>
-      <% end %>
-                   
+          <strong>Users:</strong> <%= form.select( :bill_ids, options_for_select(@users_on_group_bill), { :prompt => "Please select"}, { :multiple => true, :size => 5 })%>             
+          <%= form.hidden_field :item_id, value: item[1] %>
+          <%= form.submit %>  <br/><br>
+        <% end %>
+  <% end %>
+
+
+<h2>List of Users </h2>    
+    <%= form_with(model: @bill) do |form| %>
+      <%= form.hidden_field :group_bill_id, value: @group_bill.id %>
+      <%= form.select(:users_ids, options_for_select(@users), { :prompt => "Please select"}, { :multiple => true, :size => 5 })%>
+      <%= form.submit%>
+    <% end %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link rel="stylesheet" href="spliting.css">
+  <script src="https://unpkg.com/ionicons@4.2.2/dist/ionicons.js"></script>
+  <title>Document</title>
+</head>
+<body>
+  <!-- <h2>Hello Underworld</h2> -->
+  <!-- nav conatiner with logo and menu icon -->
+  <nav class="container-1">
+      <div class="box-1">
+          <img src="Untitled-3.svg" alt="" style="
+          width: 90px;">
+      </div>
+      <div class="box-2">
+        <ion-icon name="menu"></ion-icon>
+      </div>
+  </nav>
+  <!-- container with name of page "My Bill" and edit linked button -->
+  <div class="container-2">
+    <div class="box-3">
+        <h1 style="
+        padding-left: 40px;">Split Bill</h1>      
+    </div>
+    <div class="box-4">
+        <a href="#">Edit</a>
+    </div> 
+  </div>  
+  <div class="master_container">
+    <!-- container with items and price -->
+    <div class="container-3">
+      <div class="box-5">
+        <span>Cheesebuger</span>
+      </div>
+      <div class="box-6">
+        <span>$12.00</span>
+      </div>
+    </div>
+    <!-- will hold users icons when drag & drop is implemented  -->
+    <div class="container-4">
+      <div class="box-7">
+      </div> 
+    </div>  
+
+    <!-- container with bordered tip, tax, subtotal and percent of bill-->
+    <div class="case-container">
+      <div class="container-5">
+        <div class="box-8">
+            <p>tip</p>
+        </div> 
+        <div class="box-9">
+          <p>price</p>
+        </div>
+      </div>  
+      <div class="container-6">
+        <div class="box-10">
+            <p>tax</p>
+        </div>
+        <div class="box-11">
+          <p>price</p>
+        </div>
+      </div>
+    </div>
+    <!-- container with TOTAL and the total integer -->
+    <div class="container-7">
+      <div class="box-12">
+        <p>total</p>
+      </div>
+      <div class="box-13">
+        <p>price</p>
+      </div>
+    </div> 
+  </div>
+
+  <div class="container8"> 
+      <!-- add friends to bill conatiner -->
+        <div class="box-14" style="padding-bottom: 70px">
+          <p>hello----------------</p>
+        </div> 
+    
+      <div class="14">
+        <button type="button" style="
+        color: White;">Split Bill</button>
+      </div>
+  </div> 
+</body>
+</html> 

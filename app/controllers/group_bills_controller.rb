@@ -14,7 +14,8 @@ class GroupBillsController < ApplicationController
     @users = User.all
     @users = User.all.map { |c| [ c.first_name, c.id] }
     @bill = Bill.new
-    @items = @group_bill.items.map{ |c| [ c.name, c.id]}
+    @items = @group_bill.items
+    @admin= User.find(@group_bill.admin)
     
     @bills_on_group_bill=@group_bill.bills
     @users_on_group_bill=[]
@@ -67,7 +68,7 @@ class GroupBillsController < ApplicationController
         group_bill_id: @group_bill.id
       )
     end
-    redirect_to group_bills_path
+    redirect_to group_bill_path(@group_bill)
 
   end
 
