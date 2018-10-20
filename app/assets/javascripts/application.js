@@ -14,3 +14,36 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+array=[]
+function dragstart_handler(event){
+    sub_array=[(event.target.id)]
+    array.push(event.target.id)
+    console.log(array[0])
+    // console.log(event.target.id)
+    event.dataTransfer.setData("text", event.target.id);
+    event.dataTransfer.dropEffect="copy"
+}
+function dragover_handler(event) {
+    event.preventDefault();
+    // event.dataTransfer.dropEffect = "copy"
+   }
+function drop_handler(event){
+    event.preventDefault();
+    var data = event.dataTransfer.getData("text");
+    var nodeCopy = document.getElementById(data).cloneNode(true);
+    nodeCopy.id = data+"newId"; 
+    event.target.appendChild(nodeCopy);
+    array.push(event.target.id);
+    // console.log(event.target.id)
+    // console.log(array)
+    add=document.getElementById("invisible")
+    add.innerHTML+=array
+
+    // <%=items_bill.create(
+
+    //     bill=array[0]
+    //     item=array[1]
+    // )
+    // array=[]
+    // )
+}

@@ -23,6 +23,8 @@ class GroupBillsController < ApplicationController
       bill.users.each do |user|
           @users_on_group_bill.push([user.first_name,user.id])
       end
+    
+
     end
 
 
@@ -79,7 +81,7 @@ class GroupBillsController < ApplicationController
   end
 
   ######################
-      def api_call(group_bill_object)
+    def api_call(group_bill_object)
         application_id = CGI.escape("BillSplitterApp")
         password = CGI.escape("Gc4wsceCBv8uDYh/TSEqjJkc")
         # file_name= Rails.root.to_s + ActionController::Base.helpers.asset_path('o.png')
@@ -176,7 +178,7 @@ class GroupBillsController < ApplicationController
         return new_array
     end
 
-  ######################
+
 end
 
 
