@@ -1,7 +1,7 @@
 <%= form_with model: @group_bill do |form| %>
 
   <strong>Admin:</strong> <%= form.text_field :admin %> <br />
-  Image Url <%= form.text_field :image_url%>
+  Receipt <%= form.file_field :receipt%>
   <%= form.submit %> 
 
 <% end %>

@@ -51,12 +51,14 @@ class GroupBillsController < ApplicationController
   def create
     @group_bill = GroupBill.create(
       admin: params[:group_bill][:admin],
-      image_url: params[:group_bill][:image_url]
+      receipt: params[:group_bill][:receipt]
     )
+    # image_tag @group_bill.receipt
+
     # session[:group_bill_id] = group_bill.id
     # call=OcrskdCall.new(@group_bill.image_url)
     # items_array=call.api_call
-    items_array=api_call()
+    items_array=api_call(@group_bill)
     
     items_array.each do |item|
       Item.create(
@@ -76,11 +78,12 @@ class GroupBillsController < ApplicationController
   end
 
   ######################
-      def api_call
+      def api_call(group_bill_object)
         application_id = CGI.escape("BillSplitterApp")
         password = CGI.escape("Gc4wsceCBv8uDYh/TSEqjJkc")
-        file_name= Rails.root.to_s + ActionController::Base.helpers.asset_path('o.png')
-        file_name=Rails.root.to_s + "/app/assets/images/#{"o.png"}"
+        # file_name= Rails.root.to_s + ActionController::Base.helpers.asset_path('o.png')
+        file_path=ActiveStorage::Blob.service.send(:path_for, group_bill_object.receipt.key)
+
         # file_name = Rails.root.to_s + "./o.png"
         language = "English"
         base_url = "http://#{application_id}:#{password}@cloud.ocrsdk.com"
@@ -98,7 +101,7 @@ class GroupBillsController < ApplicationController
         puts "Uploading file.."
         begin
             response = RestClient.post("#{base_url}/processImage?language=#{language}&exportFormat=txt", :upload => { 
-                :file => File.new(file_name, 'rb') 
+                :file => File.new(file_path, 'rb') 
             })  
             rescue RestClient::ExceptionWithResponse => e
                 # Show processImage errors
