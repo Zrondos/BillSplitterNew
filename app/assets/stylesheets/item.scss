@@ -109,9 +109,23 @@
   border-radius: 4px;
   box-sizing: border-box;
   }
+  .login-half {
+    color: white; 
+    background-color: #FF473A;
+    width: 35%;
+    padding: 12px 20px;
+    margin-left: 15%;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    }
   #align-password{
     text-align: right;
     padding-right: 20px;
+  }
+  #forgot-password {
+    text-align: center;
   }
   // main-button {
   //   justify-content: center;
