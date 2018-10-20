@@ -1,14 +1,14 @@
-<div id="bill_page">
-    <div class="logo-banner">
-       <h1 style="align-text:center;"></h1>
-    </div>
-      <section class="page-picture">
-        <%= form_with model: @group_bill do |form| %>
-        Admin:</strong> <%= form.text_field :admin %> <br />
-        Image Url <%= form.text_field :image_url%>
-        <%= form.submit %> 
-        <% end %>
-      </section>
+
+<%= form_with model: @group_bill do |form| %>
+
+  <strong>Admin:</strong> <%= form.text_field :admin %> <br />
+  Receipt <%= form.file_field :receipt%>
+  <%= form.submit %> 
+
+<% end %>
+            
+
+
 
 <!-- split button -->
     <section class="split-pay-button">
