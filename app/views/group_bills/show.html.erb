@@ -11,7 +11,7 @@
       <%= form.submit%>
       <% end %>
     <% end %>  -->
-<br >
+
 
 <% @bills_on_group_bill.each do |bill| %>
     <%bill.users.each do |user|%>
@@ -23,7 +23,6 @@
     <%= form_with(model: @bill) do |form| %>
     <%= form.hidden_field :group_bill_id, value: @group_bill.id %>
     <%= form.select(:users_ids, options_for_select(@users), { :prompt => "Please select"}, { :multiple => true, :size => 5 })%>
-    
     <br /> <br/>
     <%= form.submit%>
     <% end %>
@@ -40,12 +39,7 @@
     <% end %>
 <br/>  -->
 
-
-
-
-
-
-<br/><br/><br/>
+<br/><br/>
 <h2>FORM Bill-Items </h2>    
   <% @items.each do |item| %>
     <%= item[0] %> 
@@ -56,27 +50,20 @@
       <% end %>
       <% end %>
 
-                   
 
-
-
-  
-
-<div id="bill_page">
+    <div id="bill_page">
       <!-- Banner with logo -->
     <div class="logo-banner">
-       <img src="Untitled-3.svg" alt="">
+       <h1></h1>
     </div>
 
     <div class="container">
       <section class="page-title">
-      <h1>Split Bill</h1>
+      <h1>Split Bill</h1>     
       </section>
-    <!-- "Hello, User" title -->
-      <section class="hello-user">
-        <% @bill.users.each do |user| %>
-        <h2>Hello <%=user.first_name.capitalize%> </h2>
-      <% end %>
+
+      <section class="page-title">
+      Hello: <%=User.find(@group_bill.admin).first_name%>
       </section>
     <!-- item/receipt and price of item  -->
      <section class="item">
@@ -88,7 +75,7 @@
           <% end %>
         </section>
     <!-- bar with dropped user icons -->
-    <section class="dropped-user-icon-bar">
+     <section class="dropped-user-icon-bar">
     </section>
     <!-- subtotal and price -->
     <section class="sub-total-price">
@@ -121,4 +108,5 @@
     <!-- bottom navbar with edit, User's own icon, and a view my bill options and icons -->
     <div class="bottom_nav"></div>
 </div> 
+
 
