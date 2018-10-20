@@ -15,7 +15,6 @@ class GroupBillsController < ApplicationController
     @users = User.all.map { |c| [ c.first_name, c.id] }
     @bill = Bill.new
     @items = @group_bill.items.map{ |c| [ c.name, c.id]}
-    
     @bills_on_group_bill=@group_bill.bills
     @users_on_group_bill=[]
     @bills_on_group_bill.each do |bill|
@@ -24,14 +23,10 @@ class GroupBillsController < ApplicationController
       end
     end
 
-
-    
-    
     # bills-items functionality 
+     @items = Item.all
+     @items = Item.all.map { |c| [ c.name, c.price] }
 
-
-    # @items = Item.all
-    # @items = Item.all.map { |c| [ c.name, c.id] }
   end
 
   def new
@@ -40,7 +35,6 @@ class GroupBillsController < ApplicationController
 
   def edit
   end
-
 
   def new 
     @users = User.all.map{ |c| [ c.id] }
