@@ -1,10 +1,19 @@
-<%= form_with model: @group_bill do |form| %>
+<div id="bill_page">
+    <div class="logo-banner">
+       <h1 style="align-text:center;"></h1>
+    </div>
+      <section class="page-picture">
+        <%= form_with model: @group_bill do |form| %>
+        Admin:</strong> <%= form.text_field :admin %> <br />
+        Image Url <%= form.text_field :image_url%>
+        <%= form.submit %> 
+        <% end %>
+      </section>
 
-  <strong>Admin:</strong> <%= form.text_field :admin %> <br />
-  Image Url <%= form.text_field :image_url%>
-  <%= form.submit %> 
-
-<% end %>
-            
-
-
+<!-- split button -->
+    <section class="split-pay-button">
+      <button type="button" style="color: white">Some action</button>
+    </section>
+       <!-- bottom navbar with edit, User's own icon, and a view my bill options and icons -->
+      <div class="bottom_nav"></div>
+</div> 

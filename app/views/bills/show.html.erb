@@ -13,9 +13,25 @@
   Price_I_Pay $<%=item.price/(item.bills.length)%><br>
 <%  totalprice += item.price/(item.bills.length) %>
 <% end %>
-  TOTAL: $<%=totalprice%>
+  TOTAL: $<%=totalprice%> <br>
 
+  
+<h2> Trial for all bills </h2>
 
+ <% @bills_on_group_bill.each do |bill| %>
+    <%bill.users.each do |user|%>
+      <%=user.first_name%> <br>
+      
+    <% totalprice = 0%>
+    <% @bill.items.each do |items| %>
+      <% @items.each do |item| %>
+          <%totalprice += item.price/(item.bills.length) %> 
+      
+      money to pay <%=totalprice%> <br>
+      <%toalprice=0%>
+      <%end %>
+    <%end %>  
 
-
+    <%end %> 
+  <% end %>   
 
