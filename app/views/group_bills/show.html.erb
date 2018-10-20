@@ -18,7 +18,7 @@ Welcome <%=@admin.first_name%>
           <%= form.hidden_field :item_id, value: item[1] %>
           <%= form.submit %>  <br/><br>
         <% end %>
-  <% end %>
+  <% end %> -->
 
 
 <h2>List of Users </h2>    
@@ -26,9 +26,9 @@ Welcome <%=@admin.first_name%>
       <%= form.hidden_field :group_bill_id, value: @group_bill.id %>
       <%= form.select(:users_ids, options_for_select(@users), { :prompt => "Please select"}, { :multiple => true, :size => 5 })%>
       <%= form.submit%>
-    <% end %> -->
+    <% end %> 
 
-
+<!-->
   <!-- <h2>Hello Underworld</h2> -->
   <!-- nav conatiner with logo and menu icon -->
   </div>
@@ -94,7 +94,8 @@ Welcome <%=@admin.first_name%>
       <!-- bottom navbar with edit, User's own icon, and a view my bill options and icons -->
       <div class="bottom_nav"></div>
   </div> 
-
-  <ul id="invisible">
-    <li>None</li>
-  </ul>
+  
+  
+  <div id="invisible">
+  
+  </div>

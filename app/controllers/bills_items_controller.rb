@@ -20,16 +20,10 @@ class BillsItemsController < ApplicationController
   end 
 
   def create
-    item_id = params[:bills_item][:item_id]
-    bill_ids= params[:bills_item][:bill_ids]   
-
-    bill_ids.each do |id| 
-      BillsItem.create(
-        item_id: item_id,
-        bill_id: id
-    )
+    respond_to do |format|
+      format.js 
     end
-    redirect_to bills_items_path
+    # redirect_to group_bill_path(@group_bill)
   end
   
 

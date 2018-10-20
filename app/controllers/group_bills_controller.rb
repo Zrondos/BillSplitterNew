@@ -24,7 +24,6 @@ class GroupBillsController < ApplicationController
           @users_on_group_bill.push([user.first_name,user.id])
       end
     
-
     end
 
 
