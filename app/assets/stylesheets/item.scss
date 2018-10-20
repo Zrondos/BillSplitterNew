@@ -4,25 +4,29 @@
 
 
 #bill_page {
-
 @media(min-width:138px){
  .container {
    height:300px; 
    overflow: scroll;
-   
  }
-
+ .container-landing-page {
+  height:400px; 
+  background-color: #EAE5E5;
+  overflow: scroll;
+}
   .logo-banner,
   .page-title {
     display: flex;
     background-color: #FFFEFE;
     justify-content: center;
   }
+  
   .logo-banner{
     background-image: image-url('Untitled-3.svg');
     background-repeat: no-repeat;
+    margin-left: 40%;
   }
-  }
+}
   
   .page-title,
   .hello-user,
@@ -33,7 +37,6 @@
   .TOTAL-price {
     background-color: #EAE5E5;
   }
-
   .hello-user {
     font-family: 'Roboto', sans-serif;
     font-size: 10px;
@@ -49,15 +52,12 @@
     display: flex;
     justify-content: space-between;
   }
-
   .dropped-user-icon-bar {
     display: flex;
   }
-
   .user-icons {
     display: flex;
   }
-
   .bottom_nav {
     background-color: #FFFEFE;
     height: 100px;
@@ -66,12 +66,10 @@
     position: fixed;
     margin: 0;
   }
-
   .split-pay-button {
     justify-content: center;
     display: flex;
   }
-
   button {
     justify-content: center;
     background-color: #FF473A;
@@ -80,8 +78,49 @@
     width: 300px;
     height: 50px;
     bottom: 0;
-
   }
-   
+
+  #login-text{
+    color: #FF473A;
+    font-size: 26px;
+    padding: 18px;
+    line-height: 1.6;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 450;
+  }
+  .field-style{
+  width: 70%;
+  padding: 12px 20px;
+  margin-left: 15%;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  }
+
+  .login {
+  color: white; 
+  background-color: #FF473A;
+  width: 70%;
+  padding: 12px 20px;
+  margin-left: 15%;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  }
+  #align-password{
+    text-align: right;
+    padding-right: 20px;
+  }
+  // main-button {
+  //   justify-content: center;
+  //   background-color: #FF473A;
+  //   box-shadow: 2px 5px 18px #88888888;
+  //   border: none;
+  //   width: 300px;
+  //   height: 50px;
+  //   bottom: 0;
+  // }
 }
 
