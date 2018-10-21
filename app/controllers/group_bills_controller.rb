@@ -16,6 +16,7 @@ class GroupBillsController < ApplicationController
     @bill = Bill.new
     @items = @group_bill.items
     @admin= User.find(@group_bill.admin)
+    @bills_items=BillsItem.new
     
     @bills_on_group_bill=@group_bill.bills
     @users_on_group_bill=[]
@@ -23,7 +24,10 @@ class GroupBillsController < ApplicationController
       bill.users.each do |user|
           @users_on_group_bill.push([user.first_name,user.id])
       end
-    
+    respond_to do |format|
+       format.js 
+    end
+
     end
 
 

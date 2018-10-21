@@ -20,14 +20,26 @@ class BillsItemsController < ApplicationController
   end 
 
   def create
-    respond_to do |format|
-      format.js 
+    result=params[:bills_item][:test]
+    
+    result=result.split("/")
+    result.each do |array|
+      array=array.split(",")
+      bill=array[0][4..-1].to_i
+      item=array[1][4..-1].to_i
+      BillsItem.create(
+      item_id: item,
+      bill_id: bill
+        )
     end
-    # redirect_to group_bill_path(@group_bill)
+    
   end
+
   
 
   def update
+
+    
   end
 
   def delete

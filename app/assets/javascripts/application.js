@@ -17,8 +17,7 @@
 array=[]
 function dragstart_handler(event){
     sub_array=[(event.target.id)]
-    array.push("["+event.target.id)
-    console.log(array[0])
+    array.push(event.target.id)
     event.dataTransfer.setData("text", event.target.id);
     event.dataTransfer.dropEffect="copy"
 }
@@ -32,10 +31,9 @@ function drop_handler(event){
     nodeCopy.id = data+"newId"; 
     event.target.appendChild(nodeCopy);
 
-    array.push(event.target.id+"]");
-    add=document.getElementById("invisible")
-    add.innerHTML+=array
-    array=[]
+    array.push(event.target.id+"/");
+    document.getElementById("array_of_data").value+=array
 
+    array=[]
 
 }

@@ -86,8 +86,20 @@ Welcome <%=@admin.first_name%>
       </section> 
     </div> 
       <!-- split button -->
+      <div id="invisible">
+
+
+
+       <%= form_with( model: BillsItem.new) do |form| %>
+          <%= form.text_field :test, id: "array_of_data"%>
+           <%= form.submit %>  <br/><br>
+       <% end %>
+      </div>
+
+      
       <button type='button'> 
-      <%= link_to "Split", bills_items_path, method: :create, remote: true%></button>
+      <%= link_to "Split", group_bill_path(@group_bill), method: :get, remote: true %> </button> 
+      <!--<%= link_to "Split", bills_items_path, method: :create, remote: true%> </button> -->
       <section class="split-pay-button">
         <button type="button" style="color: white">Split Bill</button>
       </section>
@@ -95,7 +107,3 @@ Welcome <%=@admin.first_name%>
       <div class="bottom_nav"></div>
   </div> 
   
-  
-  <div id="invisible">
-  
-  </div>
