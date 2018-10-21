@@ -1,37 +1,42 @@
-<h1>Bills#show</h1>
-<p>Find me in app/views/bills/show.html.erb</p>
+<h2>Admin <%=@admin.first_name.capitalize %></h2>
+<h2>Group Bill Id: <%=@group_bill.id%>
+<%@bill.users.each do |user| %>
+  <h2>This is my individual bill: <%=user.first_name%> </h2>
+<% end %>
 
-<h2>Bill Owner </h2> <br />
-  <% @bill.users.each do |user| %>
-    <%=user.first_name.capitalize%><br/><br/>
-  <% end %>
+
+
   
 <% totalprice = 0%>
-<% @items.each do |item| %>
-  Items: 
-  <%= item.name %> <br>
-  Price_I_Pay $<%=item.price/(item.bills.length)%><br>
-<%  totalprice += item.price/(item.bills.length) %>
-<% end %>
-  TOTAL: $<%=totalprice%> <br>
+ 
+<div id="my_bill_page">
+      <div class="split-bill-container">
+        <h1>Split Bill</h1>     
 
-  
-<h2> Trial for all bills </h2>
+        <!-- item/receipt and price of item  -->
+        <% @items.each do |item| %>
+          <div class="item" id="item<%=item.id%>">
+              <div class="items_users" id="item<%=item.id%>" ondrop="drop_handler(event);" ondragover="dragover_handler(event);">
+                <%= item.name.capitalize %>
+                $<%=item.price/(item.bills.length) %>
+                <%  totalprice += item.price/(item.bills.length) %>
+                <%item.bills.each do |bill|%>
+                    <%bill.users.each do |user|%>
+                      <div  class="user" id="bill<%=bill.id%>"> <%=user.first_name.capitalize%><br><%=user.last_name.capitalize%> </div>
+                    <% end %>
+                <%end %>
+              </div>
+          </div>  
+        <% end %> 
+        <h2> Total: <%=totalprice%></h2>
+      </div>
+</div>
+      <div class="users_container">
+      <%@bill.group_bill.bills.each do |bill|%>
+        <%bill.users.each do |user|%>
+            <div class="user" id="bill<%=bill.id%>"> <%=user.first_name.capitalize%> <br> <%=user.last_name.capitalize%> </div>
+        <% end %>
+      <% end %>
+     </div>
 
- <% @bills_on_group_bill.each do |bill| %>
-    <%bill.users.each do |user|%>
-      <%=user.first_name%> <br>
-      
-    <% totalprice = 0%>
-    <% @bill.items.each do |items| %>
-      <% @items.each do |item| %>
-          <%totalprice += item.price/(item.bills.length) %> 
-      
-      money to pay <%=totalprice%> <br>
-      <%toalprice=0%>
-      <%end %>
-    <%end %>  
-
-    <%end %> 
-  <% end %>   
-
+        
