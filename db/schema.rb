@@ -50,8 +50,7 @@ ActiveRecord::Schema.define(version: 2018_10_19_211035) do
   end
 
   create_table "group_bills", force: :cascade do |t|
-    t.integer "admin"
-    t.string "image_url"
+    t.integer "admin_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

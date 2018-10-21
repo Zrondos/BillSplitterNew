@@ -4,37 +4,30 @@ require "rexml/document"
 
 class GroupBillsController < ApplicationController
 
-  def index
-    @users = User.all.map { |c| [ c.first_name, c.id] }
-    @bill = Bill.new
-  end
-
   def show
     @group_bill = GroupBill.find(params[:id])
-    @users = User.all
-    @users = User.all.map { |c| [ c.first_name, c.id] }
     @bill = Bill.new
 
     @items = @group_bill.items
-    @admin= User.find(@group_bill.admin)
+    @admin= User.find(@group_bill.admin_id)
     @bills_items=BillsItem.new
-    
-
     @bills_on_group_bill=@group_bill.bills
-    @users_on_group_bill=[]
-    @bills_on_group_bill.each do |bill|
-      bill.users.each do |user|
-          @users_on_group_bill.push([user.first_name,user.id])
-      end
-    respond_to do |format|
-       format.js 
+    @users=User.all.map { |c| [ c.first_name.capitalize, c.id] }
+    all_users=User.all
+    users_to_add=[]
+    all_users.each do |user|
+        list_of_bills=[]
+        user.bills.each do |bill|
+            list_of_bills.push(bill.group_bill_id)
+        end
+        if list_of_bills.include?(@group_bill.id)
+            next
+        else
+            users_to_add.push(user)
+        end
     end
-
-    end
-
-    # bills-items functionality 
-     @items = Item.all
-     @items = Item.all.map { |c| [ c.name, c.price] }
+   
+    @users_to_add = users_to_add.map { |c| [ c.first_name.capitalize, c.id] }
 
   end
 
@@ -42,25 +35,11 @@ class GroupBillsController < ApplicationController
     @group_bill=GroupBill.new
   end
 
-  def edit
-  end
-
-  def new 
-    @users = User.all.map{ |c| [ c.id] }
-    @group_bill = GroupBill.new 
-  end 
-
-
   def create
     @group_bill = GroupBill.create(
-      admin: params[:group_bill][:admin],
+      admin_id: params[:group_bill][:admin_id],
       receipt: params[:group_bill][:receipt]
     )
-    # image_tag @group_bill.receipt
-
-    # session[:group_bill_id] = group_bill.id
-    # call=OcrskdCall.new(@group_bill.image_url)
-    # items_array=call.api_call
     items_array=api_call(@group_bill)
     
     items_array.each do |item|
@@ -71,13 +50,6 @@ class GroupBillsController < ApplicationController
       )
     end
     redirect_to group_bill_path(@group_bill)
-
-  end
-
-  def update
-  end
-
-  def delete
   end
 
   ######################
@@ -177,7 +149,6 @@ class GroupBillsController < ApplicationController
 
         return new_array
     end
-
 
 end
 
