@@ -14,13 +14,22 @@ class GroupBillsController < ApplicationController
     @users = User.all
     @users = User.all.map { |c| [ c.first_name, c.id] }
     @bill = Bill.new
-    @items = @group_bill.items.map{ |c| [ c.name, c.id]}
+
+    @items = @group_bill.items
+    @admin= User.find(@group_bill.admin)
+    @bills_items=BillsItem.new
+    
+
     @bills_on_group_bill=@group_bill.bills
     @users_on_group_bill=[]
     @bills_on_group_bill.each do |bill|
       bill.users.each do |user|
           @users_on_group_bill.push([user.first_name,user.id])
       end
+    respond_to do |format|
+       format.js 
+    end
+
     end
 
     # bills-items functionality 
@@ -61,7 +70,7 @@ class GroupBillsController < ApplicationController
         group_bill_id: @group_bill.id
       )
     end
-    redirect_to group_bills_path
+    redirect_to group_bill_path(@group_bill)
 
   end
 
@@ -72,7 +81,7 @@ class GroupBillsController < ApplicationController
   end
 
   ######################
-      def api_call(group_bill_object)
+    def api_call(group_bill_object)
         application_id = CGI.escape("BillSplitterApp")
         password = CGI.escape("Gc4wsceCBv8uDYh/TSEqjJkc")
         # file_name= Rails.root.to_s + ActionController::Base.helpers.asset_path('o.png')
@@ -169,7 +178,7 @@ class GroupBillsController < ApplicationController
         return new_array
     end
 
-  ######################
+
 end
 
 

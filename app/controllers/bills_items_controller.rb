@@ -20,20 +20,26 @@ class BillsItemsController < ApplicationController
   end 
 
   def create
-    item_id = params[:bills_item][:item_id]
-    bill_ids= params[:bills_item][:bill_ids]   
-
-    bill_ids.each do |id| 
+    result=params[:bills_item][:test]
+    
+    result=result.split("/")
+    result.each do |array|
+      array=array.split(",")
+      bill=array[0][4..-1].to_i
+      item=array[1][4..-1].to_i
       BillsItem.create(
-        item_id: item_id,
-        bill_id: id
-    )
+      item_id: item,
+      bill_id: bill
+        )
     end
-    redirect_to bills_items_path
+    
   end
+
   
 
   def update
+
+    
   end
 
   def delete
