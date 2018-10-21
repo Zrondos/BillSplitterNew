@@ -18,6 +18,15 @@ Rails.application.routes.draw do
   resources :users
   resources :photos
 
-  root to: 'photos#new'
+  
+devise_scope :user do
+  authenticated :user do
+    root 'group_bills#new', as: :authenticated_root
+  end
+  
+  unauthenticated do
+    root 'devise/sessions#new', as: :unauthenticated_root
+  end
+end
 
 end
