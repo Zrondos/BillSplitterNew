@@ -20,9 +20,6 @@ class GroupBillsController < ApplicationController
         user.bills.each do |bill|
             list_of_bills.push(bill.group_bill_id)
         end
-        puts "list of bills"
-        puts user.first_name
-        puts list_of_bills
         if list_of_bills.include?(@group_bill.id)
             next
         else
