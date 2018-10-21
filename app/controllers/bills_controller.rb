@@ -16,8 +16,14 @@ class BillsController < ApplicationController
   def show
     @bill=Bill.find(params[:id])
     @items=@bill.items
-    # @bills_item = BillsItem.all
+     @bills_item = BillsItem.all
+    @group_bill = GroupBill.find(params[:id])
+    @bills=Bill.all
+    @bills_on_group_bill=@group_bill.bills
     
+
+
+
   end
 
 

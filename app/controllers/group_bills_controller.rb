@@ -7,6 +7,7 @@ class GroupBillsController < ApplicationController
   def show
     @group_bill = GroupBill.find(params[:id])
     @bill = Bill.new
+
     @items = @group_bill.items
     @admin= User.find(@group_bill.admin_id)
     @bills_items=BillsItem.new
