@@ -1,109 +1,50 @@
-Welcome <%=@admin.first_name%>
+Welcome <%=@admin.first_name.capitalize%>
 
-
-  
-<br >
-<div class="commented-out">
-<!-- <% @bills_on_group_bill.each do |bill| %>
-    <%bill.users.each do |user|%>
-      <%=user.first_name%>
-    <%end %>
-<% end %> 
-
-<h2>FORM Bill-Items </h2>    
-  <% @items.each do |item| %>
-    <%= item.name %> $<%= item.price %> 
-        <%= form_with(model: BillsItem.new) do |form| %>
-          <strong>Users:</strong> <%= form.select( :bill_ids, options_for_select(@users_on_group_bill), { :prompt => "Please select"}, { :multiple => true, :size => 5 })%>             
-          <%= form.hidden_field :item_id, value: item[1] %>
-          <%= form.submit %>  <br/><br>
-        <% end %>
-  <% end %> -->
-
-
-<h2>List of Users </h2>    
-    <%= form_with(model: @bill) do |form| %>
-      <%= form.hidden_field :group_bill_id, value: @group_bill.id %>
-      <%= form.select(:users_ids, options_for_select(@users), { :prompt => "Please select"}, { :multiple => true, :size => 5 })%>
-      <%= form.submit%>
-    <% end %> 
-
-<!-->
-  <!-- <h2>Hello Underworld</h2> -->
-  <!-- nav conatiner with logo and menu icon -->
-  </div>
     <div id="bill_page">
-      <!-- Banner with logo -->
-        <div class="logo-banner">
-          <h1 style="align-text:center;"></h1>
-        </div>
-
       <div class="split-bill-container">
-          <h1>Split Bill</h1>     
+        <h1>Split Bill</h1>     
 
       <!-- item/receipt and price of item  -->
-      <% @items.each do |item| %>
-        <div class="item" id="item<%=item.id%>">
-            <%puts %>
-            <div class="items_users" id="item<%=item.id%>" ondrop="drop_handler(event);" ondragover="dragover_handler(event);">
-              <%= item.name.capitalize %>
-              $<%=item.price %>
-            </div>
-        </div>  
-      <% end %> 
+        <% @items.each do |item| %>
+          <div class="item" id="item<%=item.id%>">
+              <div class="items_users" id="item<%=item.id%>" ondrop="drop_handler(event);" ondragover="dragover_handler(event);">
+                <%= item.name.capitalize %>
+                $<%=item.price %>
+                <%item.bills.each do |bill|%>
+                    <%bill.users.each do |user|%>
+                      <div  class="user" id="bill<%=bill.id%>" draggable="true" ondragstart="dragstart_handler(event);"> <%=user.first_name.capitalize%><br><%=user.last_name.capitalize%> </div>
+                    <% end %>
+                <%end %>
+              </div>
+          </div>  
+        <% end %> 
+      </div>
 
       <div class="users_container">
-        <div  class="user" id="user1" draggable="true" ondragstart="dragstart_handler(event);"> User1 </div>
-        <div class="user" id="user2" draggable="true" ondragstart="dragstart_handler(event);"> User2 </div>
-        <div class="user" id="user3" draggable="true" ondragstart="dragstart_handler(event);"> User3 </div>
-      </div>
+
+      <%@bills_on_group_bill.each do |bill|%>
+        <%bill.users.each do |user|%>
+          <div  class="user" id="bill<%=bill.id%>" draggable="true" ondragstart="dragstart_handler(event);"> <%=user.first_name.capitalize%><br><%=user.last_name.capitalize%> </div>
+        <% end %>
+      <% end %>
         
-      <!-- bar with dropped user icons -->
-      <section class="dropped-user-icon-bar">
-      </section>
-      <!-- subtotal and price -->
-      <section class="sub-total-price">
-        <p>sub-total</p>
-        <p>price</p>
-      </section>
-      <!--  tax and price-->
-      <section class="tax-price">
-        <p>tax</p>
-        <p>price</p>
-      </section>
-      <!-- tip and price -->
-      <section class="tip-price">
-        <p>tip</p>
-        <p>price</p>
-      </section>
-      <!-- total and price -->
-      <section class="TOTAL-price">
-        <p>TOTAL</p>
-        <p>price</p>
-      </section>
-      <!-- user icons to be dragged -->
-      <section class="user-icons">
-      </section> 
+      </div>
     </div> 
+
+    <h2>Add Friends</h2>    
+      <%= form_with(model: @bill) do |form| %>
+        <%= form.hidden_field :group_bill_id, value: @group_bill.id %>
+        <%= form.select(:users_ids, options_for_select(@users_to_add), { :prompt => "Please select"}, { :multiple => true, :size => 5 })%>
+        <%= form.submit  "Add friends"%>
+      <% end %> 
       <!-- split button -->
       <div id="invisible">
-
-
-
        <%= form_with( model: BillsItem.new) do |form| %>
           <%= form.text_field :test, id: "array_of_data"%>
-           <%= form.submit %>  <br/><br>
+          <%= form.submit "Split"%>  <br/><br>
        <% end %>
       </div>
 
-      
-      <button type='button'> 
-      <%= link_to "Split", group_bill_path(@group_bill), method: :get, remote: true %> </button> 
-      <!--<%= link_to "Split", bills_items_path, method: :create, remote: true%> </button> -->
-      <section class="split-pay-button">
-        <button type="button" style="color: white">Split Bill</button>
-      </section>
-      <!-- bottom navbar with edit, User's own icon, and a view my bill options and icons -->
-      <div class="bottom_nav"></div>
-  </div> 
+
+
   

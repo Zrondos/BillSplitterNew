@@ -152,10 +152,22 @@
 
 .user{
     border:2px solid black;
-    padding: 20px;
+    padding: 10px;
     display: inline-block;
     margin: 20px;
-    border-radius: 100px;
+    border-radius: 1000px;
 }
+
+#array_of_data{
+    display:none;
+}
+
+.users_container{
+    font-size:10px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
+
 
 
