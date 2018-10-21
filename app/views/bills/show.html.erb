@@ -28,6 +28,12 @@
               </div>
           </div>  
         <% end %> 
+        <%total_tax=@group_bill.tax%>
+        <%total_tip=@group_bill.tip%>
+        <%my_percentage=totalprice/@group_bill.total%>
+
+        <h3>My share of tax <%=total_tax*my_percentage%></h3>
+        <h3>My share of tip <%=total_tip*my_percentage%>
         <h2> Total: <%=totalprice%></h2>
       </div>
 </div>

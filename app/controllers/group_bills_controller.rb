@@ -36,17 +36,64 @@ class GroupBillsController < ApplicationController
   end
 
   def create
+    
     @group_bill = GroupBill.create(
+      name: params[:group_bill][:name],  
       admin_id: params[:group_bill][:admin_id],
-      receipt: params[:group_bill][:receipt]
+      receipt: params[:group_bill][:receipt],
+      subtotal: 0,
+      tax: 0,
+      tip: 0,
+      total: 0
     )
+    @subtotal=0
+    @tax=0
     items_array=api_call(@group_bill)
+    items_array.each do |item|
+        if item[0]=='Subtotal'
+             next
+        elsif item[0]=='Tax'
+            @tax=item[1].to_f
+             next
+        elsif item[0]=='Total'
+             next
+        end
+        @subtotal+=item[1].to_f
+        puts "!!!!!!!!!!!!!!"  
+        puts @subtotal
+    end
+    puts "????????"
+    puts @subtotal.class
+    puts "TYPEEEEEEEES"
+    @tip=(@tax+@subtotal)*0.2
+    puts @tip
+    puts @tip.class
+    variable=@group_bill.id
+    
+    @group_bill=GroupBill.find(@group_bill.id).update(
+        name: params[:group_bill][:name],  
+        admin_id: params[:group_bill][:admin_id],
+        receipt: params[:group_bill][:receipt],
+        subtotal: @subtotal,
+        tax: @tax,
+        tip: @tip,
+        total: (@subtotal+@tax+@tip)
+        )
+
+    puts "updated!!!!!!!!!!!!!!!!!!"
     
     items_array.each do |item|
+        if item[0]=='Subtotal'
+            next
+        elsif item[0]=='Tax'
+            next
+        elsif item[0]=='Total'
+            next
+        end
       Item.create(
         name: item[0],
         price: item[1],
-        group_bill_id: @group_bill.id
+        group_bill_id: variable
       )
     end
     redirect_to group_bill_path(@group_bill)
