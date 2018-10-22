@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'profiles/index'
+  get 'profiles/show'
+  get 'profiles/edit'
+  get 'profiles/delete'
+  get 'profiles/create'
+  get 'profiles/update'
   get 'photo/index'
   get 'photo/create'
   get 'photo/new'
@@ -17,6 +23,7 @@ Rails.application.routes.draw do
   resources :items
   resources :users
   resources :photos
+  resources :profiles
 
   
 devise_scope :user do
