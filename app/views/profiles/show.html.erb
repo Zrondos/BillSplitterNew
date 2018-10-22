@@ -1,14 +1,11 @@
 <h1>Profiles#show</h1>
 <p>Find me in app/views/profiles/show.html.erb</p>
 
-    <%@group_bill.admin do |admin|%>
+    <%@group_bill.admin_id do |admin|%>
       <%=totalprice%>
     <%end %> 
       
-  <!--<%puts "!!!!!!!!!!!!!!!!!!!!!"%>
-  <% puts @group_bill.admin do |admin|%>
-
-<%end%> -->
+  
 
 <div id="profile-page">
 <div class="superContainer">
@@ -47,10 +44,10 @@
           <p>
           BIll Id I belong to: <%=bill.id%>
           group_bill I belong to: <%=bill.group_bill.id%>
-          admin_id as per group_bill = <%=bill.group_bill.admin%>
-          admin of the bill: <%=User.find(bill.group_bill.admin).first_name%>
+          admin_id as per group_bill = <%=bill.group_bill.admin_id%>
+          admin_id of the bill: <%=User.find(bill.group_bill.admin_id).first_name%>
                         <%= link_to 'BIll', bill_path(bill.id), :class => 'navbar-link' %> 
-          <%if current_user.id==bill.group_bill.admin%>
+          <%if current_user.id==bill.group_bill.admin_id%>
             <%= link_to 'Group Bill', group_bill_path(bill.group_bill.id), :class => 'navbar-link' %> 
           <%end%>
     
