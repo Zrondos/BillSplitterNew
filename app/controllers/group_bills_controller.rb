@@ -59,16 +59,12 @@ class GroupBillsController < ApplicationController
              next
         end
         @subtotal+=item[1].to_f
-        puts "!!!!!!!!!!!!!!"  
-        puts @subtotal
+
     end
-    puts "????????"
-    puts @subtotal.class
-    puts "TYPEEEEEEEES"
+
     @tip=(@tax+@subtotal)*0.2
-    puts @tip
-    puts @tip.class
-    variable=@group_bill.id
+
+    group_bill_id=@group_bill.id
     
     @group_bill=GroupBill.find(@group_bill.id).update(
         name: params[:group_bill][:name],  
@@ -93,10 +89,10 @@ class GroupBillsController < ApplicationController
       Item.create(
         name: item[0],
         price: item[1],
-        group_bill_id: variable
+        group_bill_id: group_bill_id
       )
     end
-    redirect_to group_bill_path(@group_bill)
+    redirect_to group_bill_path(group_bill_id)
   end
 
   ######################

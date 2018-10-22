@@ -43,13 +43,15 @@ Welcome <%=@admin.first_name.capitalize%>
         <%= form.submit  "Add friends"%>
       <% end %> 
       <!-- split button -->
+      <%puts "!!!!!!!!!!!!!"%>
+      <%puts @group_bill.id%>
       <div id="invisible">
        <%= form_with( model: BillsItem.new) do |form| %>
-          <%= form.text_field :test, id: "array_of_data"%>
-          <%= form.submit "Split"%>  <br/><br>
+        <%=form.hidden_field :group_bill_id, value: @group_bill.id %>
+        <%=form.hidden_field :admin_id, value: @admin.id %>
+        <%=form.text_field :list_of_bills_items, id: "array_of_data"%>
+        <%= form.submit "Split"%>  <br/><br>
        <% end %>
       </div>
-
-
 
   
