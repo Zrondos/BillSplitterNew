@@ -6,6 +6,7 @@
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:900" rel="stylesheet">
     <script src="https://unpkg.com/ionicons@4.2.2/dist/ionicons.js"></script>
@@ -15,6 +16,39 @@
     <a href="./new" class="icon"><ion-icon name="camera" style="height:30px; width:30px;"></ion-icon></a>
     <div class="logo"><strong>Split</strong></div>
     <a href="/profile" class="icon"><ion-icon name="contact" style="height:30px; width:30px;"></ion-icon></a>
+
+    <script src="https://unpkg.com/ionicons@4.2.2/dist/ionicons.js"></script>
+  </head>
+  <body>
+
+  <header>
+  
+  </header>
+
+<% if notice %>
+  <p class="alert alert-success"><%= notice %></p>
+<% end %>
+<% if alert %>
+  <p class="alert alert-danger"><%= alert %></p>
+<% end %>
+
+
+<p class="navbar-text pull-right">
+<% if user_signed_in? %>
+  Logged in as <strong><%= current_user.email %></strong>.
+  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %> |
+
+
+  <%= link_to 'Camera', new_group_bill_path, :class => 'navbar-link' %> |
+    <%= link_to 'profile', profile_path(current_user.id), :class => 'navbar-link' %> |
+
+
+<% else %>
+  <!--<%= link_to "Sign up", new_user_registration_path, class: style="display:none;"  %> |
+  <%= link_to "Login", new_user_session_path, :class => 'hidden'  %> -->
+<% end %>
+</p>
+
 
   </header>
 

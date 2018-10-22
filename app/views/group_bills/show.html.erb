@@ -29,6 +29,7 @@
         <!-- user dropped icons -->        
         
 
+
   </div>
     </section>    
 <!-- section-D: subtotal, tax, tip, TOTAL -->
@@ -37,6 +38,7 @@
           <p class="sub-name">Sub total</p>
           <p class="sub-sum">$<%=@group_bill.subtotal%></p>
         </div>
+
 
         <div class="tax-price">
           <p class="tax-name">Tax</p>
@@ -74,23 +76,26 @@
     </footer>
 
 
-      <!-- item/receipt and price of item  -->
-        <!-- <% @items.each do |item| %>
-          <div class="item" id="item<%=item.id%>">
-              <div class="items_users" id="item<%=item.id%>" ondrop="drop_handler(event);" ondragover="dragover_handler(event);">
-                <%= item.name.capitalize %>
-                $<%=item.price %>
-                <%item.bills.each do |bill|%>
-                    <%bill.users.each do |user|%>
-                      <div  class="user" id="bill<%=bill.id%>" draggable="true" ondragstart="dragstart_handler(event);"> <%=user.first_name.capitalize%><%=user.last_name.capitalize%> </div>
-                    <% end %>
-                <%end %>
-              </div>
-          </div>  
-        <% end %> 
-        <h2>Subtotal <%=@group_bill.subtotal%> -->
-        <!--<h2>Tax <%=@group_bill.tax%></h2> -->
-        <!-- <h2>Tip <%=@group_bill.tip%>
+
+
+    <!-- item/receipt and price of item  -->
+      <% @items.each do |item| %>
+        <div class="item" id="item<%=item.id%>">
+          <div class="items_users" id="item<%=item.id%>" ondrop="drop_handler(event);" ondragover="dragover_handler(event);">
+            <%= item.name.capitalize %>
+            $<%=item.price %>
+            <%item.bills.each do |bill|%>
+              <%bill.users.each do |user|%>
+                <div  class="user" id="bill<%=bill.id%>" draggable="true" ondragstart="dragstart_handler(event);"> <%=user.first_name.capitalize%><br><%=user.last_name.capitalize%> </div>
+              <% end %>
+            <%end %>
+            </div>
+        </div>  
+      <% end %> 
+
+        <h2>Subtotal <%=@group_bill.subtotal%>
+        <h2>Tip <%=@group_bill.tip%>
+
         <h2>Total <%=@group_bill.total%>
       </div>
 
@@ -112,9 +117,7 @@
         <%= form.select(:users_ids, options_for_select(@users_to_add), { :prompt => "Please select"}, { :multiple => true, :size => 5 })%>
         <%= form.submit  "Add friends"%>
       <% end %> 
-      <!-- split button -->
-      <%puts "!!!!!!!!!!!!!"%>
-      <%puts @group_bill.id%>
+
       <div id="invisible">
        <%= form_with( model: BillsItem.new) do |form| %>
         <%=form.hidden_field :group_bill_id, value: @group_bill.id %>
