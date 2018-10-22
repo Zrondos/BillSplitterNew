@@ -1,88 +1,96 @@
-Welcome <%=@admin.first_name.capitalize%>
+<div id="group_bill_page">
+  <div id="main"> 
+<!-- section A: holds hello user -->
+    <section id="section-a">
+      <div class="content-wrap">
+        <h2 class="hello-user">Hello, <%=@admin.first_name.capitalize%></h2>
+      </div>
+    </section>    
 
-
-    <div id="bill_page">
-
-      <!-- Banner with logo -->
-    <div class="logo-banner">
-       <h1 style="align-text:center;"></h1>
-    </div>
-
-    <div class="container">
-      <section class="page-title">
-      <h1>Split Bill</h1>     
-      </section>
-
-      <section class="page-title">
-      Hello: <%=User.find(@group_bill.admin).first_name%>
-      </section>
-    <!-- item/receipt and price of item  -->
-   
-
-     <section class="item">
-      <% @items.each do |item| %>
-        <p><%= item[0] %></p> 
-        <p>$<%=item[1] %></p>
-      </section>
-        <section class="item">
+<!-- section-B: holds item, price and user dropped icon -->
+    <section id="section-b">
+      <div class="recipt">
+          <% @items.each do |item| %>
+        <div class="item-container" id="item<%=item.id%>">
+            <div class="items_users" id="item<%=item.id%>" ondrop="drop_handler(event);" ondragover="dragover_handler(event);">
+            <p class="flex"><%= item.name.capitalize %></p>
+            <p class="flex">$<%=item.price %></p>
+          <%item.bills.each do |bill|%>
+                <%bill.users.each do |user|%>
+                <div class="dropped-content" id="bill<%bill.id%>" draggable="true" ondragstart="dragstart_handler(event);"> <%=user.first_name.capitalize%><br><%=user.last_name.capitalize%>
+                </div>
+              </div>
+                
+            <% end %>
           <% end %>
-        </section>
-    <!-- bar with dropped user icons -->
-     <section class="dropped-user-icon-bar">
-    </section>
-    <!-- subtotal and price -->
-    <section class="sub-total-price">
-      <p>sub-total</p>
-      <p>price</p>
-    </section>
-    <!--  tax and price-->
-    <section class="tax-price">
-      <p>tax</p>
-      <p>price</p>
-    </section>
-    <!-- tip and price -->
-    <section class="tip-price">
-      <p>tip</p>
-      <p>price</p>
-    </section>
-    <!-- total and price -->
-    <section class="TOTAL-price">
-      <p>TOTAL</p>
-      <p>price</p>
-    </section>
-    <!-- user icons to be dragged -->
-    <section class="user-icons">
-    </section> 
-  </div> 
-    <!-- split button -->
-    <section class="split-pay-button">
-      <button type="button" style="color: white">Split Bill</button>
-    </section>
-    <!-- bottom navbar with edit, User's own icon, and a view my bill options and icons -->
-    <div class="bottom_nav"></div>
-</div> 
+        </div>
+      </div>
+    <%end%>
+        <!-- user dropped icons -->        
+        
 
+  </div>
+    </section>    
+<!-- section-D: subtotal, tax, tip, TOTAL -->
+    <section id="section-d">
+        <div class="sub-total-price">
+          <p class="sub-name">Sub total</p>
+          <p class="sub-sum">$<%=@group_bill.subtotal%></p>
+        </div>
 
-      <div class="split-bill-container">
-        <h1>Split Bill</h1>     
+        <div class="tax-price">
+          <p class="tax-name">Tax</p>
+          <p class="tax-sum">$<%=@group_bill.tax%></p>
+        </div>
+
+        <div class="tip-price">
+          <p class="tip-name">Tip</p>
+          <p class="tip-sum">$<%=@group_bill.tip%>%</p>
+        </div>
+
+        <div class="TOTAL-price">
+          <p class="total-name">TOTAL</p>
+          <p class="total-sum">$<%=@group_bill.total%></p>
+        </div>
+      </section>
+
+      <%@bills_on_group_bill.each do |bill|%>
+      <%bill.users.each do |user|%>
+        <div  class="section-e" id="bill<%=bill.id%>" draggable="true" ondragstart="dragstart_handler(event);">
+          <%=user.first_name.capitalize%><br><%=user.last_name.capitalize%> 
+        </div>
+        
+      <% end %>
+    <% end %>
+
+    </main>
+
+    <!-- footer -->
+    <footer id="main-footer" class="split-pay-button">
+      <div class="wrap-button">
+        <a href="#section-e" class="btn">Split Bill</a>
+      </div>
+
+    </footer>
+
 
       <!-- item/receipt and price of item  -->
-        <% @items.each do |item| %>
+        <!-- <% @items.each do |item| %>
           <div class="item" id="item<%=item.id%>">
               <div class="items_users" id="item<%=item.id%>" ondrop="drop_handler(event);" ondragover="dragover_handler(event);">
                 <%= item.name.capitalize %>
                 $<%=item.price %>
                 <%item.bills.each do |bill|%>
                     <%bill.users.each do |user|%>
-                      <div  class="user" id="bill<%=bill.id%>" draggable="true" ondragstart="dragstart_handler(event);"> <%=user.first_name.capitalize%><br><%=user.last_name.capitalize%> </div>
+                      <div  class="user" id="bill<%=bill.id%>" draggable="true" ondragstart="dragstart_handler(event);"> <%=user.first_name.capitalize%><%=user.last_name.capitalize%> </div>
                     <% end %>
                 <%end %>
               </div>
           </div>  
         <% end %> 
-        <h2>Subtotal <%=@group_bill.subtotal%>
+        <h2>Subtotal <%=@group_bill.subtotal%> -->
         <!--<h2>Tax <%=@group_bill.tax%></h2> -->
-        <h2>Tip <%=@group_bill.tip%>
+        <!-- <h2>Tip <%=@group_bill.tip%>
         <h2>Total <%=@group_bill.total%>
       </div>
 
@@ -95,7 +103,7 @@ Welcome <%=@admin.first_name.capitalize%>
       <% end %>
         
       </div>
-    </div> 
+    </div>  -->
 
 
     <h2>Add Friends</h2>    
@@ -115,5 +123,4 @@ Welcome <%=@admin.first_name.capitalize%>
         <%= form.submit "Split"%>  <br/><br>
        <% end %>
       </div>
-
-  
+</div>
