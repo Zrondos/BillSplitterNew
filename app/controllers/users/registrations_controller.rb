@@ -12,15 +12,15 @@ class Users::RegistrationsController < Devise::RegistrationsController
       encrypted_password: params[:user][:encrypted_password],
       password_confirmation: params[:user][:password_confirmation],
       payment_method: params[:user][:payment_method]
-    )  end
-
+    )
+  end
   private
 
   # Notice the name of the method
   def sign_up_params
     params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation, :payment_method)
   end
-end
+
 
 
   # GET /resource/sign_up
