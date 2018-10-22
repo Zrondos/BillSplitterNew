@@ -1,42 +1,30 @@
 
 class BillsItemsController < ApplicationController
 
-  def index
-    @bills_item = BillsItem.all
-  end 
-
-
-  def show
-  end
-
-  def edit
-  end
-
-  def new 
-    @bill = Bill.all
-    @items = Item.all
-    @items = Item.all.map { |c| [ c.name, c.id] }
-    @bills_item = BillsItem.new
-  end 
-
   def create
-    item_id = params[:bills_item][:item_id]
-    bill_ids= params[:bills_item][:bill_ids]   
-
-    bill_ids.each do |id| 
+    result=params[:bills_item][:list_of_bills_items]
+    result=result.split("/")
+    result.each do |array|
+      array=array.split(",")
+      bill=array[0][4..-1].to_i
+      item=array[1][4..-1].to_i
       BillsItem.create(
-        item_id: item_id,
-        bill_id: id
-    )
+      item_id: item,
+      bill_id: bill
+      )
     end
-    redirect_to bills_items_path
-  end
-  
+    group_bill_id=params[:bills_item][:group_bill_id].to_i
+    admin_id=params[:bills_item][:admin_id]
+    user=User.find(admin_id)
 
-  def update
-  end
-
-  def delete
+    users_bills=User.find(admin_id).bills
+    
+    users_bills.each do |bill|
+      if bill.group_bill_id==group_bill_id
+        redirect_to bill_path(bill.id)
+      end
+    end
+    
   end
   
 end
