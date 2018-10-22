@@ -3,8 +3,7 @@
 
     <%@group_bill.admin do |admin|%>
       <%=totalprice%>
-    <%end %>
-              
+    <%end %> 
       
   <!--<%puts "!!!!!!!!!!!!!!!!!!!!!"%>
   <% puts @group_bill.admin do |admin|%>
@@ -54,8 +53,7 @@
           <%if current_user.id==bill.group_bill.admin%>
             <%= link_to 'Group Bill', group_bill_path(bill.group_bill.id), :class => 'navbar-link' %> 
           <%end%>
-      
-
+    
           </p> 
 
           </button>
