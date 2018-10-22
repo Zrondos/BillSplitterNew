@@ -1,8 +1,8 @@
-<h1>GroupBill#show</h1>
-<p>Find me in app/views/group_bill/show.html.erb</p>
+<!-- <h1>GroupBill#show</h1>
+<p>Find me in app/views/group_bill/show.html.erb</p> -->
 
 
-  <!--<h2>List of items </h2>    
+   <h2>List of items </h2>    
 
     <% @items.each do |item| %>
     <li><%= item[0] %></li> <br/>
@@ -12,7 +12,7 @@
       <br /> <br/>
       <%= form.submit%>
       <% end %>
-    <% end %>  -->
+    <% end %>  
 
 
 <% @bills_on_group_bill.each do |bill| %>
@@ -30,7 +30,7 @@
     <% end %>
 <br >
 
- <!-- <h2>List of Bill-Items </h2>    
+ <h2>List of Bill-Items </h2>    
   <% @items.each do |item| %>
     <li><%= item[0] %></li> <br/>
       <%= form_with(model: @bills_item) do |form| %>
@@ -39,10 +39,10 @@
       <%= form.submit %> 
       <% end %>
     <% end %> -->
-<br/> 
+<!-- <br/>  -->
 
-<br/><br/>
-<h2>FORM Bill-Items </h2>    
+ <br/><br/>
+ <h2>FORM Bill-Items </h2>    
   <% @items.each do |item| %>
     <%= item[0] %> 
         <%= form_with(model: BillsItem.new) do |form| %>
@@ -50,7 +50,7 @@
         <%= form.hidden_field :item_id, value: item[1] %>
         <%= form.submit %>  <br/><br>
       <% end %>
-      <% end %>
+      <% end %> 
 
 
     <div id="bill_page">
@@ -65,7 +65,7 @@
       </section>
 
       <section class="page-title">
-      Hello: <%=User.find(@group_bill.admin).first_name%>
+      <!-- Hello: <%=User.find(@group_bill.admin).first_name%> -->
       </section>
     <!-- item/receipt and price of item  -->
    

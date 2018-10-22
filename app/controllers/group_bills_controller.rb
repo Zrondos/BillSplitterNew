@@ -61,7 +61,7 @@ class GroupBillsController < ApplicationController
         group_bill_id: @group_bill.id
       )
     end
-    redirect_to group_bills_path
+    redirect_to group_bill_path
 
   end
 
