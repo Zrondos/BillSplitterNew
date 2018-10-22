@@ -1,8 +1,26 @@
 Welcome <%=@admin.first_name.capitalize%>
 
 
+<<<<<<< HEAD
 <div class="split-bill-container">
     <h1>Split Bill</h1>     
+=======
+    <div id="bill_page">
+
+      <!-- Banner with logo -->
+    <div class="logo-banner">
+       <h1 style="align-text:center;"></h1>
+    </div>
+
+    <div class="container">
+      <section class="page-title">
+      <h1>Split Bill</h1>     
+      </section>
+
+      <section class="page-title">
+      Hello: <%=User.find(@group_bill.admin_id).first_name%>
+      </section>
+>>>>>>> master
     <!-- item/receipt and price of item  -->
       <% @items.each do |item| %>
         <div class="item" id="item<%=item.id%>">
