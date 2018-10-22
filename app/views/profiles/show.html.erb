@@ -45,12 +45,12 @@
     <%= link_to 'Edit', edit_user_registration_path, class: "btn btn-success" %> 
 
     <div class="bio">
-       <div class="profileTitle"> </div>s
+       <div class="profileTitle"> </div>
      <div class="email">Email: <%=@user.email%></div>
     </div>
 
 <div class="profile">
-    <h4 style="align-text:center;"> My Bills  </h4>
+    <h4 style="align-text:center;"> Bills  </h4>
   </div>
      
 
@@ -62,7 +62,14 @@
           group_bill I belong to: <%=bill.group_bill.id%>
           admin_id as per group_bill = <%=bill.group_bill.admin%>
           admin of the bill: <%=User.find(bill.group_bill.admin).first_name%>
+                        <%= link_to 'BIll', bill_path(bill.id), :class => 'navbar-link' %> 
+          <%if current_user.id==bill.group_bill.admin%>
+            <%= link_to 'Group Bill', group_bill_path(bill.group_bill.id), :class => 'navbar-link' %> 
+          <%end%>
+      
+
           </p> 
+
           </button>
       </div>
     <% end %>
