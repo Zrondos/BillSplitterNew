@@ -1,2 +1,13 @@
-<h1>Guest#show</h1>
-<p>Find me in app/views/guest/show.html.erb</p>
+<h2><%=@user.first_name.capitalize%>'s Profile</h2>
+
+<%@user.bills.each do |bill|%>
+    I owe <%=User.find(bill.group_bill.admin_id).first_name%> money <br>
+<% end %>
+
+
+
+
+
+
+
+

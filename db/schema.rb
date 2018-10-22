@@ -50,15 +50,19 @@ ActiveRecord::Schema.define(version: 2018_10_19_211035) do
   end
 
   create_table "group_bills", force: :cascade do |t|
-    t.integer "admin"
-    t.string "image_url"
+    t.integer "admin_id"
+    t.string "name"
+    t.float "subtotal"
+    t.float "tax"
+    t.float "tip"
+    t.float "total"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "items", force: :cascade do |t|
     t.string "name"
-    t.money "price", scale: 2
+    t.float "price"
     t.integer "group_bill_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

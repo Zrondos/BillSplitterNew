@@ -4,28 +4,30 @@ require "rexml/document"
 
 class GroupBillsController < ApplicationController
 
-  def index
-    @users = User.all.map { |c| [ c.first_name, c.id] }
-    @bill = Bill.new
-  end
-
   def show
     @group_bill = GroupBill.find(params[:id])
-    @users = User.all
-    @users = User.all.map { |c| [ c.first_name, c.id] }
     @bill = Bill.new
-    @items = @group_bill.items.map{ |c| [ c.name, c.id]}
-    @bills_on_group_bill=@group_bill.bills
-    @users_on_group_bill=[]
-    @bills_on_group_bill.each do |bill|
-      bill.users.each do |user|
-          @users_on_group_bill.push([user.first_name,user.id])
-      end
-    end
 
-    # bills-items functionality 
-     @items = Item.all
-     @items = Item.all.map { |c| [ c.name, c.price] }
+    @items = @group_bill.items
+    @admin= User.find(@group_bill.admin_id)
+    @bills_items=BillsItem.new
+    @bills_on_group_bill=@group_bill.bills
+    @users=User.all.map { |c| [ c.first_name.capitalize, c.id] }
+    all_users=User.all
+    users_to_add=[]
+    all_users.each do |user|
+        list_of_bills=[]
+        user.bills.each do |bill|
+            list_of_bills.push(bill.group_bill_id)
+        end
+        if list_of_bills.include?(@group_bill.id)
+            next
+        else
+            users_to_add.push(user)
+        end
+    end
+   
+    @users_to_add = users_to_add.map { |c| [ c.first_name.capitalize, c.id] }
 
   end
 
@@ -33,46 +35,68 @@ class GroupBillsController < ApplicationController
     @group_bill=GroupBill.new
   end
 
-  def edit
-  end
-
-  def new 
-    @users = User.all.map{ |c| [ c.id] }
-    @group_bill = GroupBill.new 
-  end 
-
-
   def create
+    
     @group_bill = GroupBill.create(
-      admin: params[:group_bill][:admin],
-      receipt: params[:group_bill][:receipt]
+      name: params[:group_bill][:name],  
+      admin_id: params[:group_bill][:admin_id],
+      receipt: params[:group_bill][:receipt],
+      subtotal: 0,
+      tax: 0,
+      tip: 0,
+      total: 0
     )
-    # image_tag @group_bill.receipt
-
-    # session[:group_bill_id] = group_bill.id
-    # call=OcrskdCall.new(@group_bill.image_url)
-    # items_array=call.api_call
+    @subtotal=0
+    @tax=0
     items_array=api_call(@group_bill)
+    items_array.each do |item|
+        if item[0]=='Subtotal'
+             next
+        elsif item[0]=='Tax'
+            @tax=item[1].to_f
+             next
+        elsif item[0]=='Total'
+             next
+        end
+        @subtotal+=item[1].to_f
+
+    end
+
+    @tip=(@tax+@subtotal)*0.2
+
+    group_bill_id=@group_bill.id
+    
+    @group_bill=GroupBill.find(@group_bill.id).update(
+        name: params[:group_bill][:name],  
+        admin_id: params[:group_bill][:admin_id],
+        receipt: params[:group_bill][:receipt],
+        subtotal: @subtotal,
+        tax: @tax,
+        tip: @tip,
+        total: (@subtotal+@tax+@tip)
+        )
+
+    puts "updated!!!!!!!!!!!!!!!!!!"
     
     items_array.each do |item|
+        if item[0]=='Subtotal'
+            next
+        elsif item[0]=='Tax'
+            next
+        elsif item[0]=='Total'
+            next
+        end
       Item.create(
         name: item[0],
         price: item[1],
-        group_bill_id: @group_bill.id
+        group_bill_id: group_bill_id
       )
     end
-    redirect_to group_bill_path
-
-  end
-
-  def update
-  end
-
-  def delete
+    redirect_to group_bill_path(group_bill_id)
   end
 
   ######################
-      def api_call(group_bill_object)
+    def api_call(group_bill_object)
         application_id = CGI.escape("BillSplitterApp")
         password = CGI.escape("Gc4wsceCBv8uDYh/TSEqjJkc")
         # file_name= Rails.root.to_s + ActionController::Base.helpers.asset_path('o.png')
@@ -169,7 +193,6 @@ class GroupBillsController < ApplicationController
         return new_array
     end
 
-  ######################
 end
 
 
