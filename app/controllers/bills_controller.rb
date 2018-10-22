@@ -31,6 +31,10 @@ class BillsController < ApplicationController
     group_bill_id= params[:bill][:group_bill_id]
     users=users[1..-1]
     users.each do |user|
+
+
+
+      
         @bill = Bill.create(
           group_bill_id: group_bill_id
         )
@@ -39,6 +43,8 @@ class BillsController < ApplicationController
           bill_id: @bill.id
         )
     end
+
+    # admins_personal_bill=Bill.where(group_bill_id=grupo)
 
     redirect_to group_bill_path(group_bill_id)
   end
