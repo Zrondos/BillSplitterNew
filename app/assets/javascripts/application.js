@@ -14,6 +14,7 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
 array=[]
 function dragstart_handler(event){
     sub_array=[(event.target.id)]
@@ -37,3 +38,4 @@ function drop_handler(event){
     array=[]
 
 }
+

@@ -1,0 +1,64 @@
+<h1>Profiles#show</h1>
+<p>Find me in app/views/profiles/show.html.erb</p>
+
+    <%@group_bill.admin do |admin|%>
+      <%=totalprice%>
+    <%end %> 
+      
+  <!--<%puts "!!!!!!!!!!!!!!!!!!!!!"%>
+  <% puts @group_bill.admin do |admin|%>
+
+<%end%> -->
+
+<div id="profile-page">
+<div class="superContainer">
+
+<div class="navBar">
+    <ion-icon name="menu"></ion-icon>
+  </div>
+<!-- Banner with logo -->
+  <div class="logo-banner">
+       <p>_____</p>
+  </div> 
+
+  <div class="profile">
+    <h4 style="align-text:center;"> MY PROFILE </h4>
+  </div>
+
+<!-- nav conatiner with logo and menu icon -->
+  <div class="profile">
+        <h1 class="personName"> <%=@user.first_name%> <%=@user.last_name%> <br> </h1>
+        <div class="profileImage"> <img src="photo1.jpeg" height="80px" width="80px" style="border-radius:35px;">   </div>
+    <%= link_to 'Edit', edit_user_registration_path, class: "btn btn-success" %> 
+
+    <div class="bio">
+       <div class="profileTitle"> </div>
+     <div class="email">Email: <%=@user.email%></div>
+    </div>
+
+<div class="profile">
+    <h4 style="align-text:center;"> Bills  </h4>
+  </div>
+     
+
+    <%@user.bills.each do |bill| %>
+      <div class="payment">
+          <button type="button" id="menuButton" name="button">
+          <p>
+          BIll Id I belong to: <%=bill.id%>
+          group_bill I belong to: <%=bill.group_bill.id%>
+          admin_id as per group_bill = <%=bill.group_bill.admin%>
+          admin of the bill: <%=User.find(bill.group_bill.admin).first_name%>
+                        <%= link_to 'BIll', bill_path(bill.id), :class => 'navbar-link' %> 
+          <%if current_user.id==bill.group_bill.admin%>
+            <%= link_to 'Group Bill', group_bill_path(bill.group_bill.id), :class => 'navbar-link' %> 
+          <%end%>
+    
+          </p> 
+
+          </button>
+      </div>
+    <% end %>
+
+</div>
+</div>
