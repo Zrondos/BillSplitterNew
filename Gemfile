@@ -67,4 +67,4 @@ gem 'ocr_space'
 
 gem 'rest-client'
 
-gem 'carrierwave', '~> 1.0'
+gem 'carrierwave'
