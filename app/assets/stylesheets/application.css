@@ -32,17 +32,20 @@
     justify-content: space-between;
 }
 
-.ion-icon{
-    position: absolute;
-    top: 0.2;
-    right: 0;
+
+ion-icon{
     height: 50px;
     width: 50px;
-}
+    color: #FF473A !important;
+    padding-top: 15px;
+    padding-bottom: 0;
+    letter-spacing: 2.5px;
+
 
 .logoutbutton{
     position: absolute;
     top: 60px;
     right: 0;
+
 
 }

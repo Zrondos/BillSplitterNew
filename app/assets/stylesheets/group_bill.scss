@@ -9,8 +9,8 @@
     font-size: 1.1em;
     line-height: 1.5;
     margin: -7px;
-    margin-top: 2px;
-    padding-top: 1px;
+    // margin-top: 2px;
+    // padding-top: 1px;
 
   .group_bill_info{
     text-align: center;
@@ -22,12 +22,15 @@
 }
 
 .items_users{
-  border-bottom: 1px solid black;
-  padding-top: 3px;
-  padding-left: 10px;
-  z-index: 2;
-  width: 98%;
-  position: relative;
+  // border-bottom: 1px solid black;
+  // padding-top: 3px;
+  // padding-left: 10px;
+  // z-index: 2;
+  // width: 98%;
+  // position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding: 2em 1em 1em;
 }
 
 .item_price{
@@ -49,14 +52,6 @@
   text-align: center;
 }
 
-.user{
-  border:2px solid black;
-  padding: 10px;
-  display: inline-block;
-  margin: 20px;
-  border-radius: 1000px;
-  font-size:10px;
-}
 
 .totals_container{
   text-align: center;
@@ -103,15 +98,15 @@
 //   display: inline-block;
 // }
    
-  // h2 {
-  //   margin: 0;
-  //   padding: 1em 0;
-  // }
+  h2 {
+    margin: 0;
+    padding: 1em 0;
+  }
   
-  // p {
-  //   margin: 0;
-  //   padding: 1em 0;
-  // }
+  p {
+    margin: 0;
+    padding: 1em 0;
+  }
   
   // .btn-circle {
   //   height: 25px;
@@ -121,40 +116,46 @@
   //   display: inline-block;
   // }
   
-  // .btn-big-circle {
-  //   height: 50px;
-  //   width: 50px;
-  //   background-color: lightgray;
-  //   border-radius: 50%;
-  //   display: inline-block;
-  // }
+  .btn-big-circle {
+    height: 50px;
+    width: 50px;
+    background-color: lightgray;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: 16px;
+  }
+
+  .btn-big-text {
+    position: relative;
+    top: 18px;
+  }
   
-  // .btn {
-  //   display: inline-block;
-  //   background-color: #FF473A;
-  //   color: white;
-  //   text-decoration: none;
-  //   padding: 1em 2em;
-  //   margin: 0.5em 0;
-  //   box-shadow: 2px 5px 18px #88888888;
-  //   width: 200px;
-  // }
+  .btn {
+    display: inline-block;
+    background-color: #FF473A;
+    color: white;
+    text-decoration: none;
+    padding: 1em 2em;
+    margin: 0.5em 0;
+    box-shadow: 2px 5px 18px #88888888;
+    width: 200px;
+  }
   
-  // #banner {
-  //   min-height: 60px;
-  //   background-color: white;
-  //   color: #FF473A;
-  //   text-align: center;
-  // }
+  #banner {
+    min-height: 60px;
+    background-color: white;
+    color: #FF473A;
+    text-align: center;
+  }
   
-  // #banner .logo {
-  //   font-family: 'Playfair Display', serif;
-  //   font-size: 2em;
-  //   padding-top: 15px;
-  //   padding-bottom: 0;
-  //   letter-spacing: 2.5px;
+  #banner .logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 2em;
+    padding-top: 15px;
+    padding-bottom: 0;
+    letter-spacing: 2.5px;
   
-  // }
+  }
   
   // #section-b {
   //   padding: 2em 1em 1em;
@@ -173,15 +174,13 @@
   //   border-top: 1px solid black;
   // }
   
-  // #section-d .sub-total-price,
-  // .tax-price,
-  // .tip-price,
-  // .TOTAL-price {
-  //   display: flex;
-  //   justify-content: space-between;
-  // }
+  #section-d  {
+    text-align: center;
+    // display: flex;
+    // justify-content: space-between;
+  }
   
-  // #section-d .TOTAL-price {
+  // #section-d .total {
   //   border-top: 1px solid black;
   //   border-bottom: 1px solid black;
   // }
@@ -190,9 +189,9 @@
   //   padding: 2em 2em; 
   // }
   
-  // #section-e .add-user-icons-to-bill {
-  //   display: flex;
-  // }
+  #section-e .add-user-icons-to-bill {
+    display: flex;
+  }
   
   // #main-footer {
   //   min-height: 70px;
