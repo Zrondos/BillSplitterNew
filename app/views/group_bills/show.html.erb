@@ -14,7 +14,7 @@ Welcome <%=@admin.first_name.capitalize%>
       </section>
 
       <section class="page-title">
-      Hello: <%=User.find(@group_bill.admin).first_name%>
+      Hello: <%=User.find(@group_bill.admin_id).first_name%>
       </section>
     <!-- item/receipt and price of item  -->
    
@@ -80,10 +80,10 @@ Welcome <%=@admin.first_name.capitalize%>
               </div>
           </div>  
         <% end %> 
-        <h2>Subtotal <%=@group_bill.subtotal%>
+        <h2>Subtotal $<%=(@group_bill.subtotal).round(2)%>
         <!--<h2>Tax <%=@group_bill.tax%></h2> -->
-        <h2>Tip <%=@group_bill.tip%>
-        <h2>Total <%=@group_bill.total%>
+        <h2>Tip $<%=(@group_bill.tip).round(2)%>
+        <h2>Total $<%=(@group_bill.total).round(2)%>
       </div>
 
       <div class="users_container">

@@ -31,9 +31,9 @@
   <%total_tip=@group_bill.tip%> 
   <%my_percentage=totalprice/@group_bill.total%>
 
-  <h3>My share of tax <%=total_tax*my_percentage%></h3>
-  <h3>My share of tip <%=total_tip*my_percentage%>
-  <h2> Total: <%=totalprice%></h2>
+  <h3>My share of tax <%=(total_tax*my_percentage).round(2)%></h3>
+  <h3>My share of tip <%=(total_tip*my_percentage).round(2)%>
+  <h2> Total: <%=((totalprice)+(total_tax*my_percentage)+(total_tip*my_percentage)).round(2)%></h2>
 </div>
   </div>  
           
@@ -44,11 +44,7 @@
 
       money to pay <%=totalprice%> <br>
       <%totalprice=0%>
-      <%end %>
-    <%end %>  
-
-    <%end %> 
-  <% end %>   -->
+      
 
       <div class="users_container">
       <%@bill.group_bill.bills.each do |bill|%>
@@ -58,8 +54,6 @@
         <% end %>
       <% end %>
      </div>
-
-
 </div>
 
      

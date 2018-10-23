@@ -19,6 +19,9 @@ class BillsController < ApplicationController
     @bills_item = BillsItem.all
     @group_bill = @bill.group_bill
     @admin=User.find(@group_bill.admin_id)
+    
+      
+    
   end
 
 
@@ -53,7 +56,8 @@ class BillsController < ApplicationController
   def update
   end
 
-
+ def totalprice
+ end 
 
   def edit
   end
