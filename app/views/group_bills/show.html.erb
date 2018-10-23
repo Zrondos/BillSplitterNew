@@ -11,11 +11,12 @@
       <div class="items_container">
         <% @items.each do |item| %>
           <div class="item" id="item<%=item.id%>">
-            <%= item.name.capitalize %>
-            $<%=item.price %>
+            
             <div class="items_users" id="item<%=item.id%>" ondrop="drop_handler(event);" ondragover="dragover_handler(event);">
+                <div class="item_name"><%= item.name.capitalize %></div>
+                <div class="item_price">$<%=item.price %></div>
                   <%item.bills.each do |bill|%>
-                    <%bill.users.each do |user|%>
+                  <%bill.users.each do |user|%>
                       <div class="user" id="bill<%=bill.id%>" draggable="true" ondragstart="dragstart_handler(event);"> <%=user.first_name.capitalize%><br><%=user.last_name.capitalize%> 
                       </div>
                     <% end %>
