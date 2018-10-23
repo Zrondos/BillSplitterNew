@@ -1,20 +1,20 @@
-<h1>Profiles#show</h1>
-  <p>Find me in app/views/profiles/show.html.erb</p>
+<!--<h1>Profiles#show</h1>
+  <p>Find me in app/views/profiles/show.html.erb</p>-->
 
 <div id="profile-page"> 
     <div class="superContainer">
       <!-- Banner with logo -->
-        <div class="logo-banner"> <p></p> </div> 
-        <div class="profile"> <h4> MY PROFILE </h4>  </div>
-  
+        <div class="profile"> <h4> PROFILE </h4>  </div>
           <!-- nav conatiner with logo and menu icon -->
         <div class="profile">
           <h1 class="personName"> <%=@user.first_name%> <%=@user.last_name%> <br> </h1>
 
             <div class="profileImage"><ion-icon name="person" style="height:100px; width:100px; color:blue;"></ion-icon>   </div>
             <%= link_to 'Edit', edit_user_registration_path, class:"login" %>
-            <div class="email">Email: <%=@user.email%></div>
+            <div class="email"><%@user.email%></div>
         </div>
+        <br>
+        <hr>
         <div class="profile"><h4 style="align-text:center;"> My Bills</h4></div>
         <%@user.bills.each do |bill| %>
             <%if current_user.id==bill.group_bill.admin_id%>
@@ -33,40 +33,36 @@
                       <%total_tax=bill.group_bill.tax%>
                          <%total_tip=bill.group_bill.tip%> 
                           <%my_percentage=totalprice/(bill.group_bill.total)%>
-                   <div class="check"><strong>  I owe $<%=result=((totalprice)+(total_tax*my_percentage)+(total_tip*my_percentage)).round(2)%>
+                   <div class="check">  I owe $<%=result=((totalprice)+(total_tax*my_percentage)+(total_tip*my_percentage)).round(2)%>
                 <%end %> 
-                to <%=User.find(bill.group_bill.admin_id).first_name.capitalize%> </strong>
+                to <%=User.find(bill.group_bill.admin_id).first_name.capitalize%> 
                  </div>
               <%= link_to 'View My bill', bill_path(bill.id), class: "button_profile_container" %> 
    
           <%end%>
           </div>
+
+        <div class="profile"><h4 style="align-text:center;"> Group Bills</h4></div> 
             <%@user.bills.each do |bill| %>
                 <%if current_user.id==bill.group_bill.admin_id%>
-                  <div class="profile"><h4 style="align-text:center;"> Group Bills</h4></div> 
                     <button type="button" id="menuButton" name="button">
-                    
                       <%= link_to 'View Bill', group_bill_path(bill.group_bill.id), class:"button_profile_container" %> 
-                    
                         <div class="check"> <%=bill.group_bill.name.capitalize%>bill  <br>
                         Total: <%=bill.group_bill.total%><br> Friends:
                           <%bill.group_bill.bills.each do |bill| %>
                             <%bill.users.each do |user|%>
-                              <%=user.first_name.capitalize%>,
+                              <%=user.first_name.capitalize%></ol></ul>
                             <%end%>
                           <%end%>  
                   <%else%>
                 <%end%> 
-            <%end%>     </div>
+            <%end%>   
+                      </div>
                     </button>
-                  </div>  
-                  <br>
-      <% if user_signed_in? %>
-      <div class="logout_container">
-        <%= link_to "Logout", destroy_user_session_path, method: :delete, class:"login"%> 
-       </div>
-      <%end %>   
-
+                  
+                  <br><br>
+      
+</div>  
    </div> 
 </div>
 
