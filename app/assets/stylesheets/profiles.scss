@@ -55,12 +55,10 @@
   .logo-banner,
   .page-title {
     display: flex;
-    background-color: #FFFEFE;
     justify-content: center;
   }
   .page-picture {
     display: flex;
-    background-color: #FFFEFE;
     height: 35%;
   }
 
@@ -185,7 +183,7 @@
   .logo-banner,
   .page-title {
     display: flex;
-    background-color: #FFFEFE;
+    
     justify-content: center;
   }
   .page-picture {
@@ -290,8 +288,9 @@ margin-left: 15%;
 display: inline-block;
 border: 1px solid #ccc;
 border-radius: 10px;
-font-size: 150%;
+font-size: 30px;
 box-sizing: border-box;
+text-align: center;
 }
 .login-half {
   color: white; 
