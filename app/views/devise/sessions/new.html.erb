@@ -1,12 +1,21 @@
+
+
 <!--<h2>Log in</h2> -->
 <div id="bill_page">  
+<div class="background_picture"> 
+
+
   <div class="logo-banner">
-    <h1 ></h1>
+      <h1 ></h1>
   </div>
+  
   <div class="container-landing-page">
     <section class="page-title">
-      <div id="login-text">LET'S <br>GO <br> SPLIT</div>  
-        <br><br>
+    <!-- <%=image_tag("mikasa.jpg") %> -->
+    <br><br>
+    
+      <div id="login-text"><strong>LET'S <br>GO <br> SPLIT</strong></div>  
+       
     </section>
 
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -18,8 +27,8 @@
       </div>
       <% if devise_mapping.rememberable? -%>
         <div class="field">
-          <%= f.check_box :remember_me %>
-          <%= f.label :remember_me %>
+        <div id="align-remember">  <%= f.check_box :remember_me %> </div>
+         <div id="align-remember"> <%= f.label :remember_me %> </div>
         </div>
       <% end -%>
       <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
@@ -34,3 +43,15 @@
 
   </div> 
 </div> 
+
+</div> 
+
+
+
+
+
+
+
+
+
+

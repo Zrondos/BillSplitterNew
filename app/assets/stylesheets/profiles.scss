@@ -11,21 +11,56 @@
    overflow: scroll;
   }
 
+  .button_profile_container {
+    color: white; 
+    background-color: #FF473A;
+    width: 18%;
+    padding: 10px 10px;
+    margin-right:10px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 90%;
+    box-sizing: border-box;
+    position: relative;
+    right: -33%;
+    }
+
+.profile{
+  text-align: center;
+}
+
+.profile_text{
+  color: black;
+  font-size: 30px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+}
+
+  .logo-banner,
+  .page-title {
+    display: flex;
+    background-color: #FFFEFE;
+    justify-content: center;
+  }
+  .page-picture {
+    display: flex;
+    background-color: #FFFEFE;
+    height: 35%;
+  }
+
   .logo-banner{
     background-image: image-url('Untitled-3.svg');
     background-repeat: no-repeat;
     margin-left: 40%;
-  }
-  .profile{
-    text-align: center;
+  
+    height: 9%;
   }
 
   .personName {
     text-align: center;
   }
-  .profileImage {
-    text-align: center;
-  }
+  
   .editButton {
     text-align: center;
   }
@@ -44,7 +79,7 @@
   #menuButton {
     background-color:#EAE5E5;
     width: 100%;
-    height: 50px;
+    height: 100px;
     box-shadow: 2px 5px 18px #88888888;
     border: none;
     padding-left: 40px;
@@ -56,57 +91,256 @@
     text-shadow: 1px 0.5px black;
     font-family: Arial;
   }
-  
-  
-  
-  
-  
-  /* MODAL CSS  */
-  
-  body {font-family: Arial, Helvetica, sans-serif;}
-  
-  /* The Modal (background) */
-  .modal {
-      display: none; /* Hidden by default */
-      position: fixed; /* Stay in place */
-      z-index: 1; /* Sit on top */
-      padding-top: 100px; /* Location of the box */
-      left: 0;
-      top: 0;
-      width: 100%; /* Full width */
-      height: 100%; /* Full height */
-      overflow: auto; /* Enable scroll if needed */
-      background-color: rgb(0,0,0); /* Fallback color */
-      background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
-    
-      
+
+  .check {
+    color: black;
+    font-size: 15px;
+    text-shadow: 1px 0.5px black;
+    font-family: Arial;
   }
   
-  /* Modal Content */
-  .modal-content {
-      background-color: #fefefe;
-      margin: auto;
-      padding: 20px;
-      border: 1px solid #888;
-      width: 80%;
+  
+  .login {
+    color: white; 
+    background-color: #FF473A;
+    width: 18%;
+    padding: 10px 10px;
+    margin-left: 1%;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 90%;
+    box-sizing: border-box;
+    }
+
+
+  .logout {
+    color: white; 
+    background-color: #FF473A;
+    width: 18%;
+    padding: 10px 10px;
+    margin-right: 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 90%;
+    box-sizing: border-box;
+    }
+
+  
+
+}
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+#bill_page{
+  height: 650px;
+
+.background_picture{
+  width: 100%;
+  height: 90%;
+  background-image:url('/assets/images/mikasa.jpg');
+
+  background-size: cover;
+ 
+ 
+}
+
+  .container {
+  height:60%; 
+  overflow: scroll;
   }
   
-  /* The Close Button */
-  .close {
-      color: #aaaaaa;
-      float: right;
-      font-size: 28px;
-      font-weight: bold;
+  .container-landing-page {
+  height:95%; 
+  background-color: #EAE5E5;
+  overflow: scroll;
   }
+
+  .logo-banner,
+  .page-title {
+    display: flex;
+    background-color: #FFFEFE;
+    justify-content: center;
+  }
+  .page-picture {
+    display: flex;
+    background-color: #FFFEFE;
+    height: 35%;
+  }
+
+ 
+
+  .page-title,
+  .hello-user,
+  .item,
+  .sub-total-price,
+  .tax-price,
+  .tip-price,
+  .TOTAL-price {
+    background-color: #EAE5E5;
+  }
+
+  .hello-user {
+    font-family: 'Roboto', sans-serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+  }
+
+  .item,
+  .hello-user,
+  .sub-total-price,
+  .tax-price,
+  .tip-price,
+  .TOTAL-price {  
+  display: flex;
+  justify-content: space-between;
+  }
+
+  .dropped-user-icon-bar {
+    display: flex;
+  }
+  .user-icons {
+    display: flex;
+  }
+  .bottom_nav {
+    background-color: #FFFEFE;
+    height: 18%;
+    width: 100%;
+    padding: 6px;
+    position: fixed;
+    margin: 0;
+  }
+  .split-pay-button {
+    justify-content: center;
+    display: flex;
+  }
+  button {
+    justify-content: center;
+    background-color: #FF473A;
+    box-shadow: 2px 5px 18px #88888888;
+    border: none;
+    width: 300px;
+    height: 40px;
+    bottom: 0;
+  }
+
+#login-text{
+  color: #FF473A;
+  font-size: 30px;
+  font-stretch: expanded;
+  line-height: 2;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
   
-  .close:hover,
-  .close:focus {
-      color: #000;
-      text-decoration: none;
-      cursor: pointer;
+}
+.field-style{
+width: 70%;
+padding: 30px 30px;
+margin-left: 15%;
+display: inline-block;
+border: 1px solid #ccc;
+border-radius: 4px;
+font-size: 150%;
+box-sizing: border-box;
+}
+
+.update-style{
+  width: 70%;
+  padding: 18px 18px;
+  margin-left: 15%;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 150%;
+  box-sizing: border-box;
   }
-  #myBtn{
-    color: white;
-    text-align: center;
+
+.login {
+color: white; 
+background-color: #FF473A;
+width: 70%;
+padding: 30px 30px;
+margin-left: 15%;
+display: inline-block;
+border: 1px solid #ccc;
+border-radius: 10px;
+font-size: 150%;
+box-sizing: border-box;
+}
+.login-half {
+  color: white; 
+  background-color: #FF473A;
+  width: 35%;
+  padding: 12px 20px;
+  margin-left: 15%;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
   }
+#align-password{
+  text-align: right;
+  padding-right: 20px;
+  font-size: 150%;
+  color: white;
+}
+#align-remember{
+  text-align: left;
+  padding-right: 20px;
+  font-size: 150%;
+  color: white;
+}
+#forgot-password {
+  text-align: center;
+}
+
+
+.my_bill_page{
+  height:30%;
+} 
+.item{
+  border: 1px solid black;
+  display: inline-block;
+  width: 100%;
+  // height: 100%;
+}
+
+.items_users{
+  border: 1px solid black;
+  z-index: 2;
+  height: 100%;
+  padding: 10px;
+  position: relative;
+}
+
+.user{
+  border:2px solid black;
+  padding: 10px;
+  display: inline-block;
+  margin: 20px;
+  border-radius: 1000px;
+}
+
+#array_of_data{
+  display:none;
+}
+
+.users_container{
+  font-size:10px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+
 }
