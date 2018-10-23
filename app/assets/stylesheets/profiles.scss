@@ -11,8 +11,30 @@
    overflow: scroll;
   }
 
+  .button_profile_container {
+    color: white; 
+    background-color: #FF473A;
+    width: 18%;
+    padding: 10px 10px;
+    margin-right:10px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 90%;
+    box-sizing: border-box;
+    position: relative;
+    right: -33%;
+    }
+
 .profile{
   text-align: center;
+}
+
+.profile_text{
+  color: black;
+  font-size: 30px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
 }
 
   .logo-banner,
@@ -38,9 +60,7 @@
   .personName {
     text-align: center;
   }
-  .profileImage {
-    text-align: center;
-  }
+  
   .editButton {
     text-align: center;
   }
@@ -59,7 +79,7 @@
   #menuButton {
     background-color:#EAE5E5;
     width: 100%;
-    height: 50px;
+    height: 100px;
     box-shadow: 2px 5px 18px #88888888;
     border: none;
     padding-left: 40px;
@@ -71,6 +91,14 @@
     text-shadow: 1px 0.5px black;
     font-family: Arial;
   }
+
+  .check {
+    color: black;
+    font-size: 15px;
+    text-shadow: 1px 0.5px black;
+    font-family: Arial;
+  }
+  
   
   .login {
     color: white; 
@@ -84,6 +112,23 @@
     font-size: 90%;
     box-sizing: border-box;
     }
+
+
+  .logout {
+    color: white; 
+    background-color: #FF473A;
+    width: 18%;
+    padding: 10px 10px;
+    margin-right: 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 90%;
+    box-sizing: border-box;
+    }
+
+  
+
 }
   
   
