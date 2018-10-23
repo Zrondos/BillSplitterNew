@@ -1,5 +1,5 @@
 <!--<h2>Sign up</h2> -->
-<div id="bill_page">  
+<div id="bill_page" style="height:1334px;">  
   <div class="logo-banner">
     <h1 ></h1>
   </div>
@@ -35,11 +35,11 @@
       <!--<%= f.label :password_confirmation %><br />-->
       <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Password-confirmation", class:"field-style"  %>
     </div>
-
-    <div class="field">
-      <!--<%= f.label :payment_method %><br /> -->
+<br><br>
+    <!-- <div class="field">
+     <%= f.label :payment_method %><br /> 
       <%= f.text_field :payment_method, autocomplete: "payment_method", placeholder: "Payment method", class:"field-style" %>
-    </div>
+    </div> -->
 
     <div class="actions">
       <%= f.submit "Sign up", class:"login" %>
