@@ -1,47 +1,55 @@
-
-
-
-
-
-
-<div class="top_div">
-<%@bill.users.each do |user| %>
-  <h3>Welcome <%=user.first_name.capitalize%> </h3>
-<% end %>
-<h2>Bill Name: <%=@group_bill.name%>
-<h2>Bill Admin: <%=@admin.first_name.capitalize%> <%@admin.last_name.capitalize %></h2>
-</div>
+<div id="bill_page">
+  <div class="bill_info">
+    <% @bill.users.each do |user| %>
+      <h3>Welcome <%=user.first_name.capitalize%> </h3>
+    <% end %>
+    <h2><%=@group_bill.name%>
+    <h3>Created by <%=@admin.first_name.capitalize%> <%=@admin.last_name.capitalize %></h3>
+  </div>
   
-<% totalprice = 0%>
+  <% totalprice = 0%>
  
 <div class="bill">
-  <div class="split-bill-container">   
-    <!-- item/receipt and price of item  -->
-    <% @items.each do |item| %>
-      <div class="item" id="item<%=item.id%>">
-        <div class="items_users" id="item<%=item.id%>" ondrop="drop_handler(event);" ondragover="dragover_handler(event);">
-          <%= item.name.capitalize %>
-          $<%=item.price/(item.bills.length) %>
-          <%  totalprice += item.price/(item.bills.length) %>
-          <%item.bills.each do |bill|%>
-            <%bill.users.each do |user|%>
-              <div  class="user" id="bill<%=bill.id%>"> <%=user.first_name.capitalize%><br><%=user.last_name.capitalize%>
-              </div>
-            <% end %>
-          <%end %>
-        </div>
-      </div>
-    <% end %> 
-    <div>
+  <div class="items_container">
+        <% @items.each do |item| %>
+          <% totalprice+=item.price%>
+          <div class="items_users" id="item<%=item.id%>" ondrop="drop_handler(event);" ondragover="dragover_handler(event);">
+            <div class="item" id="item<%=item.id%>">
+            <span class="item_name"><%= item.name.capitalize %></span> 
+            <span class="item_price">$<%=(item.price).round(2) %></span>
+              <%item.bills.each do |bill|%>
+                <%bill.users.each do |user|%>
+                    <div class="user" id="bill<%=bill.id%>" draggable="true" ondragstart="dragstart_handler(event);"> <%=user.first_name.capitalize%><br><%=user.last_name.capitalize%> 
+                    </div>
+                <% end %>
+              <%end %> 
+          </div>
+          </div>  
+        <% end %> 
+  </div>
+  
+
   <%total_tax=@group_bill.tax%>
   <%total_tip=@group_bill.tip%> 
   <%my_percentage=totalprice/@group_bill.total%>
 
-  <h3>My share of tax <%=(total_tax*my_percentage).round(2)%></h3>
-  <h3>My share of tip <%=(total_tip*my_percentage).round(2)%>
-  <h2> Total: <%=((totalprice)+(total_tax*my_percentage)+(total_tip*my_percentage)).round(2)%></h2>
+  <div class="totals_container">
+    <h2>Tax <%=(total_tax*my_percentage).round(2)%></h2>
+    <h3>Tip <%=(total_tip*my_percentage).round(2)%></h3>
+    <h2 class="total">Total <%=((totalprice)+(total_tax*my_percentage)+(total_tip*my_percentage)).round(2)%></h2>
+  </div>
+
+  <div class="users_container">
+      <%@group_bill.bills.each do |bill| %>
+          <%bill.users.each do |user|%>
+            <div  class="user" id="bill<%=bill.id%>" draggable="true" ondragstart="dragstart_handler(event);"> <%=user.first_name.capitalize%><br><%=user.last_name.capitalize%> 
+            </div>
+          <% end %>
+      <% end %>    
+  </div>
+
 </div>
-  </div>  
+
           
 
 
@@ -50,14 +58,7 @@
 
 
 
-      <div class="users_container">
-      <%@bill.group_bill.bills.each do |bill|%>
-        <%bill.users.each do |user|%>
-            <div class="user" id="bill<%=bill.id%>"> <%=user.first_name.capitalize%> <br> <%=user.last_name.capitalize%>
-            </div>
-        <% end %>
-      <% end %>
-     </div>
+      
 </div>
 
      

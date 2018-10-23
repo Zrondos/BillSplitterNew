@@ -15,11 +15,22 @@
  */
 
  .logo{
-     display:inline-block;
+    display: inline-block;
+    margin-top: -50px;
+    margin-bottom: -35px;
+}
+
+.logo_text{
+    font-size:53px;
 }
 
 #banner{
     width: 100%;
     display: flex;
     justify-content: space-between;
+}
+
+.ion-icon{
+    height: 50px;
+    width: 50px;
 }

@@ -3,7 +3,7 @@
       <!-- Banner with logo -->
     <div class="bill">
       <div class="group_bill_info">
-        <h2>Welcome <%=User.find(@group_bill.admin_id).first_name.capitalize%></h2>
+        <h3>Welcome <%=User.find(@group_bill.admin_id).first_name.capitalize%></h3>
         <h2><%=@group_bill.name%> Bill</h2>
       </div>
 
@@ -14,31 +14,27 @@
           <div class="item" id="item<%=item.id%>">
             
             <span class="item_name"><%= item.name.capitalize %></span> 
-            <span class="item_price">$<%=item.price %></span>
+            <span class="item_price">$<%=(item.price).round(2) %></span>
             
                   
                   
-                  <!--<%item.bills.each do |bill|%>
+                  <%item.bills.each do |bill|%>
                     <%bill.users.each do |user|%>
                       <div class="user" id="bill<%=bill.id%>" draggable="true" ondragstart="dragstart_handler(event);"> <%=user.first_name.capitalize%><br><%=user.last_name.capitalize%> 
                       </div>
                     <% end %>
-                  <%end %> -->
+                  <%end %> 
             </div>
           </div>  
         <% end %> 
       </div>
 
-      <!--<div class="totals_container">
-          <h2>Subtotal $<%=(@group_bill.subtotal).round(2)%>
+      <div class="totals_container">
+          <h2>Subtotal $<%=(@group_bill.subtotal).round(2)%></h2>
           <h2>Tax <%=@group_bill.tax%></h2> 
-          <h2>Tip $<%=(@group_bill.tip).round(2)%>
-          <h2>Total $<%=(@group_bill.total).round(2)%>
-
-          <h2>Subtotal <%=@group_bill.subtotal%>
-          <h2>Tip <%=@group_bill.tip%>
-          <h2>Total <%=@group_bill.total%>
-      </div>  -->
+          <h2>Tip $<%=(@group_bill.tip).round(2)%></h2>
+          <h2 class="total">Total $<%=(@group_bill.total).round(2)%></h2>
+      </div>  
 
     </div>
 
@@ -54,19 +50,23 @@
         
     </div>
 
-    <h2>Add Friends</h2>    
-      <%= form_with(model: @bill) do |form| %>
-        <%= form.hidden_field :group_bill_id, value: @group_bill.id %>
-        <%= form.select(:users_ids, options_for_select(@users_to_add), { :prompt => "Please select"}, { :multiple => true, :size => 5 })%>
-        <%= form.submit  "Add friends"%>
-      <% end %> 
+    <div class="friends_container">
+      <h4>Add Friends</h4>    
+        <%= form_with(model: @bill) do |form| %>
+          <%= form.hidden_field :group_bill_id, value: @group_bill.id %>
+          <%= form.select(:users_ids, options_for_select(@users_to_add), { :prompt => "Please select"}, { :multiple => true, :size => 5 })%>
+          <br>
+          <%= form.submit  "Add friends"%>
+        <% end %> 
+    
 
       <div id="invisible">
-       <%= form_with( model: BillsItem.new) do |form| %>
-          <%=form.hidden_field :group_bill_id, value: @group_bill.id %>
-          <%=form.hidden_field :admin_id, value: @admin.id %>
-          <%=form.text_field :list_of_bills_items, id: "array_of_data"%>
-          <%= form.submit "Split"%>  <br/><br>
-       <% end %>
+        <%= form_with( model: BillsItem.new) do |form| %>
+            <%=form.hidden_field :group_bill_id, value: @group_bill.id %>
+            <%=form.hidden_field :admin_id, value: @admin.id %>
+            <%=form.text_field :list_of_bills_items, id: "array_of_data"%>
+            <%= form.submit "Split", class: "split_button" %> 
+        <% end %>
       </div>
+    </div>
 </div>
