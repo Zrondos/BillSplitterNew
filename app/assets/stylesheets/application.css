@@ -1,59 +1,12 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
- body {
-    margin: 0;
-    background-color: #EAE5E5;
-    font-family: 'Roboto', sans-serif;
-    color: black;
-    font-size: 1.1em;
-    line-height: 1.5;
-  }
-
- #banner {
-    min-height: 60px;
-    background-color: white;
-    color: #FF473A;
-    display: flex;
-    justify-content: space-between;
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-  
-  #banner .logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 2em;
-    padding-top: 15px;
-    padding-bottom: 0;
-    letter-spacing: 2.5px;
-  
-  }
-
-  #banner .icon {
-    color: #FF473A;
-    padding-top: 15px;
-    padding-bottom: 0;
-  }
-
 .item{
+    border: 2px solid black;
     display: inline-block;
     width: 98%;
     /* height: 100%; */
 }
 
 .items_users{
+    border: 1px solid black;
     z-index: 2;
     height: 100%;
     padding: 10px;
@@ -61,6 +14,7 @@
 }
 
 .user{
+    border:2px solid black;
     padding: 10px;
     display: inline-block;
     margin: 20px;
@@ -72,24 +26,15 @@
     display:none;
 }
 
-.receipt{
+.users_container{
     font-size:10px;
     overflow-x: scroll;
     overflow-y: hidden;
     white-space: nowrap;
 }
 
-#section-b {
-    padding: 2em 1em 1em;
+.split-bill-container{
+    height: 500px;
     overflow-y: scroll;
-}
-  
-#section-b .item-users .flex {
-    display: flex;
-    justify-content: space-between;
-}
 
-  
-  @media (min-width: 700px) {
-    
-  } 
+}
