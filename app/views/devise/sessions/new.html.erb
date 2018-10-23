@@ -1,48 +1,39 @@
 
 
 <!--<h2>Log in</h2> -->
-<div id="bill_page">  
-
-
-  <div class="logo-banner">
-  </div>
-  
-  <div class="container-landing-page">
-    <section class="page-title">
-    <!-- <%=image_tag("mikasa.jpg") %> -->
-    <br><br>
+<div id="login_page">  
     
-      <div id="login-text"><strong>LET'S <br>GO <br> SPLIT</strong></div>  
+  <div class="login-text">SPLIT</div>  
        
-    </section>
 
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <div class="field">
-        <%= f.email_field :email,  autofocus: true, autocomplete: "email", placeholder: "Email address", class:"field-style"  %>
-      </div>
-      <div class="field">
-        <%= f.password_field :password, autocomplete: "current-password", placeholder: "Password", class:"field-style" %>
-      </div>
-      <% if devise_mapping.rememberable? -%>
-        <div class="field">
-        <div id="align-remember">  <%= f.check_box :remember_me %> </div>
-         <div id="align-remember"> <%= f.label :remember_me %> </div>
-        </div>
-      <% end -%>
-      <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
-       <div id="align-password"> <%= link_to "Forgot your password", new_password_path(resource_name) %></div><br />
-      <% end -%>
+    <div class="login_form">
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <div class="field">
+            <%= f.email_field :email,  autofocus: true, autocomplete: "email", placeholder: "Email address", class:"field-style"  %>
+          </div>
+
+          <div class="field">
+            <%= f.password_field :password, autocomplete: "current-password", placeholder: "Password", class:"field-style" %>
+          </div>
+
+        
+
+        <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+        <div id="align-password"> <%= link_to "Forgot your password", new_password_path(resource_name) %></div><br />
+        <% end -%>
+
         <div class="actions">
           <%= f.submit "Log in", class:"login" %>
         </div>
-    <% end %>
+      <% end %>
+    </div>
 
     <%= render "devise/shared/links" %>
 
   </div> 
 </div> 
 
-</div> 
+
 
 
 

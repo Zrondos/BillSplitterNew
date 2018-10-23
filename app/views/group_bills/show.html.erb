@@ -1,11 +1,14 @@
 
+<div class="group_bill_info">
+        <br>
+        <h3>Welcome <%=User.find(@group_bill.admin_id).first_name.capitalize%></h3>
+        <h2 class="group_bill_name"><%=@group_bill.name%> Bill</h2>
+      </div>
 <div id="group_bill_page">
       <!-- Banner with logo -->
+    
     <div class="bill">
-      <div class="group_bill_info">
-        <h3>Welcome <%=User.find(@group_bill.admin_id).first_name.capitalize%></h3>
-        <h2><%=@group_bill.name%> Bill</h2>
-      </div>
+      
 
     <!-- item/receipt and price of item  -->
       <div class="items_container">
@@ -20,7 +23,10 @@
                   
                   <%item.bills.each do |bill|%>
                     <%bill.users.each do |user|%>
-                      <div class="user" id="bill<%=bill.id%>" draggable="true" ondragstart="dragstart_handler(event);"> <%=user.first_name.capitalize%><br><%=user.last_name.capitalize%> 
+                      <div class="user" id="bill<%=bill.id%>" draggable="true" ondragstart="dragstart_handler(event);"> 
+                      <div class="initials">
+                      <%=user.first_name.capitalize[0]%>.<%=user.last_name.capitalize[0]%>.
+                       </div>
                       </div>
                     <% end %>
                   <%end %> 
@@ -45,6 +51,7 @@
 
         <%@bills_on_group_bill.each do |bill|%>
             <%bill.users.each do |user|%>
+            
               <div  class="btn-big-circle" id="bill<%=bill.id%>" draggable="true" ondragstart="dragstart_handler(event);"> 
                 <div class="btn-big-text"><%=user.first_name.capitalize[0]%>.<%=user.last_name.capitalize[0]%>. </div>
               </div>
@@ -59,7 +66,7 @@
         <%= form_with(model: @bill) do |form| %>
           <%= form.hidden_field :group_bill_id, value: @group_bill.id %>
           <%= form.select(:users_ids, options_for_select(@users_to_add), { :prompt => "Please select"}, { :multiple => true, :size => 5 })%>
-          <br>
+         <br>
           <%= form.submit  "Add friends"%>
         <% end %> 
 

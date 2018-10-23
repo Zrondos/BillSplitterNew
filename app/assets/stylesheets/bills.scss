@@ -2,7 +2,19 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 #bill_page{
-    
+  background-color: #EAE5E5;
+
+  .user {
+    font-size:10px;
+    height: 25px;
+    width: 25px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: 20px;
+  }
+  
+.bill{
     margin: 0;
     background-color: #EAE5E5;
     font-family: 'Roboto', sans-serif;
@@ -11,7 +23,7 @@
     line-height: 1.5;
     margin: -7px;
     margin-top: 2px;
-    padding-top: 1px;
+    padding-top: 1px;}
 
   .bill_info{
     text-align: center;
@@ -23,12 +35,15 @@
 }
 
 .items_users{
-  border-bottom: 1px solid black;
+  border-top: 1px dotted black;
+  border-bottom: 1px dotted black;
   padding-top: 3px;
   padding-left: 10px;
   z-index: 2;
   width: 98%;
   position: relative;
+
+  padding-bottom: 12px;
 }
 
 .item_price{
@@ -43,21 +58,16 @@
 }
 
 .users_container{
-  font-size:10px;
+  font-size: 10px;
   overflow-x: scroll;
   overflow-y: hidden;
   white-space: nowrap;
   text-align: center;
+  padding-bottom: 250px;
+  padding-top:10px;
 }
 
-.user{
-  border:2px solid black;
-  padding: 10px;
-  display: inline-block;
-  margin: 20px;
-  border-radius: 1000px;
-  font-size:10px;
-}
+
 
 .totals_container{
   text-align: center;
@@ -76,6 +86,7 @@
 
 .total{
   font-size:20px;
+  padding-bottom: 30px;
 }
 
 .split_button{

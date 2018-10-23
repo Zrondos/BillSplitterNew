@@ -18,7 +18,6 @@
     display: inline-block;
     margin-top: -50px;
     margin-bottom: -35px;
-    margin-left: 237px;
 
 }
 
@@ -26,26 +25,26 @@
     font-size:53px;
 }
 
-/* #banner{
+#banner{
     width: 100%;
     display: flex;
     justify-content: space-between;
-} */
+}
 
 
-/* ion-icon{
+ion-icon{
     height: 50px;
     width: 50px;
     color: #FF473A !important;
     padding-top: 15px;
     padding-bottom: 0;
     letter-spacing: 2.5px;
-} */
+}
 
-/* .logoutbutton{
+.logoutbutton{
     position: absolute;
-    top: 60px;
-    right: 0;
-} */
+    top: 70px;
+    right: 11px;
+}
 
 

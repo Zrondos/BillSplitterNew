@@ -1,4 +1,9 @@
 <div id="bill_page">
+  
+  
+  <% totalprice = 0%>
+ 
+<div class="bill">
   <div class="bill_info">
     <% @bill.users.each do |user| %>
       <h3>Welcome <%=user.first_name.capitalize%> </h3>
@@ -7,9 +12,6 @@
     <h3>Created by <%=@admin.first_name.capitalize%> <%=@admin.last_name.capitalize %></h3>
   </div>
   
-  <% totalprice = 0%>
- 
-<div class="bill">
   <div class="items_container">
         <% @items.each do |item| %>
           <% totalprice+=item.price%>
@@ -19,10 +21,16 @@
             <span class="item_price">$<%=(item.price).round(2) %></span>
               <%item.bills.each do |bill|%>
                 <%bill.users.each do |user|%>
-                    <div class="user" id="bill<%=bill.id%>" draggable="true" ondragstart="dragstart_handler(event);"> <%=user.first_name.capitalize%><br><%=user.last_name.capitalize%> 
-                    </div>
+                    <div class="user" id="bill<%=bill.id%>" draggable="true" ondragstart="dragstart_handler(event);"> 
+                      <div class="initials">
+                      <%=user.first_name.capitalize[0]%>.<%=user.last_name.capitalize[0]%>.
+                       </div>
+                      </div>
                 <% end %>
               <%end %> 
+
+
+
           </div>
           </div>  
         <% end %> 
@@ -42,7 +50,9 @@
   <div class="users_container">
       <%@group_bill.bills.each do |bill| %>
           <%bill.users.each do |user|%>
-            <div  class="user" id="bill<%=bill.id%>" draggable="true" ondragstart="dragstart_handler(event);"> <%=user.first_name.capitalize%><br><%=user.last_name.capitalize%> 
+            <div  class="user" id="bill<%=bill.id%>" draggable="true" ondragstart="dragstart_handler(event);"> 
+              <div class="initials_bottom"> <%=user.first_name.capitalize[0]%>.<%=user.last_name.capitalize[0]%> 
+              </div>
             </div>
           <% end %>
       <% end %>    

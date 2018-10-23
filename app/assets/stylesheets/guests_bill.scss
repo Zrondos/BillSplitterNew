@@ -39,8 +39,10 @@ body {
     text-align:  left;
 }
 .submitButton {
-  background-color:blue;
-  font-size:20px;
-  width:140px;
-  height: 40px;;
+  font-size: 20px;
+    box-shadow: 1px 1px;
+    border-radius: 10px;
+    width: 158px;
+    height: 40px;
 }
+
