@@ -1,11 +1,22 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 
-<%=current_user.id%>
-<%= form_with model: @group_bill do |form| %>
-  Event Name: <%=form.text_field :name%>
-  <%= form.hidden_field :admin_id, value: current_user.id%> <br />
-  Receipt <%= form.file_field :receipt%><br>
-  <%= form.submit %> 
-<% end %>
+
+<div class="cameraPageContainer">
+
+  <div class="uploadImageTitle"> Upload Bill </div>
+  <div class="cameraIcon"> <i class="fas fa-camera fa-10x"></i> </div>
+
+  <div class="uploadBillForm">
+  <%# <%=current_user.id%> 
+  <%= form_with model: @group_bill do |form| %>
+    <div class="eventName"> Event Name:  <%=form.text_field :name%> </div> 
+    <%= form.hidden_field :admin_id, value: current_user.id%> 
+    <div class="receipt">  Receipt   <%= form.file_field :receipt%> </div> 
+    <div > <%= form.submit  :class => 'submitButton' %> </div>
+  <% end %>
+  </div>
+
+</div>
             
 
 

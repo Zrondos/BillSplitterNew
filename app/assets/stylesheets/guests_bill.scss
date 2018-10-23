@@ -1,3 +1,46 @@
 // Place all the styles related to the Guests_bill controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+    
+}
+.cameraPageContainer {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top:20px;
+}
+.uploadImageTitle {
+  font-family: Ariel;
+  font-size:46px;
+}
+.cameraIcon {
+  margin-top:20px;
+}
+.fas {
+  color:orange;
+}
+.uploadBillForm {
+  margin:10px;
+  font-size:22px;
+  padding:10px;
+  align-content: center;
+  justify-content: center;
+  display: flex;
+
+}
+.eventName {
+  margin:24px;
+  text-align: left;
+}
+.receipt {
+    margin:24px;
+    text-align:  left;
+}
+.submitButton {
+  background-color:blue;
+  font-size:20px;
+  width:140px;
+  height: 40px;;
+}
