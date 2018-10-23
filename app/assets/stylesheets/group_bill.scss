@@ -2,115 +2,144 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 #group_bill_page{
-
-  body {
     margin: 0;
     background-color: #EAE5E5;
     font-family: 'Roboto', sans-serif;
     color: black;
     font-size: 1.1em;
     line-height: 1.5;
+  
+  .items_container{
+      height: 500px;
+      overflow-y: scroll;
+      
+  }
+
+  .group_bill_info{
+    text-align: center;
+  }
+
+  .item{
+    border: 2px solid black;
+    display: inline-block;
+    width: 98%;
+}
+
+.items_users{
+  border: 1px solid black;
+  z-index: 2;
+  height: 100%;
+  width: 100%;
+  
+  position: relative;
+}
+
+.item_price{
+  border: 2px solid black;
+  position: relative;
+  float: right;
+  bottom: 29px;
+}
   }
    
-  h2 {
-    margin: 0;
-    padding: 1em 0;
-  }
+  // h2 {
+  //   margin: 0;
+  //   padding: 1em 0;
+  // }
   
-  p {
-    margin: 0;
-    padding: 1em 0;
-  }
+  // p {
+  //   margin: 0;
+  //   padding: 1em 0;
+  // }
   
-  .btn-circle {
-    height: 25px;
-    width: 25px;
-    background-color: lightgray;
-    border-radius: 50%;
-    display: inline-block;
-  }
+  // .btn-circle {
+  //   height: 25px;
+  //   width: 25px;
+  //   background-color: lightgray;
+  //   border-radius: 50%;
+  //   display: inline-block;
+  // }
   
-  .btn-big-circle {
-    height: 50px;
-    width: 50px;
-    background-color: lightgray;
-    border-radius: 50%;
-    display: inline-block;
-  }
+  // .btn-big-circle {
+  //   height: 50px;
+  //   width: 50px;
+  //   background-color: lightgray;
+  //   border-radius: 50%;
+  //   display: inline-block;
+  // }
   
-  .btn {
-    display: inline-block;
-    background-color: #FF473A;
-    color: white;
-    text-decoration: none;
-    padding: 1em 2em;
-    margin: 0.5em 0;
-    box-shadow: 2px 5px 18px #88888888;
-    width: 200px;
-  }
+  // .btn {
+  //   display: inline-block;
+  //   background-color: #FF473A;
+  //   color: white;
+  //   text-decoration: none;
+  //   padding: 1em 2em;
+  //   margin: 0.5em 0;
+  //   box-shadow: 2px 5px 18px #88888888;
+  //   width: 200px;
+  // }
   
-  #banner {
-    min-height: 60px;
-    background-color: white;
-    color: #FF473A;
-    text-align: center;
-  }
+  // #banner {
+  //   min-height: 60px;
+  //   background-color: white;
+  //   color: #FF473A;
+  //   text-align: center;
+  // }
   
-  #banner .logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 2em;
-    padding-top: 15px;
-    padding-bottom: 0;
-    letter-spacing: 2.5px;
+  // #banner .logo {
+  //   font-family: 'Playfair Display', serif;
+  //   font-size: 2em;
+  //   padding-top: 15px;
+  //   padding-bottom: 0;
+  //   letter-spacing: 2.5px;
   
-  }
+  // }
   
-  #section-b {
-    padding: 2em 1em 1em;
-  }
+  // #section-b {
+  //   padding: 2em 1em 1em;
+  // }
   
-  #section-b .item-users .flex {
-    display: flex;
-    justify-content: space-between;
-  }
+  // #section-b .item-users .flex {
+  //   display: flex;
+  //   justify-content: space-between;
+  // }
   
-  #section-d {
-    padding: 2em 2em;
-  }
+  // #section-d {
+  //   padding: 2em 2em;
+  // }
   
-  #section-d .sub-total-price {
-    border-top: 1px solid black;
-  }
+  // #section-d .sub-total-price {
+  //   border-top: 1px solid black;
+  // }
   
-  #section-d .sub-total-price,
-  .tax-price,
-  .tip-price,
-  .TOTAL-price {
-    display: flex;
-    justify-content: space-between;
-  }
+  // #section-d .sub-total-price,
+  // .tax-price,
+  // .tip-price,
+  // .TOTAL-price {
+  //   display: flex;
+  //   justify-content: space-between;
+  // }
   
-  #section-d .TOTAL-price {
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
-  }
+  // #section-d .TOTAL-price {
+  //   border-top: 1px solid black;
+  //   border-bottom: 1px solid black;
+  // }
   
-  #section-e {
-    padding: 2em 2em; 
-  }
+  // #section-e {
+  //   padding: 2em 2em; 
+  // }
   
-  #section-e .add-user-icons-to-bill {
-    display: flex;
-  }
+  // #section-e .add-user-icons-to-bill {
+  //   display: flex;
+  // }
   
-  #main-footer {
-    min-height: 70px;
-    background-color: white;
-    text-align: center;
-  }
+  // #main-footer {
+  //   min-height: 70px;
+  //   background-color: white;
+  //   text-align: center;
+  // }
   
-  @media (min-width: 700px) {
+  // @media (min-width: 700px) {
     
-  }
+  // }
   
-}
