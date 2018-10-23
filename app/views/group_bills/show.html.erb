@@ -29,27 +29,31 @@
         <% end %> 
       </div>
 
-      <div class="totals_container">
-          <h2>Subtotal $<%=(@group_bill.subtotal).round(2)%></h2>
-          <h2>Tax <%=@group_bill.tax%></h2> 
-          <h2>Tip $<%=(@group_bill.tip).round(2)%></h2>
-          <h2 class="total">Total $<%=(@group_bill.total).round(2)%></h2>
+      <div id="section-d">
+          <p>Subtotal $<%=(@group_bill.subtotal).round(2)%></p>
+          <p>Tax <%=@group_bill.tax%></p> 
+          <p>Tip $<%=(@group_bill.tip).round(2)%></p>
+          <p class="total">Total $<%=(@group_bill.total).round(2)%></p>
       </div>  
 
     </div>
+    <!-- <section id="section-e" class="add-user-icons-to-bill">
+        <a href="#section-e" class="btn-big-circle"></a>
+    </section> -->
+    <section id="section-e" class="add-user-icons-to-bill">
+      <div class="users_container">
 
-    <div class="users_container">
-
-      <%@bills_on_group_bill.each do |bill|%>
-          <%bill.users.each do |user|%>
-            <div  class="user" id="bill<%=bill.id%>" draggable="true" ondragstart="dragstart_handler(event);"> <%=user.first_name.capitalize%><br><%=user.last_name.capitalize%> 
-            </div>
+        <%@bills_on_group_bill.each do |bill|%>
+            <%bill.users.each do |user|%>
+              <div  class="btn-big-circle" id="bill<%=bill.id%>" draggable="true" ondragstart="dragstart_handler(event);"> 
+                <div class="btn-big-text"><%=user.first_name.capitalize[0]%>.<%=user.last_name.capitalize[0]%>. </div>
+              </div>
 
           <% end %>
       <% end %>
         
-    </div>
-
+      </div>
+  </section>
     <div class="friends_container">
       <h4>Add Friends</h4>    
         <%= form_with(model: @bill) do |form| %>
@@ -58,14 +62,14 @@
           <br>
           <%= form.submit  "Add friends"%>
         <% end %> 
-    
+
 
       <div id="invisible">
         <%= form_with( model: BillsItem.new) do |form| %>
             <%=form.hidden_field :group_bill_id, value: @group_bill.id %>
             <%=form.hidden_field :admin_id, value: @admin.id %>
             <%=form.text_field :list_of_bills_items, id: "array_of_data"%>
-            <%= form.submit "Split", class: "split_button" %> 
+            <%= form.submit "Split", class: "btn" %> 
         <% end %>
       </div>
     </div>
