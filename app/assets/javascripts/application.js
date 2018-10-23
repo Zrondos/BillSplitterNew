@@ -38,3 +38,4 @@ function drop_handler(event){
     array=[]
 }
 
+
