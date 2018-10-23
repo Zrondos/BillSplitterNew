@@ -36,6 +36,6 @@ function drop_handler(event){
     document.getElementById("array_of_data").value+=array
 
     array=[]
-
 }
+
 

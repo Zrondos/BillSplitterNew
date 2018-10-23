@@ -1,40 +1,25 @@
-.item{
-    border: 2px solid black;
-    display: inline-block;
-    width: 98%;
-    /* height: 100%; */
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ .logo{
+     display:inline-block;
 }
 
-.items_users{
-    border: 1px solid black;
-    z-index: 2;
-    height: 100%;
-    padding: 10px;
-    position: relative;
-}
-
-.user{
-    border:2px solid black;
-    padding: 10px;
-    display: inline-block;
-    margin: 20px;
-    border-radius: 1000px;
-    font-size:10px;
-}
-
-#array_of_data{
-    display:none;
-}
-
-.users_container{
-    font-size:10px;
-    overflow-x: scroll;
-    overflow-y: hidden;
-    white-space: nowrap;
-}
-
-.split-bill-container{
-    height: 500px;
-    overflow-y: scroll;
-
+#banner{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 }
