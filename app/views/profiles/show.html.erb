@@ -10,19 +10,19 @@
           <!-- nav conatiner with logo and menu icon -->
         <div class="profile">
           <h1 class="personName"> <%=@user.first_name%> <%=@user.last_name%> <br> </h1>
-            <div class="profileImage"> <img src="photo1.jpeg" height="80px" width="80px" style="border-radius:35px;">   </div>
+
+            <div class="profileImage"><ion-icon name="person" style="height:100px; width:100px; color:blue;"></ion-icon>   </div>
             <%= link_to 'Edit', edit_user_registration_path, class:"login" %>
             <div class="email">Email: <%=@user.email%></div>
         </div>
         <div class="profile"><h4 style="align-text:center;"> My Bills</h4></div>
-        
-          <%@user.bills.each do |bill| %>
+        <%@user.bills.each do |bill| %>
             <%if current_user.id==bill.group_bill.admin_id%>
             <%next %>
             <%end%>
           <div class="payment">
             <button type="button" id="menuButton" name="button">
-              <%=bill.group_bill.name%> bill <br>
+              <%=bill.group_bill.name.capitalize%> bill <br>
                 <%group_bill_total=bill.group_bill.total%>
                 
                 <% totalprice = 0%>
@@ -34,28 +34,27 @@
                          <%total_tip=bill.group_bill.tip%> 
                           <%my_percentage=totalprice/(bill.group_bill.total)%>
                      I owe $<%=result=((totalprice)+(total_tax*my_percentage)+(total_tip*my_percentage)).round(2)%>
-                  <%end %> 
-                to <%=User.find(bill.group_bill.admin_id).first_name%>
-              <%= link_to 'BIll', bill_path(bill.id), :class => 'navbar-link' %>  
+                <%end %> 
+                to <%=User.find(bill.group_bill.admin_id).first_name.capitalize%>
+              <%= link_to 'View My bill', bill_path(bill.id), :class => 'navbar-link' %>  
           <%end%>
           </div>
-          <%@user.bills.each do |bill| %>
-          
+            <%@user.bills.each do |bill| %>
                 <%if current_user.id==bill.group_bill.admin_id%>
-                    <div class="profile"><h4 style="align-text:center;"> Group Bills</h4></div>
-                <button type="button" id="menuButton" name="button">
-                    <%= link_to 'Group Bill', group_bill_path(bill.group_bill.id), :class => 'navbar-link' %> 
-                      <%bill.group_bill.bills.each do |bill| %>
-                        <%bill.users.each do |user|%>
-                          <%=user.first_name%>
-                        <%end%>
-                      <%end%>  
+                  <div class="profile"><h4 style="align-text:center;"> Group Bills</h4></div>
+                    <button type="button" id="menuButton" name="button">
+                      <%= link_to 'View Bill', group_bill_path(bill.group_bill.id), :class => 'navbar-link' %> 
+                        <%=bill.group_bill.name.capitalize%> bill <br>
+                        Total: <%=bill.group_bill.total%> Friends:
+                          <%bill.group_bill.bills.each do |bill| %>
+                            <%bill.users.each do |user|%>
+                              <%=user.first_name.capitalize%>
+                            <%end%>
+                          <%end%>  
                 <% else %>
                 <%end%> 
-                </button>
+                    </button>
                   </div>   
-          <%end%>     
-          
-          
-  </div>
+            <%end%>         
+    </div>
 </div>
