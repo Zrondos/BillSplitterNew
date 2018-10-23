@@ -5,11 +5,10 @@ class ProfilesController < ApplicationController
   end
 
   def show
-    @bill=Bill.find(params[:id])
     @user = User.find(params[:id])
     @users_bill = UsersBill.find(params[:id])
     @users = User.all.map{ |c| [ c.id] }
-    @group_bill = @bill.group_bill
+
 
 
   end
