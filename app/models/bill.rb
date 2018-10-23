@@ -4,4 +4,6 @@ class Bill < ApplicationRecord
     has_many :items, through: :bills_items
     has_many :users_bills
     has_many :users, through: :users_bills
+
+    
 end
