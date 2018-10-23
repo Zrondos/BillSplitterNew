@@ -1,6 +1,7 @@
 <div id="bill_page">  
   <div class="logo-banner">
     <h1 ></h1>
+          <div class="background_picture"></div>
   </div>
   <div class="container-landing-page">
     <section class="page-title">
@@ -12,12 +13,13 @@
       <div class="field">
         <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email address", class:"field-style" %>
       </div>
-
+      <br>
       <div class="actions">
         <%= f.submit "Reset password instructions", class:"login" %>
       </div>
         <br>
     <% end %>
    <%= render "devise/shared/links" %>
+   
  </div>
 </div>

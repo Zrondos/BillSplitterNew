@@ -13,11 +13,25 @@
   </head>
 
   <header id="banner" class="grid">
-    <a href="./new" class="icon"><ion-icon name="camera" style="height:50px; width:50px;"></ion-icon></a>
-    <div class="logo"><h2 class="logo_text">Split</h2></div>
-    <a href="/profile" class="icon"><ion-icon name="contact" style="height:50px; width:50px;"></ion-icon></a>
+      <script src="https://unpkg.com/ionicons@4.2.2/dist/ionicons.js"></script>
+<% if user_signed_in? %>
+  <%= link_to new_group_bill_path, class: "btn btn-default" do %> 
+    <ion-icon name="camera" style="height:50px; width:50px;"></ion-icon>
+  
+  <div class="logo"><h2 class="logo_text">Split</h2></div>
+      
+  <%= link_to profile_path(current_user.id), class: "btn btn-default" do %>
+     <ion-icon name="contact", class="ion-icon"></ion-icon>
+    <% end %>
+         <%= link_to "Logout", destroy_user_session_path, method: :delete, class: 'logoutbutton'  %> 
 
-    <script src="https://unpkg.com/ionicons@4.2.2/dist/ionicons.js"></script>
+
+    <% else %>
+      <%= link_to "", new_user_registration_path, class: style="display:none;"  %> 
+      <%= link_to "", new_user_session_path, :class => 'hidden'  %>
+    <% end %>
+<% end %>
+
   </header>
   <body>
 
@@ -25,5 +39,6 @@
       <%= yield %>
   </body>
 </html>
+
 
 

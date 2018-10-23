@@ -18,6 +18,8 @@
     display: inline-block;
     margin-top: -50px;
     margin-bottom: -35px;
+    margin-left: 237px;
+
 }
 
 .logo_text{
@@ -31,6 +33,16 @@
 }
 
 .ion-icon{
+    position: absolute;
+    top: 0.2;
+    right: 0;
     height: 50px;
     width: 50px;
+}
+
+.logoutbutton{
+    position: absolute;
+    top: 60px;
+    right: 0;
+
 }

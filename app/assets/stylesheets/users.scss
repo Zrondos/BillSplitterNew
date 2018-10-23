@@ -11,13 +11,10 @@
   width: 100%;
   height: 90%;
   background-image:url('/assets/images/mikasa.jpg');
-
-  background-size: cover;
- 
- 
+  background-size: cover; 
 }
 
-  .container {
+.container {
   height:60%; 
   overflow: scroll;
   }
@@ -60,8 +57,8 @@
 
   .hello-user {
     font-family: 'Roboto', sans-serif;
-    font-size: 10px;
-    letter-spacing: 2px;
+    font-size: 9px;
+    letter-spacing: 1.5px;
   }
 
   .item,
@@ -82,9 +79,9 @@
   }
   .bottom_nav {
     background-color: #FFFEFE;
-    height: 18%;
+    height: 15%;
     width: 100%;
-    padding: 6px;
+    padding: 5px;
     position: fixed;
     margin: 0;
   }
@@ -95,10 +92,10 @@
   button {
     justify-content: center;
     background-color: #FF473A;
-    box-shadow: 2px 5px 18px #88888888;
+    box-shadow: 2px 5px 5px #88888888;
     border: none;
     width: 300px;
-    height: 40px;
+    height: 20px;
     bottom: 0;
   }
 
@@ -113,19 +110,19 @@
 }
 .field-style{
 width: 70%;
-padding: 30px 30px;
-margin-left: 15%;
+padding: 10px 10px;
+margin-left: 12%;
 display: inline-block;
 border: 1px solid #ccc;
 border-radius: 4px;
-font-size: 150%;
+font-size: 120%;
 box-sizing: border-box;
 }
 
 .update-style{
   width: 70%;
-  padding: 18px 18px;
-  margin-left: 15%;
+  padding: 13px 13px;
+  margin-left: 12%;
   display: inline-block;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -137,8 +134,8 @@ box-sizing: border-box;
 color: white; 
 background-color: #FF473A;
 width: 70%;
-padding: 30px 30px;
-margin-left: 15%;
+padding: 10px 10px;
+margin-left: 12%;
 display: inline-block;
 border: 1px solid #ccc;
 border-radius: 10px;
@@ -159,13 +156,13 @@ box-sizing: border-box;
 #align-password{
   text-align: right;
   padding-right: 20px;
-  font-size: 150%;
+  font-size: 100%;
   color: white;
 }
 #align-remember{
   text-align: left;
   padding-right: 20px;
-  font-size: 150%;
+  font-size: 100%;
   color: white;
 }
 #forgot-password {
