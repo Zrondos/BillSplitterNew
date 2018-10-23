@@ -60,8 +60,8 @@
 
   .hello-user {
     font-family: 'Roboto', sans-serif;
-    font-size: 10px;
-    letter-spacing: 2px;
+    font-size: 9px;
+    letter-spacing: 1.5px;
   }
 
   .item,
@@ -82,9 +82,9 @@
   }
   .bottom_nav {
     background-color: #FFFEFE;
-    height: 18%;
+    height: 15%;
     width: 100%;
-    padding: 6px;
+    padding: 5px;
     position: fixed;
     margin: 0;
   }
@@ -113,19 +113,19 @@
 }
 .field-style{
 width: 70%;
-padding: 30px 30px;
-margin-left: 15%;
+padding: 20px 20px;
+margin-left: 12%;
 display: inline-block;
 border: 1px solid #ccc;
 border-radius: 4px;
-font-size: 150%;
+font-size: 120%;
 box-sizing: border-box;
 }
 
 .update-style{
   width: 70%;
-  padding: 18px 18px;
-  margin-left: 15%;
+  padding: 13px 13px;
+  margin-left: 12%;
   display: inline-block;
   border: 1px solid #ccc;
   border-radius: 4px;
