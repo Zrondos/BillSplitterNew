@@ -1,3 +1,72 @@
+<div id="group_bill_page">
+    <div id="main"> 
+  <!-- section A: holds hello user -->
+      <section id="section-a" class="grid-two">
+        <div class="content-wrap">
+          <h2 class="hello-user">Hello, <%=@admin.first_name.capitalize%></h2>
+        </div>
+      </section>    
+  
+  <!-- section-B: holds item, price and user dropped icon -->
+      <section id="section-b" class="grid-two">
+        <div class="recipt">
+            <% @items.each do |item| %>
+            
+          <div class="item-container" id="item<%=item.id%>">
+            <p class="item"><%= item.name.capitalize %></p>
+            <p class="price">$<%=item.price %></p>
+            <%item.bills.each do |bill|%>
+                  <%bill.users.each do |user|%>
+                  <!-- <div class="dropped-content" ondrop="drop_handler(event);" ondragover="dragover_handler(event);">
+                  <h2>DROP HERE</h2></div>
+                  <a href="#section-b" class="btn-circle">user</a> -->
+                  </div>
+              <% end %>
+            <% end %>
+          </div>
+          <%end%>
+          <!-- user dropped icons -->        
+          
+  
+        </div>
+      </section>    
+  <!-- section-D: subtotal, tax, tip, TOTAL -->
+      <section id="section-d" class="grid-three">
+          <div class="sub-total-price">
+            <p class="sub-name">Sub total</p>
+            <p class="sub-sum">$<%=@group_bill.subtotal%></p>
+          </div>
+  
+          <div class="tax-price">
+            <p class="tax-name">Tax</p>
+            <p class="tax-sum">$<%=@group_bill.tax%></p>
+          </div>
+  
+          <div class="tip-price">
+            <p class="tip-name">Tip</p>
+            <p class="tip-sum">$<%=@group_bill.tip%></p>
+          </div>
+  
+          <div class="TOTAL-price">
+            <p class="total-name">TOTAL</p>
+            <p class="total-sum">$<%=@group_bill.total%></p>
+          </div>
+        </section>
+  
+      </main>
+  
+      <!-- footer -->
+      <footer id="main-footer" class="split-pay-button">
+        <div class="wrap-button">
+          <a href="#main-footer" class="btn">Split Bill</a>
+        </div>
+  
+      </footer>
+
+
+
+
+
 <div class="top_div">
 <%@bill.users.each do |user| %>
   <h3>Welcome <%=user.first_name.capitalize%> </h3>
@@ -42,9 +111,7 @@
 
       
 
-      money to pay <%=totalprice%> <br>
-      <%totalprice=0%>
-      
+
 
       <div class="users_container">
       <%@bill.group_bill.bills.each do |bill|%>

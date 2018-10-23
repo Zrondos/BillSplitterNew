@@ -1,20 +1,29 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>BillSplitter</title>
+    <title>Split</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-  <script defer src="profile.js"></script>
-  <script src="https://unpkg.com/ionicons@4.2.2/dist/ionicons.js"></script>
-
-
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:900" rel="stylesheet">
+    <script src="https://unpkg.com/ionicons@4.2.2/dist/ionicons.js"></script>
   </head>
 
+  <header id="banner" class="grid">
+    <a href="./new" class="icon"><ion-icon name="camera" style="height:30px; width:30px;"></ion-icon></a>
+    <div class="logo"><strong>Split</strong></div>
+    <a href="/profile" class="icon"><ion-icon name="contact" style="height:30px; width:30px;"></ion-icon></a>
+
+    <script src="https://unpkg.com/ionicons@4.2.2/dist/ionicons.js"></script>
+  </head>
   <body>
+
+  <header>
+  
+  </header>
 
 <% if notice %>
   <p class="alert alert-success"><%= notice %></p>
@@ -37,8 +46,15 @@
 </p>
 
 
+  </header>
 
-    <%= yield %>
+  <body>
+      <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %> |
+
+      <main id="main">
+    
+      <%= yield %>
+    </main>
   </body>
 </html>
 

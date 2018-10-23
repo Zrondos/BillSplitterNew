@@ -76,7 +76,6 @@ class GroupBillsController < ApplicationController
         total: (@subtotal+@tax+@tip)
         )
 
-    puts "updated!!!!!!!!!!!!!!!!!!"
     
     items_array.each do |item|
         if item[0]=='Subtotal'
