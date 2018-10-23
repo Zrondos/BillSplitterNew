@@ -14,54 +14,12 @@
  *= require_self
  */
 
-
-
-
-.item{
-    border: 2px solid black;
-    display: inline-block;
-    width: 98%;
-    /* height: 100%; */
+ .logo{
+     display:inline-block;
 }
 
-.items_users{
-    border: 1px solid black;
-    z-index: 2;
-    height: 100%;
-    padding: 10px;
-    position: relative;
+#banner{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 }
-
-.user{
-    border:2px solid black;
-    padding: 10px;
-    display: inline-block;
-    margin: 20px;
-    border-radius: 1000px;
-    font-size:10px;
-}
-
-#array_of_data{
-    display:none;
-}
-
-.users_container{
-    font-size:10px;
-    overflow-x: scroll;
-    overflow-y: hidden;
-    white-space: nowrap;
-}
-
-.split-bill-container{
-    height: 500px;
-    overflow-y: scroll;
-
-}
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
-  li {
-    display: inline;
-  }
