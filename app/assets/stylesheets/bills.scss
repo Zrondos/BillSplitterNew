@@ -1,3 +1,96 @@
 // Place all the styles related to the Bills controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#bill_page{
+    
+    margin: 0;
+    background-color: #EAE5E5;
+    font-family: 'Roboto', sans-serif;
+    color: black;
+    font-size: 1.1em;
+    line-height: 1.5;
+    margin: -7px;
+    margin-top: 2px;
+    padding-top: 1px;
+
+  .bill_info{
+    text-align: center;
+  }
+
+  .item{
+    display: inline-block;
+    width: 100%;
+}
+
+.items_users{
+  border-bottom: 1px solid black;
+  padding-top: 3px;
+  padding-left: 10px;
+  z-index: 2;
+  width: 98%;
+  position: relative;
+}
+
+.item_price{
+  position: relative;
+  float: right;
+  padding-right: 10px;
+}
+
+.item_name{
+  position: relative;
+  float: left;
+}
+
+.users_container{
+  font-size:10px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.user{
+  border:2px solid black;
+  padding: 10px;
+  display: inline-block;
+  margin: 20px;
+  border-radius: 1000px;
+  font-size:10px;
+}
+
+.totals_container{
+  text-align: center;
+  font-size:10px;
+  margin-bottom: -25px;
+}
+
+#array_of_data{
+  display:none;
+}
+
+.friends_container{
+  text-align: center;
+  margin-top: -22px;
+}
+
+.total{
+  font-size:20px;
+}
+
+.split_button{
+    color: white;
+    background-color: #FF473A;
+    width: 50%;
+    margin-left: 15%;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 150%;
+    box-sizing: border-box;
+    position: relative;
+    right: 32px;
+    padding: 10px;
+    }
+
+  }

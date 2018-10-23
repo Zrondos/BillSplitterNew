@@ -8,12 +8,9 @@
     color: black;
     font-size: 1.1em;
     line-height: 1.5;
-  
-  // .items_container{
-  //     height: 500px;
-  //     overflow-y: scroll;
-      
-  // }
+    margin: -7px;
+    margin-top: 2px;
+    padding-top: 1px;
 
   .group_bill_info{
     text-align: center;
@@ -25,7 +22,9 @@
 }
 
 .items_users{
-  border: 1px solid black;
+  border-bottom: 1px solid black;
+  padding-top: 3px;
+  padding-left: 10px;
   z-index: 2;
   width: 98%;
   position: relative;
@@ -33,13 +32,12 @@
 
 .item_price{
   position: relative;
-  display: inline-block;
   float: right;
+  padding-right: 10px;
 }
 
 .item_name{
   position: relative;
-  display: inline-block;
   float: left;
 }
 
@@ -48,6 +46,7 @@
   overflow-x: scroll;
   overflow-y: hidden;
   white-space: nowrap;
+  text-align: center;
 }
 
 .user{
@@ -58,6 +57,40 @@
   border-radius: 1000px;
   font-size:10px;
 }
+
+.totals_container{
+  text-align: center;
+  font-size:10px;
+  margin-bottom: -25px;
+}
+
+#array_of_data{
+  display:none;
+}
+
+.friends_container{
+  text-align: center;
+  margin-top: -22px;
+}
+
+.total{
+  font-size:20px;
+}
+
+.split_button{
+    color: white;
+    background-color: #FF473A;
+    width: 50%;
+    margin-left: 15%;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 150%;
+    box-sizing: border-box;
+    position: relative;
+    right: 32px;
+    padding: 10px;
+    }
 
   }
 
