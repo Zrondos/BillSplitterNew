@@ -17,7 +17,7 @@ Welcome <%=@admin.first_name.capitalize%>
       <section class="page-title">
       Hello: <%=User.find(@group_bill.admin_id).first_name%>
       </section>
->>>>>>> master
+
     <!-- item/receipt and price of item  -->
       <% @items.each do |item| %>
         <div class="item" id="item<%=item.id%>">
@@ -65,5 +65,3 @@ Welcome <%=@admin.first_name.capitalize%>
         <%= form.submit "Split"%>  <br/><br>
        <% end %>
       </div>
-
-  
