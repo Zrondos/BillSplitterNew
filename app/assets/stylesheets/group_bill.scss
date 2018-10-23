@@ -9,38 +9,66 @@
     font-size: 1.1em;
     line-height: 1.5;
   
-  .items_container{
-      height: 500px;
-      overflow-y: scroll;
+  // .items_container{
+  //     height: 500px;
+  //     overflow-y: scroll;
       
-  }
+  // }
 
   .group_bill_info{
     text-align: center;
   }
 
   .item{
-    border: 2px solid black;
     display: inline-block;
-    width: 98%;
+    width: 100%;
 }
 
 .items_users{
   border: 1px solid black;
   z-index: 2;
-  height: 100%;
-  width: 100%;
-  
+  width: 98%;
   position: relative;
 }
 
 .item_price{
-  border: 2px solid black;
   position: relative;
+  display: inline-block;
   float: right;
-  bottom: 29px;
 }
+
+.item_name{
+  position: relative;
+  display: inline-block;
+  float: left;
+}
+
+.users_container{
+  font-size:10px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+
+.user{
+  border:2px solid black;
+  padding: 10px;
+  display: inline-block;
+  margin: 20px;
+  border-radius: 1000px;
+  font-size:10px;
+}
+
   }
+
+  // .user {
+//   font-size:10px;
+//   height: 25px;
+//   width: 25px;
+//   background-color: #bbb;
+//   border-radius: 50%;
+//   display: inline-block;
+// }
    
   // h2 {
   //   margin: 0;

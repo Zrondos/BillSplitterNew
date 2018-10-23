@@ -10,32 +10,35 @@
     <!-- item/receipt and price of item  -->
       <div class="items_container">
         <% @items.each do |item| %>
+          <div class="items_users" id="item<%=item.id%>" ondrop="drop_handler(event);" ondragover="dragover_handler(event);">
           <div class="item" id="item<%=item.id%>">
             
-            <div class="items_users" id="item<%=item.id%>" ondrop="drop_handler(event);" ondragover="dragover_handler(event);">
-                <div class="item_name"><%= item.name.capitalize %></div>
-                <div class="item_price">$<%=item.price %></div>
-                  <%item.bills.each do |bill|%>
-                  <%bill.users.each do |user|%>
+            <span class="item_name"><%= item.name.capitalize %></span> 
+            <span class="item_price">$<%=item.price %></span>
+            
+                  
+                  
+                  <!--<%item.bills.each do |bill|%>
+                    <%bill.users.each do |user|%>
                       <div class="user" id="bill<%=bill.id%>" draggable="true" ondragstart="dragstart_handler(event);"> <%=user.first_name.capitalize%><br><%=user.last_name.capitalize%> 
                       </div>
                     <% end %>
-                  <%end %>
+                  <%end %> -->
             </div>
           </div>  
         <% end %> 
       </div>
 
-      <div class="totals_container">
+      <!--<div class="totals_container">
           <h2>Subtotal $<%=(@group_bill.subtotal).round(2)%>
-          <!--<h2>Tax <%=@group_bill.tax%></h2> -->
+          <h2>Tax <%=@group_bill.tax%></h2> 
           <h2>Tip $<%=(@group_bill.tip).round(2)%>
           <h2>Total $<%=(@group_bill.total).round(2)%>
 
           <h2>Subtotal <%=@group_bill.subtotal%>
           <h2>Tip <%=@group_bill.tip%>
           <h2>Total <%=@group_bill.total%>
-      </div>
+      </div>  -->
 
     </div>
 
@@ -45,6 +48,7 @@
           <%bill.users.each do |user|%>
             <div  class="user" id="bill<%=bill.id%>" draggable="true" ondragstart="dragstart_handler(event);"> <%=user.first_name.capitalize%><br><%=user.last_name.capitalize%> 
             </div>
+
           <% end %>
       <% end %>
         
