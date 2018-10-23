@@ -8,6 +8,9 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up, keys: attributes)
     devise_parameter_sanitizer.permit(:account_update, keys: attributes)
   end
+
+  
+  
   # def configure_permitted_parameters
   #   update_attrs = [:first_name, :last_name, :payment_method, :password, :password_confirmation, :current_password]
   #   devise_parameter_sanitizer.permit :account_update, keys: update_attrs

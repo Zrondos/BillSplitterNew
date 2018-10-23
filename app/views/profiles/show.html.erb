@@ -1,11 +1,24 @@
 <h1>Profiles#show</h1>
 <p>Find me in app/views/profiles/show.html.erb</p>
 
-    <%@group_bill.admin_id do |admin|%>
-      <%=totalprice%>
-    <%end %> 
+<!--<%@group_bill.admin_id do |admin|%>
+  <%totalprice%>
+<%end %> 
       
-  
+<% totalprice = 0%>
+   
+    <% @items.each do |item| %>
+          <%item.name.capitalize %>
+          <%item.price/(item.bills.length) %>
+          <%  totalprice += item.price/(item.bills.length) %>
+          <%item.bills.each do |bill|%>
+            <%bill.users.each do |user|%>
+            <% end %>
+          <%end %>
+    <% end %> 
+  <%total_tax=@group_bill.tax%>
+  <%total_tip=@group_bill.tip%> 
+  <%my_percentage=totalprice/@group_bill.total%> -->
 
 <div id="profile-page">
 <div class="superContainer">
@@ -42,20 +55,42 @@
       <div class="payment">
           <button type="button" id="menuButton" name="button">
           <p>
-          BIll Id I belong to: <%=bill.id%>
-          group_bill I belong to: <%=bill.group_bill.id%>
-          admin_id as per group_bill = <%=bill.group_bill.admin_id%>
-          admin_id of the bill: <%=User.find(bill.group_bill.admin_id).first_name%>
-                        <%= link_to 'BIll', bill_path(bill.id), :class => 'navbar-link' %> 
-          <%if current_user.id==bill.group_bill.admin_id%>
-            <%= link_to 'Group Bill', group_bill_path(bill.group_bill.id), :class => 'navbar-link' %> 
-          <%end%>
-    
-          </p> 
+          <!--BIll Id I belong to: <%=bill.id%>-->
+          group_bill Name I belong to: <%=bill.group_bill.name%> <br>
+          <!--admin_id as per group_bill = <%bill.group_bill.admin_id%> -->
+          admin Name of the bill: <%=User.find(bill.group_bill.admin_id).first_name%> <br>
+          <% totalprice = 0%>
+           <!-- item/receipt and price of item  -->
+        <% bill.items.each do |item| %>
+          <%item.name.capitalize %>
+          <%item.price/(item.bills.length) %>
+          <%itemsTotal= totalprice += item.price/(item.bills.length) %>
+          <%total_tax=@group_bill.tax%>
+          <%total_tip=@group_bill.tip%> 
+          <%my_percentage=totalprice/@group_bill.total%>
+          My share of the bill:  $<%=result=((totalprice)+(total_tax*my_percentage)+(total_tip*my_percentage)).round(2)%>
+        <% end %> 
+         
+  <%= link_to 'BIll', bill_path(@bill.id), :class => 'navbar-link' %> 
+    <%if current_user.id==@bill.group_bill.admin_id%>
+        <%= link_to 'Group Bill', group_bill_path(@bill.group_bill.id), :class => 'navbar-link' %> 
+              
+                  <%@group_bill.bills.each do |bill| %>
+                    <%bill.users.each do |user|%>
+                      <%=user.first_name%>
+                    <%end%>
+                  <%end%>
+    <% else %>
 
-          </button>
-      </div>
+    <%end%>   
+      
+        
+    </div>
     <% end %>
+  </div>
+</div>
 
-</div>
-</div>
+
+
+
+      

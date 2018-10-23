@@ -10,6 +10,8 @@ class ProfilesController < ApplicationController
     @users_bill = UsersBill.find(params[:id])
     @users = User.all.map{ |c| [ c.id] }
     @group_bill = @bill.group_bill
+
+
   end
 
   def edit
