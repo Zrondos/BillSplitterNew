@@ -80,11 +80,12 @@ class GroupBillsController < ApplicationController
 
     
     items_array.each do |item|
-        if item[0]=='Subtotal'
+        
+        if item[0].downcase=='Subtotal' || item[0].downcase=='sub-total' || item[0].downcase=='sub total'
             next
-        elsif item[0]=='Tax'
+        elsif item[0].downcase=='tax'
             next
-        elsif item[0]=='Total'
+        elsif item[0].downcase=='total' || item[0].downcase=='balance due'
             next
         end
       Item.create(
@@ -177,13 +178,13 @@ class GroupBillsController < ApplicationController
         array.each do |s|
             s.gsub!(' ','')
         end
+
  
 
         item_price_pairs=[]
         numbers=["0","1","2","3","4","5","6","7","8","9","."," "]
+        first_item=true
         array.each do |string|
-
-
             item_info=""
             price=""
             string_indicies=(0...string.length).to_a
@@ -220,11 +221,14 @@ class GroupBillsController < ApplicationController
             if quantity==0
                 quantity=1
             end
-            price=price.to_i
+            price=price.to_f
             price_per=price/quantity
 
 
-
+            if first_item
+                item_capitalized=item_capitalized[5..-1]
+                first_item=false
+            end
             for i in 0...quantity
                 item_price_pairs.push([item_capitalized,price_per])
             end
