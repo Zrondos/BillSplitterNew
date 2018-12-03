@@ -17,9 +17,7 @@
         <div class="profile"><h2 style="align-text:center;"> My Bills</h2></div>
         <div class="payment">
         <%@user.bills.each do |bill| %>
-            <%if current_user.id==bill.group_bill.admin_id%>
-            <%next %>
-            <%end%>
+            
           
             <div class="event_container">
               <p class="event_name"><%=bill.group_bill.name.capitalize%></p> <br>
@@ -35,9 +33,15 @@
                 <%total_tax=bill.group_bill.tax%>
                 <%total_tip=bill.group_bill.tip%> 
                 <%my_percentage=totalprice/(bill.group_bill.total)%>
+                <%i_pay=(totalprice*my_percentage)+(total_tax*my_percentage)+(total_tip*my_percentage)%>
+                <%grand_total=totalprice+total_tax+total_tip%>
                 <div class="check">  
-                  <p>I owe $<%=result=((totalprice)+(total_tax*my_percentage)+(total_tip*my_percentage)).round(2)%>
-                  to <%=User.find(bill.group_bill.admin_id).first_name.capitalize%> </p>
+                  <%if current_user.id==bill.group_bill.admin_id%>
+                    <p>I paid $<%=i_pay.round(2)%> </p>
+                  <% else %>
+                    <p>I owe $<%=result=((totalprice)+(total_tax*my_percentage)+(total_tip*my_percentage)).round(2)%>
+                    to <%=User.find(bill.group_bill.admin_id).first_name.capitalize%> </p>
+                  <% end %>
                 </div>
                 <div class="my_bill_link">
                   <%= link_to 'View My Bill', bill_path(bill.id), class: "button_profile_container" %> 

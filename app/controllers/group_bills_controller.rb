@@ -49,8 +49,6 @@ class GroupBillsController < ApplicationController
     @subtotal=0
     @tax=0
     items_array=api_call(@group_bill)
-    puts items_array.to_s
-    puts "!!!!!!!!!!!"
     items_array.each do |item|
         if item[0]=='Subtotal'
              next
