@@ -17,7 +17,8 @@
           <div class="item" id="item<%=item.id%>">
             
             <span class="item_name"><%= item.name.capitalize %></span> 
-            <span class="item_price">$<%=(item.price).round(2) %></span>
+            <span class="item_price">$<%=sprintf("%.2f",(item.price).round(2)) %></span>
+
             
                   
                   
@@ -36,10 +37,10 @@
       </div>
 
       <div id="section-d">
-          <p>Subtotal $<%=(@group_bill.subtotal).round(2)%></p>
-          <p>Tax <%=@group_bill.tax%></p> 
-          <p>Tip $<%=(@group_bill.tip).round(2)%></p>
-          <p class="total">Total $<%=(@group_bill.total).round(2)%></p>
+          <p>Subtotal $<%=sprintf("%.2f",(@group_bill.subtotal).round(2))%></p>
+          <p>Tax $<%=sprintf("%.2f",@group_bill.tax)%></p> 
+          <p>Tip $<%=sprintf("%.2f",(@group_bill.tip).round(2))%></p>
+          <p class="total">Total $<%=sprintf("%.2f",(@group_bill.total).round(2))%></p>
       </div>  
 
     </div>

@@ -79,7 +79,7 @@ class GroupBillsController < ApplicationController
     
     items_array.each do |item|
         
-        if item[0].downcase=='Subtotal' || item[0].downcase=='sub-total' || item[0].downcase=='sub total'
+        if item[0].downcase=='subtotal' || item[0].downcase=='sub-total' || item[0].downcase=='sub total'
             next
         elsif item[0].downcase=='tax'
             next

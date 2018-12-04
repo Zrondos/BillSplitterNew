@@ -20,8 +20,6 @@ class BillsController < ApplicationController
     @group_bill = @bill.group_bill
     @admin=User.find(@group_bill.admin_id)
     
-      
-    
   end
 
 
@@ -48,8 +46,12 @@ class BillsController < ApplicationController
     end
 
     # admins_personal_bill=Bill.where(group_bill_id=grupo)
-
-    redirect_to group_bill_path(group_bill_id)
+    puts "!!!!!!!!!!!!!"
+    respond_to do |format|
+      # format.html {redirect_to courses_path}
+      format.js  
+  end
+    # redirect_to group_bill_path(group_bill_id)
   end
 
 
