@@ -19,13 +19,13 @@
 }
 
 .field-style{
-  width: 70%;
-  padding: 30px 30px;
-  margin-left: 15%;
+  width: 28%;
+  padding: 15px 30px;
+  margin-left: 4%;
   display: inline-block;
   border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 150%;
+  border-radius: 14px;
+  font-size: 110%;
   box-sizing: border-box;
   }
 
@@ -34,6 +34,9 @@
   background-image: url(asset_path('background_photo.jpg'));
   background-position: -250px 0px;
   height:1000px;
+  background-size: cover;
+  width: 118%;
+
 
   .login-text{
     color: #FF473A;
@@ -43,24 +46,104 @@
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
     text-align:center;
-}
+  }
+
+  .login_position{
+    margin-left: -211px;
+  }
 
 #align-remember{
   text-align: center;
-
-}
+  }
 
 .login_form{
   color:red;
   text-align: center;
-}
+  }
+
+  .login {
+    color: white; 
+    background-color: #FF473A;
+    width: 18%;
+    padding: 10px;
+    margin-left: 15%;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 18px;
+    box-sizing: border-box;
+    text-align: center;
+    margin-left: 10px;
+    text-align:center;
+    text-decoration: none;
+    }
+
+    .forgot-password{
+      text-align: center;
+      color:blue;
+      font-size: 25px;
+    }
+
+    .password_rs {
+      color: white; 
+      background-color: #FF473A;
+      width: 28%;
+      padding: 9px 5px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      font-size: 18px;
+      margin-left: 36%;
+      display: inline-block;
+      text-align:center;
+      text-decoration: none;
+      }
+
+    .email{
+      width: 30%;
+      padding: 15px 30px;
+      margin-left: 35%;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 14px;
+      font-size: 110%;
+      box-sizing: border-box;
+      }
+
+      .login2 {
+        color: white; 
+        background-color: #FF473A;
+        width: 18%;
+        padding: 10px 9%;
+        margin-left: 39%;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        font-size: 18px;
+        text-align:center;
+        text-decoration: none;
+        }
+  
 
 }
 #sign_up_page{
 
     background-image: url(asset_path('background_photo.jpg'));
     background-position: -160px 0px;
+    background-size: cover;
+    width: 118%;
+    
 
+    #forgot-password{
+      text-align: center;
+      color: white;
+      text-shadow: .5px 1px black;
+    }
+
+    .content{
+      text-align: center;
+      color: blue;
+      font-size: 20px;
+      font-weight: bold;
+    }
     .page-title{
         background-color: none;
         text-align: center;
@@ -70,25 +153,13 @@
       display: inline-block;
     }
 
-    
-
-    .login-text{
-        color: #FF473A;
-        font-size: 37px;
-        font-stretch: expanded;
-        line-height: 2;
-        font-family: 'Roboto', sans-serif;
-        font-weight: 700;
-    }
 
     .page-picture {
         display: flex;
         background-color: #FFFEFE;
         height: 35%;
       }
-    
-     
-    
+  
     
       .hello-user,
       .item,
@@ -153,16 +224,40 @@
       
     }
     .field-style{
-    width: 70%;
-    padding: 30px 30px;
-    margin-left: 15%;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 150%;
-    box-sizing: border-box;
-    }
+      width: 45%;
+      margin-left: 28%;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 14px;
+      font-size: 110%;
+      }
     
+    .login {
+      color: white; 
+      background-color: #FF473A;
+      width: 22%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      font-size: 18px;
+      text-align: center;
+      text-decoration: none;
+      margin-left: 40%;
+      }
+
+      .login2 {
+        color: white; 
+        background-color: #FF473A;
+        width: 22%;
+        padding: 10px 9%;
+        margin-left: 39%;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        font-size: 18px;
+        text-align:center;
+        text-decoration: none;
+        }
+  
     .update-style{
       width: 70%;
       padding: 18px 18px;
@@ -174,21 +269,7 @@
       box-sizing: border-box;
       }
     
-    .login {
-    color: white; 
-    background-color: #FF473A;
-    width: 70%;
-    padding: 30px 30px;
-    margin-left: 15%;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    font-size: 30px;
-    box-sizing: border-box;
-    text-align: center;
-    margin-left: 10px;
-    text-align:center;
-    }
+    
 
     .login-half {
       color: white; 
@@ -214,9 +295,8 @@
       color: white;
       display: inline-block;
     }
-    #forgot-password {
-      text-align: center;
-    }
+    
+    
 
     
 }
