@@ -11,7 +11,7 @@
   <%= form_with model: @group_bill do |form| %>
     <div class="eventName"> Event Name:  <%=form.text_field :name%> </div> 
     <%= form.hidden_field :admin_id, value: current_user.id%> 
-     Receipt:   <%= form.file_field :class => 'submitButton'%> <br><br>
+     Receipt:   <%= form.file_field :receipt, id: "file_button"%> 
     <div onclick="myreceipt()"> <%= form.submit "Analyze Receipt", :class => 'submitButton' %></div> 
   <% end %>
   </div>
