@@ -38,4 +38,8 @@ function drop_handler(event){
     array=[]
 }
 
+function myreceipt() {
+    var element = document.getElementsByClassName("submitButton")[0];
+    element.classList.toggle("loader");
+}
 
