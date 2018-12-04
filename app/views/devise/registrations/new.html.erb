@@ -4,35 +4,35 @@
     <section class="page-title">
       <div id="login-text">SPLIT</div>  
     </section>
+      <br><br>
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <div class="field">
-      <!--<%= f.label :first_name %><br /> -->
       <%= f.text_field :first_name,  placeholder: "First name", class:"field-style" %>
     </div>
+      <br><br>
 
     <div class="field">
-      <!-- <%= f.label :last_name %><br /> -->
       <%= f.text_field :last_name,  placeholder: "Last name", class:"field-style" %>
     </div>
+      <br><br>
 
     <div class="field">
-      <!--<%= f.label :email %><br />-->
       <%= f.email_field :email, autofocus: true, autocomplete: "email",  placeholder: "Email address", class:"field-style" %>
     </div>
+      <br><br>
 
     <div class="field">
-      <!--<%= f.label :password %> -->
       <%= f.password_field :password, autocomplete: "new-password",  placeholder: "Password", class:"field-style" %>
-      <% if @minimum_password_length %>
-        <div id="forgot-password"><em>(<%= @minimum_password_length %> characters minimum)</em></div>
-      <% end %><br />
+        <% if @minimum_password_length %> <br><br>
+          <div id="forgot-password"><em>(<%= @minimum_password_length %> characters minimum)</em></div>
+        <% end %>
     </div>
+    <br><br>
 
     <div class="field">
-      <!--<%= f.label :password_confirmation %><br />-->
       <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Password-confirmation", class:"field-style"  %>
-    </div>
-<br><br>
+    </div>  
+      <br><br>
     <!-- <div class="field">
      <%= f.label :payment_method %><br /> 
       <%= f.text_field :payment_method, autocomplete: "payment_method", placeholder: "Payment method", class:"field-style" %>
@@ -41,8 +41,8 @@
     <div class="actions">
       <%= f.submit "Sign up", class:"login" %>
     </div>
-    <br>
-  <% end %>
+    <% end %>
+      <br><br><br>
 
   <%= render "devise/shared/links" %>
  </div>

@@ -1,25 +1,16 @@
-<div id="bill_page">  
-  <div class="logo-banner">
-    <h1 ></h1>
-          
-  </div>
-  <div class="container-landing-page">
-    <section class="page-title">
-      <div id="login-text">LET'S <br>GO <br> SPLIT</div>  
-    </section>
-    <div id=forgot-password>Forgot your password?</div>
-    <br>
+<div id="login_page">  
+
+    <div class="login-text">LET'S <br>GO <br> SPLIT</div>  
+      <br><br><br>
+
+    <div class="forgot-password">Forgot your password?</div>
+      <br><br>
     <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-      <div class="field">
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email address", class:"field-style" %>
-      </div>
-      <br>
-      <div class="actions">
-        <%= f.submit "Reset password instructions", class:"login" %>
-      </div>
-        <br>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email address", class:"email" %>
+        <br><br>
+
+        <%= f.submit "Reset password", class:"password_rs" %>    
     <% end %>
+    <br><br><br><br>
    <%= render "devise/shared/links" %>
-   
- </div>
 </div>
