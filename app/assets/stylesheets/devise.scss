@@ -58,7 +58,7 @@
 }
 #sign_up_page{
 
-    background-image: url('/assets/background_photo.jpg');
+    background-image: url(asset_path('background_photo.jpg'));
     background-position: -160px 0px;
 
     .page-title{
