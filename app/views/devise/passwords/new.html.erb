@@ -1,7 +1,6 @@
 <div id="login_page">  
 
-    <div class="login-text">LET'S <br>GO <br> SPLIT</div>  
-      <br><br><br>
+    <div class="logo"><h2 class="logo_text">Split</h2></div>
 
     <div class="forgot-password">Forgot your password?</div>
       <br><br>
@@ -9,8 +8,8 @@
         <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email address", class:"email" %>
         <br><br>
 
-        <%= f.submit "Reset password", class:"password_rs" %>    
+        <%= f.submit "Reset Password", class:"btn3" %>    
     <% end %>
-    <br><br><br><br>
+    <br><br><br>
    <%= render "devise/shared/links" %>
 </div>

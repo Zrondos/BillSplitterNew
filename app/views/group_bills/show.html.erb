@@ -67,11 +67,11 @@
       <h4>Add Friends</h4>    
         <%= form_with(model: @bill) do |form| %>
           <%= form.hidden_field :group_bill_id, value: @group_bill.id %>
-          <%= form.select(:users_ids, options_for_select(@users_to_add), { :prompt => "Please select"}, { :multiple => true, :size => 5 })%>
-         <br>
-          <%= form.submit  "Add friends"%>
+           <%= form.select(:users_ids, options_for_select(@users_to_add), { :prompt => "Please select"}, { :multiple => true, :size => 5 })%>
+         <br><br>
+          <%= form.submit  "Add friends", :class => 'submitButton'%>
         <% end %> 
-
+          <br><br>
 
       <div id="invisible">
         <%= form_with( model: BillsItem.new) do |form| %>
