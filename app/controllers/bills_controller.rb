@@ -31,28 +31,24 @@ class BillsController < ApplicationController
     users=params[:bill][:users_ids]
     group_bill_id= params[:bill][:group_bill_id]
     users=users[1..-1]
+    @bill_ids=[]
     users.each do |user|
 
-
-
-      
         @bill = Bill.create(
           group_bill_id: group_bill_id
         )
+        @bill_ids.push(@bill.id)
         @users_bill=UsersBill.create(
           user_id: user,
           bill_id: @bill.id
-        )
+        ) 
     end
-
-    # admins_personal_bill=Bill.where(group_bill_id=grupo)
-    puts "!!!!!!!!!!!!!"
     respond_to do |format|
-      # format.html {redirect_to courses_path}
-      format.js  
+      format.js
+    end   
   end
     # redirect_to group_bill_path(group_bill_id)
-  end
+
 
 
   def update

@@ -1,19 +1,23 @@
 users_container=document.getElementsByClassName("users_container")[0]
-users_circle=document.createElement("div")
-users_circle.setAttribute("class","btn-big-circle")
-users_circle.setAttribute("id","bill<%=@bill.id%>")
-users_circle.setAttribute("draggable","true")
-users_circle.setAttribute("ondragstart","dragstart_handler(event)")
-users_name=document.createElement("div")
-users_name.setAttribute("class","btn-big-text")
-users_name.innerHTML="<%=@users_bill.user.first_name.capitalize[0]%>.<%=@users_bill.user.last_name.capitalize[0]%>."
-users_circle.appendChild(users_name)
-users_container.appendChild(users_circle)
+<%@bill_ids.each do |id| %>
+    users_circle=document.createElement("div")
+    users_circle.setAttribute("class","btn-big-circle")
+    users_circle.setAttribute("id","bill<%=id%>")
+    users_circle.setAttribute("draggable","true")
+    users_circle.setAttribute("ondragstart","dragstart_handler(event)")
+    users_name=document.createElement("div")
+    users_name.setAttribute("class","btn-big-text")
+    <%Bill.find(id).users.each do |user|%>
+        users_name.innerHTML="<%=user.first_name.capitalize[0]%>.<%=user.last_name.capitalize[0]%>."
+    <%end%>
+    users_circle.appendChild(users_name)
+    users_container.appendChild(users_circle)
 
-selectobject=document.getElementById("bill_users_ids");
-  for (var i=0; i<selectobject.length; i++){
-  if (selectobject.options[i].value == <%=@users_bill.user.id%> )
-     selectobject.remove(i);
-  }
+    selectobject=document.getElementById("bill_users_ids");
+    for (var i=0; i<selectobject.length; i++){
+    if (selectobject.options[i].value == <%=@users_bill.user.id%> )
+        selectobject.remove(i);
+    };
+<% end %>
 
 
