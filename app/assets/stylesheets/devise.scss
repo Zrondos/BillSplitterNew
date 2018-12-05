@@ -25,7 +25,7 @@
   display: inline-block;
   border: 1px solid #ccc;
   border-radius: 14px;
-  font-size: 110%;
+  font-size: 100%;
   box-sizing: border-box;
   }
 
@@ -93,14 +93,14 @@
       font-size: 18px;
       box-sizing: border-box;
       text-align: center;
-      margin-left: 39%;
       text-decoration: none;
       }
 
     .forgot-password{
       text-align: center;
-      color:blue;
+      text-decoration: none;
       font-size: 25px;
+
     }
 
     .password_rs {
@@ -168,7 +168,6 @@
               font-size: 18px;
               box-sizing: border-box;
               text-align: center;
-              margin-left: 39%;
               text-decoration: none;
               }
 
@@ -211,14 +210,14 @@
       color: white;
       text-shadow: .5px 1px black;
       margin-left: -10%;
+      text-decoration:none;
     }
 
     .content{
       text-align: center;
-      color: blue;
-      font-size: 20px;
-      font-weight: bold;
-      margin-left: -13%
+      font-family: Ariel;
+      font-size: 46px;
+      margin-left: -13%;
     }
     .page-title{
         background-color: none;
@@ -366,6 +365,7 @@
       padding-right: 20px;
       font-size: 150%;
       color: white;
+      text-decoration: none;
     }
     // #align-remember{
     //   text-align: left;

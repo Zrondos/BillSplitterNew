@@ -30,7 +30,11 @@ function drop_handler(event){
     var data = event.dataTransfer.getData("text");
     var nodeCopy = document.getElementById(data).cloneNode(true);
     nodeCopy.id = data+"newId"; 
+    nodeCopy.setAttribute("class","user");
     event.target.appendChild(nodeCopy);
+    nodeCopy.children[0].setAttribute("class","initials")
+
+    children = document.querySelectorAll('.parent .child1');
 
     array.push(event.target.id+"/");
     document.getElementById("array_of_data").value+=array
@@ -39,7 +43,7 @@ function drop_handler(event){
 }
 
 function myreceipt() {
-    var element = document.getElementsByClassName("submitButton")[0];
-    element.classList.toggle("loader");
+    var element = document.getElementById("loading_button");
+    element.style.display="inline-block"
 }
 

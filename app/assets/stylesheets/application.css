@@ -29,6 +29,7 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
+    margin-bottom: 10px;
 }
 
 
@@ -45,6 +46,36 @@ ion-icon{
     position: absolute;
     top: 70px;
     right: 11px;
+    color: blue;
+
 }
 
+#loading_button{
+    position:relative;
+    display:none;
+    z-index:-1;
+    height:150px;
+}
 
+.forgot_password{
+    color:blue;
+}
+
+.new_session_container{
+    margin-bottom: -10px;
+    margin-top: -10px;
+}
+
+.demo{
+    color:black;
+    margin-bottom:-27px;
+}
+
+.shared_links_container{
+    text-align: center;
+}
+
+.signup_button{
+    text-align: center;
+    margin-bottom: -25px;
+}

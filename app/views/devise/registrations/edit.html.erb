@@ -20,16 +20,13 @@
       <% end %>
 
       <%= f.password_field :password, autocomplete: "new-password", placeholder: "New Password", class:"field-style" %> <br>
-         <div id="forgot-password"><i>(leave blank if you don't want to change it)</i></div>
-      <% if @minimum_password_length %>
-      <div id="forgot-password"><em><%= @minimum_password_length %> characters minimum</em></div>
-      <% end %>
+         <div id="forgot-password"><i></i></div>
+      
       <br>
   
       <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Password Confirmation", class:"field-style"  %>
-        <br><br><br>
 
-     <div id="forgot-password"><i>(we need your current password to confirm your changes)</i></div><br />
+     <div id="forgot-password"></div><br />
       <%= f.password_field :current_password, autocomplete: "current-password", placeholder: "Current-password", class:"field-style"  %>
         <br><br>
 
@@ -40,12 +37,9 @@
         <%= f.submit "Update", class:"login" %>
   
     <% end %>
-    <br><br><br>
 
-    <div class="content">Cancel my account</div>
+
     <br>
     <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class:"login" %>
-      <br><br>
-      <p style="margin-left:12%"><%= link_to "Back", :back, class: "login " %></p>
 
 </div>
