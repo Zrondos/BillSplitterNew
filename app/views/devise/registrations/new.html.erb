@@ -15,17 +15,17 @@
       <%= f.password_field :password, autocomplete: "new-password",  placeholder: "Password", class:"field-style" %>
         <% if @minimum_password_length %> <br><br>
         <% end %>
-    <br><br>
 
-      <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Password-confirmation", class:"field-style"  %>
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Confirm Password", class:"field-style"  %>
       <br><br><br>
     </div>
-    
+    <div class="signup_button">
       <%= f.submit "Sign up", class:"btn_x" %>
-    
+    </div>
       <% end %>
       <br><br><br>
-  
+    <div class="shared_links_container">
     <%= render "devise/shared/links" %>
+    </div>
  </div>
 

@@ -49,8 +49,6 @@ class BillsController < ApplicationController
   end
     # redirect_to group_bill_path(group_bill_id)
 
-
-
   def update
   end
 

@@ -4,7 +4,7 @@ users_container=document.getElementsByClassName("users_container")[0]
     users_circle.setAttribute("class","btn-big-circle")
     users_circle.setAttribute("id","bill<%=id%>")
     users_circle.setAttribute("draggable","true")
-    users_circle.setAttribute("ondragstart","dragstart_handler(event)")
+    users_circle.setAttribute("ondragstart","dragstart_handler(event);")
     users_name=document.createElement("div")
     users_name.setAttribute("class","btn-big-text")
     <%Bill.find(id).users.each do |user|%>

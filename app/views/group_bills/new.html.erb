@@ -9,10 +9,12 @@
   <div class="uploadBillForm">
   <%# <%=current_user.id%> 
   <%= form_with model: @group_bill do |form| %>
-    <div class="eventName"> Event Name:  <%=form.text_field :name%> </div> 
-    <%= form.hidden_field :admin_id, value: current_user.id%> 
-     Receipt:   <%= form.file_field :receipt, id: "file_button"%> 
+    <div class="eventName"> <span>Event Name:</span>  <%=form.text_field :name%>
+    <%= form.hidden_field :admin_id, value: current_user.id%> <br>
+    <span class="receipt">Receipt: </span>  <%= form.file_field :receipt, id: "file_button"%> 
+    </div>
     <div onclick="myreceipt()"> <%= form.submit "Analyze Receipt", :class => 'submitButton' %></div> 
+    <%= image_tag 'loading',id:"loading_button" %>
   <% end %>
   </div>
 

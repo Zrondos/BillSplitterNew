@@ -16,7 +16,7 @@
 
         <div class="profile"><h2 style="align-text:center;"> My Bills</h2></div>
         <div class="payment">
-        <%@user.bills.each do |bill| %>
+        <%@user.bills.reverse_each do |bill| %>
             
           
             <div class="event_container">
@@ -44,7 +44,7 @@
                   <% end %>
                 </div>
                 <div class="my_bill_link">
-                  <%= link_to 'View My Bill', bill_path(bill.id), class: "button_profile_container" %> 
+                  <%= link_to 'View Bill', bill_path(bill.id), class: "button_profile_container" %> 
                 </div>
               </div>
           <%end%>
