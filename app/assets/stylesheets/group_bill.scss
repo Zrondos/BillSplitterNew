@@ -150,14 +150,15 @@
     background-color: #FF473A;
     color: white;
     text-decoration: none;
-    padding: 1em 2em;
+    border-radius: 12px;
+    padding: 1em 1em;
     margin: 0.5em 0;
     box-shadow: 2px 5px 18px #88888888;
     width: 200px;
+    font-size: 18px;
   }
   
   #banner {
-    min-height: 60px;
     background-color: white;
     color: #FF473A;
     text-align: center;

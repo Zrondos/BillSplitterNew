@@ -32,21 +32,28 @@
 #login_page{
 
   background-image: url(asset_path('background_photo.jpg'));
-  background-position: -250px 0px;
+  background-position: -90px 0px;
   height:1000px;
-  background-size: cover;
-  width: 118%;
-
+  width: 100%;
+  font-family: 'Roboto', sans-serif;
 
   .login-text{
     color: #FF473A;
     font-size: 37px;
     font-stretch: expanded;
     line-height: 2;
-    font-family: 'Roboto', sans-serif;
+    
     font-weight: 700;
     text-align:center;
   }
+
+  .logo {
+    font-family: 'Playfair Display', serif;
+    color:  #FF473A;
+    margin-left: 40%;
+    padding: 5% 0;
+  }
+  
 
   .login_position{
     margin-left: -211px;
@@ -64,19 +71,31 @@
   .login {
     color: white; 
     background-color: #FF473A;
-    width: 18%;
-    padding: 10px;
-    margin-left: 15%;
-    display: inline-block;
+    padding: 10px 40px;
     border: 1px solid #ccc;
     border-radius: 10px;
     font-size: 18px;
     box-sizing: border-box;
     text-align: center;
-    margin-left: 10px;
-    text-align:center;
+    margin-left: -3%;
     text-decoration: none;
     }
+
+    .helper{
+     align-content: center;
+    }
+    .btn3 {
+      color: white; 
+      background-color: #FF473A;
+      padding: 10px 5%;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      font-size: 18px;
+      box-sizing: border-box;
+      text-align: center;
+      margin-left: 39%;
+      text-decoration: none;
+      }
 
     .forgot-password{
       text-align: center;
@@ -100,21 +119,65 @@
 
     .email{
       width: 30%;
-      padding: 15px 30px;
+      padding: 15px 0px;
       margin-left: 35%;
-      display: inline-block;
       border: 1px solid #ccc;
       border-radius: 14px;
-      font-size: 110%;
+      font-size: 100%;
       box-sizing: border-box;
+      text-align: center;
+      text-decoration: none;
+      color: white;
       }
+
+      .email2{
+        padding: 15px 30px;
+        margin-left: 38%;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 14px;
+        font-size: 110%;
+        box-sizing: border-box;
+        text-align: center;
+        text-decoration: none;
+        color: white;
+        background-color: #FF473A;
+        }
+
+        .btn2{
+          width: 28%;
+          padding: 15px 30px;
+          margin-left: 4%;
+          display: inline-block;
+          border: 1px solid #ccc;
+          border-radius: 14px;
+          font-size: 110%;
+          box-sizing: border-box;
+          text-align: center;
+          text-decoration: none;
+          color: white;
+          background-color: #FF473A;
+          }
+
+          .btn_x{
+              color: white; 
+              background-color: #FF473A;
+              padding: 10px 8%;
+              border: 1px solid #ccc;
+              border-radius: 10px;
+              font-size: 18px;
+              box-sizing: border-box;
+              text-align: center;
+              margin-left: 39%;
+              text-decoration: none;
+              }
 
       .login2 {
         color: white; 
         background-color: #FF473A;
         width: 18%;
-        padding: 10px 9%;
-        margin-left: 39%;
+        padding: 10px 5%;
+        margin-left: 40%;
         border: 1px solid #ccc;
         border-radius: 10px;
         font-size: 18px;
@@ -132,10 +195,22 @@
     width: 118%;
     
 
+    #banner .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 2em;
+      padding-top: 15px;
+      padding-bottom: 0;
+      letter-spacing: 2.5px;
+      margin-bottom: -48px;
+      margin-top: -71px;
+    
+    }
+
     #forgot-password{
       text-align: center;
       color: white;
       text-shadow: .5px 1px black;
+      margin-left: -10%;
     }
 
     .content{
@@ -143,6 +218,7 @@
       color: blue;
       font-size: 20px;
       font-weight: bold;
+      margin-left: -13%
     }
     .page-title{
         background-color: none;
@@ -158,6 +234,7 @@
         display: flex;
         background-color: #FFFEFE;
         height: 35%;
+        width: 100%;
       }
   
     
@@ -224,7 +301,7 @@
       
     }
     .field-style{
-      width: 45%;
+      width: 30%;
       margin-left: 28%;
       display: inline-block;
       border: 1px solid #ccc;
@@ -242,8 +319,10 @@
       font-size: 18px;
       text-align: center;
       text-decoration: none;
-      margin-left: 40%;
+      margin-left: 32%;
       }
+
+      
 
       .login2 {
         color: white; 
@@ -288,13 +367,13 @@
       font-size: 150%;
       color: white;
     }
-    #align-remember{
-      text-align: left;
-      padding-right: 20px;
-      font-size: 150%;
-      color: white;
-      display: inline-block;
-    }
+    // #align-remember{
+    //   text-align: left;
+    //   padding-right: 20px;
+    //   font-size: 150%;
+    //   color: white;
+    //   display: inline-block;
+    // }
     
     
 

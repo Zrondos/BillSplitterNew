@@ -1,8 +1,8 @@
 
-<!--<h2>Log in</h2> -->
 <div id="login_page">  
-  <div class="login_position">
-  <div class="login-text">SPLIT</div>  
+  <br>
+    <div class="logo"><h2 class="logo_text">Split</h2></div>
+  <br>
   
     <div class="login_form">
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -20,11 +20,11 @@
         <div id="align-password"> <%= link_to "Forgot your password", new_password_path(resource_name) %></div><br />
         <% end -%>
 
-        <div class="actions">
-          <%= f.submit "Log in", class:"login" %>
         </div>
+          <%= f.submit "Log in", class:"btn_x" %>
+       
       <% end %>
-    </div>
+   
 
     <%= render "devise/shared/links" %>
 
