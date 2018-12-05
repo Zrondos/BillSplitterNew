@@ -16,7 +16,8 @@ class UsersBillsController < ApplicationController
       user_id: params[:users_bill][:user_id],
       bill_id: params[:users_bill][:bill_id],
     )
-    redirect_to users_bills_path
+    puts "!!!!!!!!"
+    # redirect_to users_bills_path
 
   end
 

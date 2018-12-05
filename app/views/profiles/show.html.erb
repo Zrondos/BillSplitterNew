@@ -37,9 +37,9 @@
                 <%grand_total=totalprice+total_tax+total_tip%>
                 <div class="check">  
                   <%if current_user.id==bill.group_bill.admin_id%>
-                    <p>I paid $<%=i_pay.round(2)%> </p>
+                    <p>I paid $<%=sprintf("%.2f",i_pay.round(2))%> </p>
                   <% else %>
-                    <p>I owe $<%=result=((totalprice)+(total_tax*my_percentage)+(total_tip*my_percentage)).round(2)%>
+                    <p>I owe $<%=sprintf("%.2f",((totalprice)+(total_tax*my_percentage)+(total_tip*my_percentage)).round(2))%>
                     to <%=User.find(bill.group_bill.admin_id).first_name.capitalize%> </p>
                   <% end %>
                 </div>
