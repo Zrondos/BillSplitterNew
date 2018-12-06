@@ -30,7 +30,12 @@
     <%= link_to "", new_user_registration_path, class: style="display:none;"  %> 
         <%= link_to "", new_user_session_path, :class => 'hidden'  %>
   <% end %>
-
+<% if notice %>
+  <p class="alert alert-success"><%= notice %></p>
+<% end %>
+<% if alert %>
+  <p class="alert alert-danger"><%= alert %></p>
+<% end %>
 
   </header>
   <body>
