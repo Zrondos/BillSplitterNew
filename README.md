@@ -1,6 +1,8 @@
 # Bill Splitting App
 
 [Demonstration](https://www.youtube.com/watch?v=MjGFNpOoGWQ)
+
+
 Web application developed for mobile use that lets you take a photo of your bill and assign friends to items, making calculations easy.
 
 Create a profile or login using the demo username "test@test.com" and password "password"
