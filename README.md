@@ -1,5 +1,9 @@
 # Bill Splitting App
 
+[Demonstration](https://www.youtube.com/watch?v=MjGFNpOoGWQ&t=1s)
+[Try it out](https://billsplitting1.herokuapp.com/)
+![alt tex](/public/bill_splitter.png)
+
 Web application developed for mobile use that lets you take a photo of your bill and assign friends to items, making calculations easy.
 
 Create a profile or login using the demo username "test@test.com" and password "password"
