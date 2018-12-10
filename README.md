@@ -2,12 +2,16 @@
 
 
 [Demonstration](https://www.youtube.com/watch?v=MjGFNpOoGWQ&t=1s)
+
+
 [Try it out](https://billsplitting1.herokuapp.com/)
+
+
 ![alt tex](/public/bill_splitter.png)
 
 Web application developed for mobile use that lets you take a photo of your bill and assign friends to items, making calculations easy.
 
-Create a profile or login using the demo username "test@test.com" and password "password"
+Create a profile or login using the demo username "test@test.com" and password "password" 
 Give a name to the event, upload a bill, and click analyze.
 At the bottom of the bill page, add friends, then drag and drop friends to the items they ordered.
 Click split to allow all your friends to view what they ordered, who they shared it with and how much they owe.
