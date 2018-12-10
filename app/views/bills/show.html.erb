@@ -42,9 +42,9 @@
   <%my_percentage=totalprice/@group_bill.total%>
 
   <div class="totals_container">
-    <h2>Tax <%=sprintf("%.2f",(total_tax*my_percentage).round(2))%></h2>
-    <h3>Tip <%=sprintf("%.2f",(total_tip*my_percentage).round(2))%></h3>
-    <h2 class="total">Total <%=sprintf("%.2f",((totalprice)+(total_tax*my_percentage)+(total_tip*my_percentage)).round(2))%></h2>
+    <h2>Tax $<%=sprintf("%.2f",(total_tax*my_percentage).round(2))%></h2>
+    <h3>Tip $<%=sprintf("%.2f",(total_tip*my_percentage).round(2))%></h3>
+    <h2 class="total">Total $<%=sprintf("%.2f",((totalprice)+(total_tax*my_percentage)+(total_tip*my_percentage)).round(2))%></h2>
   </div>
 
   <div class="users_container">
