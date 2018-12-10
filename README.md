@@ -1,8 +1,13 @@
 # Bill Splitting App
 
+<<<<<<< HEAD
 [Demonstration](https://www.youtube.com/watch?v=MjGFNpOoGWQ&t=1s)
 [Try it out](https://billsplitting1.herokuapp.com/)
 ![alt tex](/public/bill_splitter.png)
+=======
+[Demonstration](https://www.youtube.com/watch?v=MjGFNpOoGWQ)
+
+>>>>>>> 3d4a757a85607e28409e0ae98119ed5d9ceabb36
 
 Web application developed for mobile use that lets you take a photo of your bill and assign friends to items, making calculations easy.
 
